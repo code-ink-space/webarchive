@@ -1,0 +1,924 @@
+<!DOCTYPE html> <html lang=en><!--
+ Page saved with SingleFile 
+ url: https://lobste.rs/s/1lv132/making_rss_prominent_again 
+ saved date: Tue Jul 28 2020 14:58:21 GMT+0800 (Philippine Standard Time)
+--><meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name=referrer content=always>
+<meta name=theme-color content=#AC130D>
+<meta name=twitter:card content=summary>
+<meta name=twitter:site content=@lobsters>
+<meta name=twitter:title content="Making RSS prominent again">
+<meta name=twitter:description content="25 comments">
+<meta name=twitter:image content=https://lobste.rs/apple-touch-icon-144.png>
+<meta name=twitter:creator content=@czlonka>
+<link rev=canonical rel="self alternate shorter shorturl shortlink" href=https://lobste.rs/s/1lv132>
+<title>Making RSS prominent again | Lobsters</title>
+<style>:root{--sf-img-3:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABoUlEQVQ4jZ2Su0tbYRiHn3NMpfEyCPpFBLGGQgWNg0NRMH+BhxT9D3JIyKGDFEr3dpaCKBQkqFOWUhDFQV3cvCAV1CMqFS9bExWkmoZ8B/w6mE9MY7z9lnd6eJ/3YrzdtBVAuz9IPBDhw9EwAKuhcVIn8+SVhy0swq6DVB5d1W9Yz+7R7g+ynTvAp8Humg4Mw0AndTLPyO/v/J+YiPD+cOimWUVl/NXnufMVli9cxIs6vjTHqTJfFsE/s7vEAu/4FvxEU2U969k9osJi4+9+qUG5zmPpKQBsYRETkRsbQ+9Az3wXfDuJQH/RTnwPzVzORMdQSqnHwneZ+J4D3zYx88p7MqwjrySmLSwSgf4nw9GGPpzGAYzerYQCiAqrZEH3wT/OFskrD1MqD1l418eY6M75Amcs/dlUPbUhli+26KkNMZGZLWuiYYCN7C+SmWl8yfQM3TUd6GoLCyi9t4Y1uHa5A4C5nTtg5dJF17DrMJmZLRpHzxx2Hdr8LXxtGWS09SOdVa+vPzGZnkFXWTirNpFXEqdxgNTpAlJ57OaOiwz+ATrq3NnUqGRRAAAAAElFTkSuQmCC");--sf-img-5:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABOUlEQVQ4jZ2TUWrCQBiEv2321U1O4AlSIiQ0otDLeAPvUU9QLyNYVCKkVOhzPUHUvgjZbh/qxmyC1Xbedpkd/pl/RxhjDDVMtlMABn7My25NE+PuiMUuJ1EhUkjuWowT+n6PgR+37he73BGW8yJjuX8FIO6EDlkKj4Ef0/d7AGT7N45fR5czDBIASqN5DB5YHzYVeVasHLFZsWLcHTkC4unj2dQ9NwlN2Iwq4brn/0A6B+FdfdDMpBKwnhN1/6uA3YDNRAKkKqI0+uaxtSlZ7vMfoVRF2E3cAsvPTtuS2WFTHeB6mJ5wYkPqP4wOtL63sF2YFxnDIGGynZKqCE/IipyqiOywQRtddUGbkmGQnLdgv3MzE0u0NltdqI9TGk3++e5kkio3k0SFJOrcmUog7oROFy55lo0QvwEwrJVuw3FyHgAAAABJRU5ErkJggg==");--sf-img-7:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABSklEQVQ4y6WSPYrCUBRGz0vmoQZMoSJoI1hZ+FMIKQQriVtwO7MKCzeRBWgnaC+ojb+gYKGEFIIPFadyCDNq4szp3isO9/vuFdVq9cY/0KSUFItFMpkMQoi3BR/n8xnP87Btm3Q6zXQ6ZTAY4LpuKIHwR8jn87RaLS6XC+12m+PxGBzB/1gsFjiOg2EY2LYdagI9m81++j/2+z1SSizLIhqNslwuMU2TXC7H4XD43cEja6/XQylFo9GgUqkgpaTT6QRH8NPv99lut8RiMTRNw/O89wTxeJxUKsVut0MIQbPZDNfBnVqtxnA4pNvtopSiXq9jmibr9Zrr9RosWK1W37ew2WyIRCJYlkW5XGYymaCUei34yXw+x3VdSqUSuq4zm81ed/CI0WiE4zgUCoXgEp8xHo85nU4kk8m/Ce4rTiQSzw8pzBSGYQDwBVp0d8Wa/iSXAAAAAElFTkSuQmCC");--sf-img-9:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABj0lEQVQ4jY1Sy0pCURRdt3vsI3RgTSQLQrMgksImgWLRB1TQBxT08CeKIv2AogbZqEmp2KBBhRZUaBAFGoVS+gt5znU30Hu6R3u4Zmuzz9lrrb1BTZQKFTqKpagTlAoVenksExERKxeryKRy8AX6IbhAJ8ikcuA1gV63A0xwA4IL6EwHszGlMZvOQ3CB8bBP1srFKoYm3GDdDK9P72C9bgd6+ux4e/5QFGTTeVwl7iU3PzGn27oZeE1AIyKyTt1c3vtTfiS2qHD2V9P26gEMYSi8FV2tnv/D5emdwqUFq2ed6QAAQxg/8tGpQZmJtGAN0Gz8jQtugIigaRpgPZCLk1vaWNqVfGtlv42fH99QvV6XNSUD675/Q2B2pDG5iR+3YKZtSrdy62MA0A53EmQ9jIXIDIBG2tdnDwCA4ckBOTkeTWIs6IHTZW8oGAt6lMtqtSO4ochunL6BeDQJf8gL5nTZEY8mwWsC8+vTirzxsO87bdOzTQez6fIjBgD+kBe1T97mD0BbzXw4txaGpmn4Ag1XKgd5rkPxAAAAAElFTkSuQmCC");--sf-img-15:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACJElEQVQ4jYWTTWsTURSGn4mBTqZNMkk3pjGrilvBRWwtVi36DxQXgh8Ls2tBiAvBjdiVFKQEF83GXyKWoqkjllqFaiVukszEhfmYJJOZbHpcDDPaVsi7ufccDvf94FzFyFVlZlmnWbbJFJJYpS7xvEpiUcNca5MtpulVXPoVF4BsMR32zbU21F/8FhGRxnpbRESMXFXsd07Y279tioiI/WEY3oPZxnpbos2yjTIR4Ve5C+CzL2gMPnsMdjz6FZee4ZK4GMNZGtEsd7FKHSKqglXqEM0UkmRXUr68lRRKFA7uNbHfDglgvuzgLI2or7bI12Y59IRMQefQExQjV5V/PY9Dtpim935If9vzG8c9G7mqBPh49ueJOsxkeyj7txoSPe55HMJM5mI41ydRzFdt6RveEc/KhAKAjOS/dfxSDH1Jo77a8jOYWdZxvo6wN92xCgLE51T0G5N/96C/44qRq47P4GZD7MpQREQO7lsSGeyN6O94TF1QSV6NjWVOXNZIzMdwvnh03wx9CwCJxRj6FY3a89bYDLLFNM6u/0AkW0yTr82SXNQ4/VAHIFNIkphXQ1YZCVPnJ8g98WcjqsK51xlyT6eJBstjlTocesLMss6Zx9MMdj3sTZN4XiX7KEViQePHgyac6lJfbQH4Z/AxrI2OiIh8u2NK75MrIiLf71rhxxnsuWGgway10ZETCnpbLr0t08/kmkbtmc/m7PpL1iwfVfAHBwC0CTX6qJ8AAAAASUVORK5CYII=")}html{overflow-y:scroll}body,textarea,input,button{font-family:"helvetica neue",arial,sans-serif;font-size:10pt;color:#333;line-height:1.45em}body{background-color:#fefefe}a{color:#2562dc;cursor:pointer}li.story div.details span.link a:visited{color:#7395d9}.clear{clear:both}a.tag{background-color:#fffcd7;border:1px solid #d5d458;border-radius:5px;color:#555;font-size:8pt;margin-left:0.25em;padding:0px 0.4em 1px 0.4em;text-decoration:none}textarea{color:#555;background-color:white;padding:3px 5px}textarea{resize:vertical}textarea{border:1px solid #ccc}input:focus,textarea:focus{outline-style:solid;outline-width:2px}input:focus,textarea:focus{border-color:#888;color:#303030;outline:0}textarea::placeholder{color:#333;opacity:0.8}textarea:disabled{background-color:#f0f0f0}input[type="submit"]:focus,button:focus{border-color:#888;outline:1px solid #888}::-webkit-input-placeholder{color:#aaa;font-style:italic}:-moz-placeholder{color:#aaa;font-style:italic}button,input[type="submit"]{background-color:#fafafa;border-bottom-color:#bbb;border:1px solid #ccc;color:#333333;cursor:pointer;display:inline-block;line-height:18px;padding:2px 10px 2px 10px;text-align:center;text-decoration:none}button:first-child,input[type="button"]:first-child,input[type="reset"]:first-child,input[type="submit"]:first-child{margin-left:0}button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover{color:#333333;text-decoration:none;background-color:#e6e6e6}input:disabled,button:disabled{background-color:#e9e9e9;color:gray}div#wrapper{margin-left:auto;margin-right:auto;padding-bottom:2em;min-width:600px;max-width:900px}div#inside{margin-left:0.25em;margin-right:0.25em}#header{font-weight:bold;padding:5px 10px;margin-top:1em;margin-bottom:0.5em;line-height:18px}#headerleft{float:left}#l_holder{background-position:center;float:left;display:block;width:16px;height:16px;padding:1px;margin-left:4px;margin-right:11px}.headerlinks a{color:#777;text-decoration:none;padding-right:0.75em}#headerright{float:right;text-align:right}#headerright .headerlinks a{padding-right:0;padding-left:0.75em}div#footer{float:right;font-weight:bold;margin-top:1.5em;padding-right:10px}div#footer a{color:#999;text-decoration:none;padding-left:0.75em}ol.stories,ol.comments{padding:0;list-style:none;margin:0}ol.comments{margin-left:20px;margin-bottom:0em;padding-left:6px}ol.comments1{margin-left:-20px;padding-left:0}ol.comments.comments1{border-left-color:transparent}ol.comments1>li.comments_subtree{margin-left:11px}div.voters{float:left;margin-top:0px;width:40px}div.voters div.score{color:#aaa;font-size:9pt;margin-top:1px;margin-bottom:-3px;text-align:center}li.story div.voters div.score{font-size:9.5pt;margin-top:2px}div.voters .upvoter,div.voters .downvoter{border-color:transparent transparent #bbb transparent;border-style:solid;border-width:6px;text-decoration:none;width:0px;height:0;margin-bottom:0px;margin-left:14px;padding:0;display:block}div.voters .upvoter:hover,.upvoted div.voters .upvoter{border-bottom-color:#ac130d}div.voters .upvoter{border-bottom-width:11px}div.voters .downvoter{border-width:5px;margin-top:4px;margin-left:15px;margin-bottom:-5px;border-top-width:9px}div.voters .downvoter:hover,.downvoted div.voters .downvoter{border-top-color:gray}div.voters .downvoter.downvoter_stub{border-color:transparent}li.story{clear:both}ol.stories li.story div.story_liner{padding-top:0.25em;padding-bottom:0.25em}.comment{clear:both;padding-top:0.4em;padding-bottom:0.4em;padding-left:20px;position:relative}.comment a{color:#666}ol.stories li:first-child div.story_liner{padding-top:0.5em}li div.details{padding-top:0.1em}.comment:target,li:target,p:target{background-color:#fffcd7;border-radius:8px}li .link{font-weight:bold;vertical-align:middle}li .link a{font-size:11.5pt;text-decoration:none}li.story a.tag{vertical-align:middle}li .tags{margin-right:0.25em}li .domain{color:#888;font-style:italic;font-size:9pt;text-decoration:none;vertical-align:middle}li .comment_folder{display:inline-block;font-size:9pt;color:#aaa;letter-spacing:0.1em;width:1.5em;cursor:pointer;float:left;text-align:center;margin-right:-0.3em}li .comment_folder:before{content:"[-]"}li .comment_folder_button:checked~.comment .comment_folder:before{content:"[+]"}li .comment_folder_button:checked~div.comment div.comment_text{display:none}li .comment_folder_button:checked~div.comment div.voters{visibility:hidden;margin-bottom:-15px}li .comment_folder_button:checked~ol.comments ol,li .comment_folder_button:checked~ol.comments div.comment,li .comment_folder_button:checked~ol.comments li{display:none}li.comments_subtree{position:relative}li .comment_parent_tree_line{position:absolute;left:54px;border-left:1px dotted #bbb;bottom:0}li .comment_parent_tree_line.score_shown{top:44px}li .comment_parent_tree_line.no_children{border-left-color:transparent}li .comment_siblings_tree_line{position:absolute;left:28px;border-left:1px dotted #bbb;top:2em;bottom:0}li:last-child>.comment_siblings_tree_line{border-left-color:transparent}div.comment:target div.comment_text,div.comment:target div.voters{display:block!important}li .byline{color:#888;font-size:9.5pt}li .byline img.avatar{border-radius:8px;height:16px;margin-bottom:2px;margin-right:2px;vertical-align:middle;width:16px}li.story .byline{margin-top:1px}li .byline a{color:#888;text-decoration:none}li .byline a.new_user{color:green}li div.details,div.story_content{margin-left:40px;margin-right:40px}div.story_content{margin-bottom:1em}div.comment_text{font-size:10.5pt;max-width:700px;word-wrap:break-word;overflow:hidden}div.comment_text blockquote{font-style:italic;margin:0.25em 0 0 0.5em;padding:0 0 0 1em;border-left:2px solid gray}div.comment_text p{margin:0.5em 0}div.comment_text p:first-child{margin-top:0.3em}div.comment_text code{line-height:1.2em}div.comment_form_container{margin-left:-11px}div.comment_form_container form{margin-left:40px;max-width:700px}div.comment_form_container textarea{box-sizing:border-box;width:100%}@media only screen and (max-width:480px){html{-webkit-text-size-adjust:none}body{margin:0;padding:0}div#header{margin:0;padding:8px 5px;background-color:#eee;border-bottom:1px solid #ccc}div#wrapper{padding:0;padding-bottom:2em;margin:0;min-width:100%;max-width:100%}div#headerleft{display:inline;float:none}div#headerright{display:inline;float:none;text-align:left;margin-top:0.25em;clear:both}.headerlinks a,#headerright .headerlinks a{padding-right:0.25em;padding-left:0}div#inside{margin:0}.comment{padding-left:0}ol.comments{margin-left:10px}ol.comments1{margin-left:0;padding-left:0}ol.comments1>li.comments_subtree{margin-left:0}li .comment_folder{display:none}li .comment_parent_tree_line,li .comment_siblings_tree_line{border-left-color:transparent}div.voters{margin-left:0.25em;margin-top:0px;width:31px}div.voters a.upvoter{margin-top:-5px}div.comment_form_container{margin-left:0}div.comment_form_container form{margin-left:35px}div.voters a.upvoter{margin-left:6px;border-width:9px}div.voters .upvoter:hover{border-bottom-color:#bbb}li div.details,div.story_content{margin-left:36px;margin-right:20px}li.story div.byline{font-size:10pt}div.comment textarea{max-width:90%}div#footer{text-align:center;float:none}}#l_holder{position:relative}#l_holder:after{content:'';background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAL0ALQAtZF7+HAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wCCBAuLt2rqugAAACMSURBVDjL1ZMxCsJQEERfRPEk9im9mGfxBpaCnaXmBraeQEidKsKz2eIb/peEIOLAwu4Ws7PMbsUAKlOwYCaWmd4aWCV1B4yXpR59R61SitwKDdBHfgPaSTsF8zOmHz5NLykAeCRqvuvCfxGcgP0YF3ZqHy7c1Yt6jfo8dCF3idvkQjcRRVQ/f6bZBC+RBoeZnlCyqwAAAABJRU5ErkJggg==) no-repeat center;position:absolute;top:0;left:0;bottom:0;right:0}@media only screen and (min-resolution:2dppx),only screen and (-webkit-min-device-pixel-ratio:2){#l_holder{background:#ee0000 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AsLFB03Jr/FjQAAAVZJREFUWMPtlr1KQ0EQhc+ZdZMQEkQlNopKENu8gLWVvkQa8QHs8wQ+h4UPYG+fTpsQEATJhYtFrkKy2btrFYuwV/Kv6D2w1QzLNzPLngFy/XcxK9DpdAr1er05zSXOuUet9cM8ABtZgVKpVAZwDeCAZDDPe58CeCV5B2C5AFprQzICsE9mNsoBiAF0VzajOI4raZre+wk55977/f72Wh7KaDS6CgA8L+NumZYh9ATWCbAy5QA5wN8GMMY0jDGNHwEYDofHSqm2Uqrd6/XKawdQSt2QFJJSrVZPZjajBb/uUxG5GJuYiFRW0YGgRSZJsiMitxPjeFm0A6EKdq215wA+ABRIbgI4AnBJco8kvPcgiSRJopnLa7VaHAwGh9baszRNnwJumHkmctxcK1kURVu1Wu3tKzGwlHifbYjjfO+9FRE98wiKxaL/ZhPKhAqoi1y5cv1mfQLQB8QlNdQ0/wAAAABJRU5ErkJggg==) no-repeat;background-size:16px;background-position:1px 1px}}</style>
+<meta name=csrf-param content=authenticity_token>
+<meta name=csrf-token content="HmVjVLz++O8jySbKAq0R6+vXih/mp5Bn3N3gfrdlJBCggpgzH5+cuGx7nQTgycfUwmFgmAdA6I4z7aQoxZCC3w==">
+<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAQAQEAAAAEACAAoFgAARgAAACAgAAABAAgAqAgAAG4WAAAYGgAAAQAIAAAHAAAWHwAAEBAAAAEACABoBQAAFiYAACgAAABAAAAAgAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANE6wADhSsAA8VrAAQFq0AERetABIYrQATGa4AFRuuABYcrwAXHa8AGh+wABwhsQAeI7EAHySyACAmsgAiKLMAIymzACQqtAAlK7QAJiu0ACkutQAqL7YAKzC2ACwxtgAtMrcALjO3AC80twAxNrgAO0C7AERJvwBGS78ASE3AAFNXxABXW8UAXWHHAGBkyABpbMsAa2/MAGxwzABtcc0AcHTOAHR3zwB7ftEAfYHSAIeK1QCKjdYAi47XAIyP1wCYm9sAra/jALK05AC0teUAx8nsANvc8gDq6vcA7e75AO/w+QD19fsA9/f8APj4/AD5+f0A+vr9APv7/QD8/P4A/f3+AP7+/gD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUlOkBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFJTtBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABSlCQkI/QUJCQkJCQkJCQkJCQkE9PDs7PDw+P0FCQkJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOITtBQkJCQkJCQkJCQkJCMi8rKywwMzVCQj9AQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQQAQkJCQkJCQkJCQkIeAAAAAAAAAAAAAAojN0FCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACo/QkJCQkJCQj4gAwAAAAAAAAAAAAABBAAlQkFCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARP0JCQkJCQkJCDAAAAAAAAAAAAAAAAAAABBdCQUJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADUJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAADD0JCQkJCBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAYuQkJCQgkBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAADpBQkILAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAUxQkJCDgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAABE0JCQhIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAABBQUIVAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAANkJCGwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAABwdHwcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxCQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQkJCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADEJCQkJCQkJCQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1CQkJCQkJCQkIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQP0JCQkJCQkJCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJz9CQkJCQkJCQhYDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAB0JCQkJCQkJCQj40AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACCA0YLUJCQkJCQkJCQkJCPUIiFAsIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFKEJCQD5CQkJCQkJCQkJCQkJBPEJCQhoCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABSY7QkJCQkJCQkJCQkJCQkJCQkJCQkIZAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQkODk5OTk5OTk5OTk5OTk5OTk5OTlCFwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAACAAAABAAAAAAQAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0TrAATGa0AFx2vABgerwAjKbMAJyy0ACwxtgBARb0AQUW9AEVKvgBLUMEATFHBAFNXwwBfY8cAaWzLAIeK1QCKjdYAjZDXAJaZ2gCcn9wAq63iALm65gC8vucAx8jrAMnK6wDKzOwAy83sAM3P7QDR0u4A1NXvANXW8ADW1/AA2NnxANna8QDc3fIA3+DzAOLj9ADs7PcA7u/4APHy+QDz8/oA+Pj8APr6/AD7+/0A/f39AP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0tLS0tLS0tLS0tLS0tLS0tLRcAAAAAAAAAAAAAAAAABxQkLS0tLS0tLS0tLSktLS0tGQAAAAAAAAAAAAAAAAAAAAIlLS0tLS0rHxgdKS0tLS0bAAAAAAAAAAAAAAAAAAAAABUtLS0tIQQAAAABDiYtLRwAAAAAAAAAAAAAAAAAAAAAFC0tLS0SAAAAAAAACCotHgAAAAAAAAAAAAAAAAAAAAAULS0tLREAAAAAAAAAECwgAAAAAAAAAAAAAAAAAAAAABQtLS0tEQAAAAAAAAAQLCAAAAAAAAAAAAAAAAAAAAAAFC0tLS0RAAAAAAAAAAUPEAAAAAAAAAAAAAAAAAAAAAAULS0tLREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQtLS0tEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFC0tLS0RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAULS0tLREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQtLS0tEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFC0tLS0RAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAULS0tLREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQtLS0tEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFi0tLS0TAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYoLS0tLSMDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoeKS0tLS0tLScaCQAAAAAAAAAAAAAAAAAAAAAAAAAADCIiIiIiIiIiIiILAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAGAAAADQAAAABAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADROsAB0jsAAdI7EAJyy1ACswtgA7P7wARkvAAEtPwQBRVsMAVVnFAFhcxgBZXcYAWl7GAFxgxwBeYsgAYGTIAGRoygB3e9AAeHzQAH+C0wCGidUAjI/WAJCT2ACrreEAt7nmAL7A6QDDxOoA5ub1AOjp9gDr6/cA7Oz4APDx+QD19vsA+fn8APz8/gD9/f0A/f3+AP7+/gD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJiYmJiYmJiYmJiYmJhoAAAAAAAAAAAAKJR4mJiYmHx4dHBshJiAGAAAAAAAAAAAAAhcmJiYmFA8QExklJiQJAAAAAAAAAAAAAAImJiYmAAAAAAAGISMLAAAAAAAAAAAAAAAmJiYmAAAAAAAAFSQMAAAAAAAAAAAAAAAmJiYmAAAAAAAAACYOAAAAAAAAAAAAAAAmJiYmAAAAAAAAABEFAAAAAAAAAAAAAAAmJiYmAAAAAAAAAAAAAAAAAAAAAAAAAAAmJiYmAAAAAAAAAAAAAAAAAAAAAAAAAAAmJiYmAAAAAAAAAAAAAAAAAAAAAAAAAAAmJiYmAAAAAAAAAAAAAAAAAAAAAAAAAAAmJiYmAAAAAAAAAAAAAAAAAAAAAAAAAAAmJiYmAAAAAAAAAAAAAAAAAAAAAAAAAAAmJiYmAAAAAAAAAAAAAAAAAAAAAAAABBYmJiYmEgEAAAAAAAAAAAAAAAAAAAAAJiYmJiYmJiYAAAAAAAAAAAAAAAAAAAAIJiYiIiIiJhgAAAAAAAAAAAAAAAAAAAADDwsODg4NCgcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAABAAAAAgAAAAAQAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0TrAAOFKwAFBmuABgesAAnLLUAOz+8AHBzzgB3e9AAfH/SAJyf3QCrreIAsbPkALK05QC1t+YAvL3oAMPF6gDExusA0tTwANzd8wDl5vYA+vr9APv7/gD8/P4A////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACxcXFxcXFw4AAAAAAAAAAAgVFxIPEBcOAAAAAAAAAAAAExcGAAANCQAAAAAAAAAAABMXBgAAAAAAAAAAAAAAAAATFwYAAAAAAAAAAAAAAAAAExcGAAAAAAAAAAAAAAAAABMXBgAAAAAAAAAAAAAAAAAWFwoAAAAAAAAAAAAAAAAHFBcRBAAAAAAAAAAAAAAADBcXFwUAAAAAAAAAAAAAAAIDAwMBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://lobste.rs/s/1lv132/making_rss_prominent_again></head>
+<body>
+ <div id=wrapper>
+ <div id=header>
+ <div id=headerleft>
+ <a id=l_holder style=background-color:#500000 href=https://lobste.rs/ title="Lobsters (Current traffic: 0%)"></a>
+ <span class=headerlinks>
+ <a href=https://lobste.rs/>Home</a>
+ <a href=https://lobste.rs/recent>Recent</a>
+ <a href=https://lobste.rs/comments>Comments</a>
+ <a href=https://lobste.rs/search>Search</a>
+ </span>
+ </div>
+ <div id=headerright>
+ <span class=headerlinks>
+ <a href=https://lobste.rs/login>Login</a>
+ </span>
+ </div>
+ <div class=clear></div>
+ </div>
+ <div id=inside>
+ <ol class=stories>
+ <li id=story_1lv132 data-shortid=1lv132 class=story>
+<div class="story_liner h-entry">
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>44</div>
+ </div>
+ <div class=details>
+ <span class="link h-cite u-repost-of">
+ <a class=u-url href=https://rubenerd.com/making-rss-prominent-again/ rel="ugc noreferrer">Making RSS prominent again</a>
+ </span>
+ <span class=tags>
+ <a class="tag tag_web" title="Web development and news" href=https://lobste.rs/t/web>web</a>
+ </span>
+ <a class=domain href=https://lobste.rs/domain/rubenerd.com>rubenerd.com</a>
+ <div class=byline>
+ <a href=https://lobste.rs/u/rjc><img srcset class=avatar alt="rjc avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ via
+ <a href=https://lobste.rs/u/rjc class="u-author h-card">rjc</a>
+ <span title="2020-07-13 07:38:55 -0500">14 days ago</span>
+ |
+ <a href=https://archive.md/https%3A%2F%2Frubenerd.com%2Fmaking-rss-prominent-again%2F rel=ugc target=_blank>cached</a>
+ <span class=comments_label>
+ |
+ <a href=https://lobste.rs/s/1lv132/making_rss_prominent_again>
+ 25 comments</a>
+ </span>
+ </div>
+ </div>
+</div>
+<a href=https://lobste.rs/s/1lv132/making_rss_prominent_again class=mobile_comments style=display:none>
+ <span>25</span>
+</a>
+</li>
+</ol>
+<div class=story_content>
+</div>
+ <ol class="comments comments1">
+ <li class=comments_subtree><div class="comment comment_form_container" data-shortid>
+<form id=edit_comment_ action=/comments accept-charset=UTF-8 method=post>
+ 
+ 
+ <div style=width:100%>
+ <textarea rows=5 disabled placeholder="You must be logged in to leave a comment." name=comment id=comment></textarea>
+ <p></p>
+ <div class=markdown_help_toggler>
+ <input type=submit name=commit value=Post class=comment-post disabled data-disable-with=Post>
+ &nbsp;
+ <button name=button type=button class=comment-preview disabled>Preview</button>
+ <div style=clear:both></div>
+ </div>
+ </div>
+ <p></p>
+</form></div>
+</li>
+ 
+ <li class=comments_subtree>
+ <input id=comment_folder_qg7kj8 class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_qg7kj8 data-shortid=qg7kj8 class=comment>
+ <label for=comment_folder_qg7kj8 class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>6</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_qg7kj8></a>
+ <label for=comment_folder_qg7kj8 class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/danburzo><img srcset class=avatar alt="danburzo avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/danburzo>danburzo</a>
+ edited
+ <span title="2020-07-13 08:53:17 -0500">14 days ago</span>
+ |
+ <a href=#c_qg7kj8>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>Coincidently I’ve recently read about <code>mailto</code> links <a href=https://adamsilver.io/articles/the-trouble-with-mailto-email-links-and-what-to-do-instead/ rel=ugc>not being ideal</a> and I think RSS feeds suffer from a similar problem: links to them are kind of useless beyond signaling their existence. I am much more inclined to plop the website’s URL in the RSS reader than copy the feed URL directly. There used to be the idea of a “feed://” scheme floating around, but I’m not sure if it has caught on.</p>
+ </div>
+ </div>
+</div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_coyjnh class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_coyjnh data-shortid=coyjnh class=comment>
+ <label for=comment_folder_coyjnh class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>8</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_coyjnh></a>
+ <label for=comment_folder_coyjnh class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/rjc><img srcset class=avatar alt="rjc avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/rjc>rjc</a>
+ <span title="2020-07-13 08:38:59 -0500">14 days ago</span>
+ |
+ <a href=#c_coyjnh>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>Coincidently I’ve recently read about mailto links not being ideal and I think RSS feeds suffer from a similar problem: links to them are kind of useless beyond signaling their existence.</p>
+</blockquote>
+<p>In my experience, it’s the opposite - if the the feed icon/URL is <strong>not</strong> featured on the page I have to copy the site address, open the feed reader, paste it, pick the appropriate feed (RSS, Atom, comments, etc.) and finally add. With a direct link, all I need is to click on it and my reader opens automatically.</p>
+<blockquote>
+<p>I am much more incline to plop the website’s URL in the RSS reader than copy the feed URL directly.</p>
+</blockquote>
+<p>This is what I’m <em>forced to</em> do because most pages don’t <em>feature</em> direct feed URLs.</p>
+<p>The problem is even worse when it comes to podcasts - one can find links to all sorts of iTunes, Google Play, Stitcher, Spotify, etc. but don’t have any desire to use any of it and frequently have to ask for a <strong>direct</strong> feed URL.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_omm38x class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_omm38x data-shortid=omm38x class=comment>
+ <label for=comment_folder_omm38x class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>3</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_omm38x></a>
+ <label for=comment_folder_omm38x class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/bcongdon><img srcset class=avatar alt="bcongdon avatar" src="data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAEAAQAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8Ah/ab8Qat4T8CaZdeBNc0xrq51BIbi7geO5aGHY7khRu4O3BOPbvXq3ws8P3/AIu8L6dfXDreTTxqWlS3aEbwAHXawzw4cfhXxf8AEX4gT6TrF1oGl6NasbMwW9zHNuikZZIy4WNdoxhQck/lXqVn8QZYhpkljc32mafJZIqwm6xteMKsnCEZ3E+YDjkOSehJ+qlmddZgm6lotWtra/8An5nmxyZyyyU40m2vevpe3ff8Pmf/2Q==" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/bcongdon>bcongdon</a>
+ <span title="2020-07-13 13:58:48 -0500">14 days ago</span>
+ |
+ <a href=#c_omm38x>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>if the the feed icon/URL is not featured on the page I have to copy the site address, open the feed reader, paste it, pick the appropriate feed (RSS, Atom, comments, etc.) and finally add</p>
+</blockquote>
+<p>This bugs me every time I have to do it. Plus, there’s a ~20% chance that the site doesn’t expose any type of feed, so I have to go to a workaround like <a href=https://politepol.com/en/ rel=ugc>politepol</a> to follow the site :(</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_8vocku class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_8vocku data-shortid=8vocku class=comment>
+ <label for=comment_folder_8vocku class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>6</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_8vocku></a>
+ <label for=comment_folder_8vocku class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/rjc><img srcset class=avatar alt="rjc avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/rjc>rjc</a>
+ <span title="2020-07-13 15:01:58 -0500">14 days ago</span>
+ |
+ <a href=#c_8vocku>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>This bugs me every time I have to do it. Plus, there’s a ~20% chance that the site doesn’t expose any type of feed, so I have to go to a workaround like politepol to follow the site :(</p>
+</blockquote>
+<p>Don’t get me started about sites** without any type of feed.</p>
+<p>– <em>So, you post stuff every so often and would, presumably, like some else to read it.</em></p>
+<p>– <em>Sure.</em></p>
+<p>– <em>Are you expecting me to visit every <strong>n</strong> days/weeks/months or script it?</em></p>
+<p>– <em>Yeah, why not?</em></p>
+<p>– <em>Thanks, but no thanks.</em></p>
+<p>** like with everything in life, there are, of course, exceptions :^)</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ </ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_crqvdt class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_crqvdt data-shortid=crqvdt class=comment>
+ <label for=comment_folder_crqvdt class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>2</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_crqvdt></a>
+ <label for=comment_folder_crqvdt class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/danburzo><img srcset class=avatar alt="danburzo avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/danburzo>danburzo</a>
+ <span title="2020-07-13 08:45:31 -0500">14 days ago</span>
+ |
+ <a href=#c_crqvdt>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>With a direct link, all I need is to click on it and my reader opens automatically.</p>
+</blockquote>
+<p>Ah, that’s cool! Does it work
+with any old https:// link to a feed?</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_tbm8gh class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_tbm8gh data-shortid=tbm8gh class=comment>
+ <label for=comment_folder_tbm8gh class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>2</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_tbm8gh></a>
+ <label for=comment_folder_tbm8gh class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/rjc><img srcset class=avatar alt="rjc avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/rjc>rjc</a>
+ <span title="2020-07-13 09:20:23 -0500">14 days ago</span>
+ |
+ <a href=#c_tbm8gh>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>Does it work with any old https:// link to a feed?</p>
+</blockquote>
+<p>Sure, as long as it is being served with the correct media type.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_vp9yi3 class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_vp9yi3 data-shortid=vp9yi3 class=comment>
+ <label for=comment_folder_vp9yi3 class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>2</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_vp9yi3></a>
+ <label for=comment_folder_vp9yi3 class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/danburzo><img srcset class=avatar alt="danburzo avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-5)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/danburzo>danburzo</a>
+ <span title="2020-07-13 16:23:33 -0500">14 days ago</span>
+ |
+ <a href=#c_vp9yi3>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>Huh, on macOS I get three different behaviors in three different browsers for a MIME type of <code>application/rss+xml</code>:</p>
+<ul>
+<li>Firefox offers to download the file, or open it with… Sublime Text</li>
+<li>Safari invokes the RSS reader (NetNewsWire)</li>
+<li>Chrome loads the feed as plain text</li>
+</ul>
+<p>Since I use FF day to day, this behavior might have colored my impression of RSS feed URLs.</p>
+<p>It would be interesting to see how https:// vs. feed://, text/xml vs application/rss+xml behave in the year 2020, and which version (or combination) offers the broadest convenience.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_ljjp7b class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_ljjp7b data-shortid=ljjp7b class=comment>
+ <label for=comment_folder_ljjp7b class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>2</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_ljjp7b></a>
+ <label for=comment_folder_ljjp7b class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/11backslashes><img srcset class=avatar alt="11backslashes avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABeElEQVQ4y6VTIY/CMBh9dzlMDWpmBsRMPQpRhQADYmZmZp4fgACBQSHmUYjpOQxiZmaZbUhqZqYGslmC+k5crlwPjuTuXtKk39fX9yXvtS8ACP/A608HvV4Pm80GaZpCKYUkSSCEeMil72s8HlPTNPQIWZaR53lf+fblMAzper3SM2itSQhxL8A5t4hN05DW2tRFUZi9lJK63e5NgDFGeZ5bBNd1KYoiMzXLMmvAdDolY2IQBBgOh8aY1WqF9XqNtm0BAGVZgjGGyWSC4/FojDYCy+XScrYsS4RhiPP5DABo2xaLxQKDwQDb7dbw3gDA9330+31LQAiB2WwG3/dxOBzgui5GoxEcx8HlcjFDAICSJLlzuq5r0y+KguI4pt1uR5xzyvP8ZmKn06Gqqh7GVVUVxXFMaZqSlJLm8zlJKUlrTZzzj/Q8z3uat1KK6rq2+lEU3d5OEAT0GyiliDFmBF4dx/nV59nv9ybap5/pJ3w6/2eB0+lk1e/qPLfdUbFewQAAAABJRU5ErkJggg==" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/11backslashes>11backslashes</a>
+ <span title="2020-07-13 16:56:44 -0500">14 days ago</span>
+ |
+ <a href=#c_ljjp7b>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>You can change the file type’s associated program in FF’s Preferences.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ </ol></li>
+ </ol></li>
+ </ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_i52fjs class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_i52fjs data-shortid=i52fjs class=comment>
+ <label for=comment_folder_i52fjs class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>2</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_i52fjs></a>
+ <label for=comment_folder_i52fjs class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/benoliver999><img srcset class=avatar alt="benoliver999 avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/benoliver999>benoliver999</a>
+ <span title="2020-07-13 09:26:45 -0500">14 days ago</span>
+ |
+ <a href=#c_i52fjs>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>My experience chimes with this. I always copy and paste the feed URL. I even use <a href=https://addons.mozilla.org/en-GB/firefox/addon/awesome-rss/ rel=ugc>this extension</a> to show me feed links like Firefox used to.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ </ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_mlxurz class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_mlxurz data-shortid=mlxurz class=comment>
+ <label for=comment_folder_mlxurz class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_mlxurz></a>
+ <label for=comment_folder_mlxurz class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/david_chisnall><img srcset class=avatar alt="david_chisnall avatar" src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABy0lEQVQ4jY1T3StDYRj/He+747TNcuU7JfJNkxnlwvVwQ0qttMTFSj5uXHCxNqJQcjcSGxfMP4Ab3NiFj9oF/wGFtiRabTN73Xjf3rNRnjqd5/c85/d8H4UxxvAjod1VJFMJuNwebkJvZ4HQB52TGJ9ehixUJu9vLQqHHISTx6aWkC15XEmmEsJ4FFjD3uZCDllRFJGM+0UFPONRYE33/o0sV0qqSvK8VlsPAMBq64HRZIFzfA6OgVG8xp5gLigEA/Aae8bFaQh7fp8g1zW2gySjt970Vxo8iKIouAmfIvr8gLrmDpSWV+nw2fGBrjIql+tye0AIgZqvwaBqoITm4Oy2FIfdLNY4PDoLk8mCmoY2UEJxFwnDYFB1OP7xppsJPb76ED2FdldBCIWqaiCEgFKagw35Gvq6LIKTcwfrO+e4vjyBqmqob+2Ephl1mM+Kt02zV/OfGcgrJ/WVRq+817KKatQ22VBUXIG7SBjRl0cdbmnrFitPf6VB5QscdE5iaGRG4PtIGPH4O+Yn+oUtJf0rLrcHYIyxoN/HtjfmWCaTYVwOd1aYw25m3O+wm8UT9PvEd+DKb2QeIDuInExs4a9b58LL/kwmdHfwDUHOC0+6ikPOAAAAAElFTkSuQmCC sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/david_chisnall>david_chisnall</a>
+ <span title="2020-07-14 05:04:56 -0500">13 days ago</span>
+ |
+ <a href=#c_mlxurz>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>Coincidently I’ve recently read about mailto links not being ideal</p>
+</blockquote>
+<p>That was a fascinating insight into the average user. In every desktop browser I’ve used, right-clicking on a mailto link gives an option of copying the address (often it includes the mailto: prefix, but that’s easy to trim after you paste). I’d never have thought about trying to copy the text because that requires accurately hitting the start and end, whereas right-clicking requires me to hit somewhere in the link. A copy button is potentially a good idea, but I am quite reluctant to encourage untrusted web sites to be able to write things to my clipboard. As far as I know, there are Chrome and Firefox plugins that will allow you to forward mailto links to a webmail client and it surprises me that people who use webmail wouldn’t set these up - I remember this being a problem 20 years ago but largely a solved issue 15 years ago. Does Chrome really not integrate with Gmail?</p>
+<p>The article asks why browsers removed the RSS button. I know why this happened in Safari because Apple talked about it publicly. The user experience for RSS depends on being able to see new things easily. That doesn’t work well when you read feeds on multiple devices unless you have some mechanism for syncing the ‘read’ state across devices. Apple didn’t have that and didn’t want a core feature of the browser to depend on iCloud. The popular RSS readers were all server-side things that kept track of what you’d read centrally. These could ship a browser plugin that detected the RSS feeds and let you add it to your list, so this didn’t need to be core browser functionality. A quick look in the Chrome store implies that only feeder.co actually does this.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ </ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_tiazry class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_tiazry data-shortid=tiazry class=comment>
+ <label for=comment_folder_tiazry class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>5</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_tiazry></a>
+ <label for=comment_folder_tiazry class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/krn><img srcset class=avatar alt="krn avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-9)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/krn class=new_user>krn</a>
+ <span title="2020-07-13 20:08:30 -0500">14 days ago</span>
+ |
+ <a href=#c_tiazry>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>I remember the days when Chrome and Firefox both <a href=https://dt.azadicdn.com/wp-content/uploads/2015/05/RSS-subscribe-button-Chrome.png rel=ugc>displayed RSS feeds</a> for websites right in the browser.</p>
+ </div>
+ </div>
+</div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_ewtzfb class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_ewtzfb data-shortid=ewtzfb class=comment>
+ <label for=comment_folder_ewtzfb class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>2</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_ewtzfb></a>
+ <label for=comment_folder_ewtzfb class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/rjc><img srcset class=avatar alt="rjc avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/rjc>rjc</a>
+ <span title="2020-07-14 03:19:39 -0500">13 days ago</span>
+ |
+ <a href=#c_ewtzfb>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>I remember the days when Chrome and Firefox both displayed RSS feeds for websites right in the browser.</p>
+</blockquote>
+<p>That’s <strong>exactly</strong> waht the author mentions in the article:</p>
+<blockquote>
+<p>RSS used to be displayed far more prominently in browsers. Firefox, Safari, and the Chromium-based browsers used to include RSS icons or text in their UIs that would activate upon detecting a page with the appropriate meta tag.</p>
+</blockquote>
+<p>;^)</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_0cfdj8 class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_0cfdj8 data-shortid=0cfdj8 class=comment>
+ <label for=comment_folder_0cfdj8 class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>2</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_0cfdj8></a>
+ <label for=comment_folder_0cfdj8 class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/w0wt1p><img srcset class=avatar alt="w0wt1p avatar" src="data:image/png;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAEAAQAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+mbT4fK/gzR9Nsxb2DSW8QlvPKVpAdoOBv3Zz9a8o+Ln7NOn6It3rtpfSLBNav5wlx5skoBJ2AlRnCngdMHiuO+JPxo8aaz4OhsvD2t2ug3iLG8c0BClGUDoTuIzjB7cmvPfDXjjxbrs2rX3jG4gvbh4Qlrci7kkI+UBgEfhSxG5iDyT6AY/Mcv4UxlCrz1q1k77a/fsbuVNxvY//9k=" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/w0wt1p>w0wt1p</a>
+ <span title="2020-07-14 05:13:56 -0500">13 days ago</span>
+ |
+ <a href=#c_0cfdj8>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p><a href=https://addons.mozilla.org/en-US/firefox/addon/livemarks rel=ugc>https://addons.mozilla.org/en-US/firefox/addon/livemarks</a></p>
+<p><a href=https://addons.mozilla.org/en-US/firefox/addon/awesome-rss rel=ugc>https://addons.mozilla.org/en-US/firefox/addon/awesome-rss</a></p>
+<p>But yeah, it should be there by default…</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ </ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_04xacf class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_04xacf data-shortid=04xacf class=comment>
+ <label for=comment_folder_04xacf class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>3</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_04xacf></a>
+ <label for=comment_folder_04xacf class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/lau><img srcset class=avatar alt="lau avatar" src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAEAAQAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8AsfC34Iad4h0Twnr/AIh1N4LbXfElvo9ppsKfPcxeYoncvn5AASBweR7itb46/B3wjpXh/UvFHgKe8jsdJ1eTRNV0y/be0EykhZI26lGwOpJ57YIGZ8N/iT4P1P4dJ4C8fjUrGzsr1tQ0jXNIAaazkb76Mp6qTk8ZOT2wCIfiV8R/Cdj8P08BeAhqN3ps99/aOqazqoCz3swGFAUfdUdeecjvkk/sD+uvGLWVlLa3u8t9797fO/kfh6+orBPSOsd7+/zW2t6/K3mf/9k=" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/lau>lau</a>
+ edited
+ <span title="2020-07-14 08:41:57 -0500">13 days ago</span>
+ |
+ <a href=#c_04xacf>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>Decentralised technologies like RSS never become mainstream because they don’t get any support from any major company. Google would prefer users to find what they need on google.com; Facebook and Twitter have feeds they control, Microsoft has Bing, Linkedin, etc. All those are services they fully control.</p>
+<p>But RSS they wouldn’t be able to control or track, it’s completely decentralised and as such there’s nothing in it for them, and no point supporting it.</p>
+ </div>
+ </div>
+</div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_hizze0 class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_hizze0 data-shortid=hizze0 class=comment>
+ <label for=comment_folder_hizze0 class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_hizze0></a>
+ <label for=comment_folder_hizze0 class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/adsouza><img srcset class=avatar alt="adsouza avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC8ElEQVQ4y02SvW9cVRDFfzP3vufdtdfxrsEyYCciCK9j8RXiBhANQgLx0VGhlKHhX6ChoEE0NAjR0KSIqEIBQghTIEUgggUUAW1Mijg4Trzg3bde777Pey+FnYiRRnOac3Tm6AjAuU4Ha/STyNp3p6KIyFoiYzDGoCoQwHlP5RxpnnOYpvgQ3tvsXv9YANZXO69GxnzTrNdYmmsgAqXzREZJy4rSedKiIpkUeMB7j3Ou6CXJoxZARZ4LwNmlOU62m4gACCEEfAj3b1F5rm732BmkiGrcbjY/NOurHSrvL7qqmH3pzClqcYQ1ilFFBETkaBFUYLYes9UbIiJ4760FGIxG7TfPrtCsxajIfZsqgvMeFwKCJyA0pyKsCpUPlM71dLN7ndnG9I3CC7cGE0ofiI0SHQe4k0zY7o/xAYwoKoLVwChNGaXpmgV4aG7my+dPLzxVrzfIsvSY7Cm9Z36mRqTCYV4yHVtUhINJyv7BAd65ngVYe6T9R3Nxmb/zkoXmDHZyiHjhxHwLP79McWebB4f/UjiH855JXpDlBYut1o8WQEJ4QYY9VuOYdJRioxoKuMmIufE1KufxUxHTEnOQFkhU48zJJuunFhoWICv9WmQseZUR2wijgqCoBsBQiwCOytTdSzi90OL1tSX2huPXFOAwL9tGhbLKUVXKqqCockLwWBViq1ijqCo/bN2m80CTEAK5cxsW4M5w3L10tfvsTn9E3SqFc1hjmK3HLLdP0GrUuNUfcXP/gJ39hJc7D1M4V/y1N/jIAvTH2df9cfb2K888zVsX3sHlOfl4zO7eHle+3+Dyb1sA+BDI8mI3q9znt4fZd5d/+v1Pe/QdXwHZP4Ok5kVpP75CliTs371LPxkCEEJgnGVkef7p+198+8ExryHHgHOdlYuRMeffePIJWo0Gu0nCzze3GUwmAJSVY5ROeGxx/sWNX69duSdwzwHW6Gelc+cv/bJJVpYIwkxtitI5sqKkdBVri23GQW/wv/kPwBp4lxAYuEwAAAAASUVORK5CYII=" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/adsouza>adsouza</a>
+ <span title="2020-07-19 18:47:18 -0500">8 days ago</span>
+ |
+ <a href=#c_hizze0>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>For several years Google offered what was then generally considered the best RSS reader before they eventually shut it down.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ </ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_ago1j6 class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_ago1j6 data-shortid=ago1j6 class=comment>
+ <label for=comment_folder_ago1j6 class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>2</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_ago1j6></a>
+ <label for=comment_folder_ago1j6 class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/l00sed><img srcset class=avatar alt="l00sed avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACHUlEQVQ4jX2TQUtUURTHf3e8827Be65cuSgjKMdFKNEmyiGcMugrFGhEvjJs0bTwE7RwE5LJkOZAi75AECoDjoU0GRQRaeYEEuNGZ5FvFt7xxWmRT3wz4Nn8+R8unPP/ca7KVlJyyjnP/bZXADze7AJgrP07xdoMe2LJeD6jmz2EWPq9EdbtB8r1jwBogGveMI1VrM3wZmesqb9uS/htecp2mbngGUxs3RQRkQ37Vaa2h0REZCF4eaDzO5OxXraSkvLuskSlO00v01WfVbvYNPnwBoUgx55YAOaCCXwzA4DKVlJyOLMiwQnnHAk0ZVuiRSVj/i9hjIluzPyg7TUruwtoZehwukmq4zGfq96OMdHR5LQ7CECCFrQyJJUhgW7y/d4IGc8nqQxpdxDdmPlG6yM6nG4SaH7VP6FVMuZng/EYEx2BiTSBRu9Pa0E3eYBw/20oFp3xfAAiPel0H8mgzx3ieutDtDJkPB89utkDQFIZCkGOs+bSkQyKtTxaGRZreQpBDh3yf520O8ieWMr10pEM0u4AGc+nEOQIsSgREYCp6l1+2Pf0eyPMBuMHCtDnDlGs5Um7AxRqOQBOOxfoOnYFopPcsF8kW0mJiByc7/zOpLz98zTWm9i6JT93SyIiMr19T/SL6h2uesN0OD10mss0MgFimZ+0fwbgd/0bK3YBvWaXWLNLnDEX6TS9rNp3MSbh/neOMkc1HzwH4B/xXlnWZrp7HAAAAABJRU5ErkJggg==" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/l00sed>l00sed</a>
+ <span title="2020-07-13 14:31:25 -0500">14 days ago</span>
+ |
+ <a href=#c_ago1j6>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>Is it more appropriate/desirable from your experience to have entire articles available in an RSS feed? I just show title, date, description. Not even image…</p>
+ </div>
+ </div>
+</div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_kiszlr class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_kiszlr data-shortid=kiszlr class=comment>
+ <label for=comment_folder_kiszlr class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>5</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_kiszlr></a>
+ <label for=comment_folder_kiszlr class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/rjc><img srcset class=avatar alt="rjc avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/rjc>rjc</a>
+ <span title="2020-07-13 15:11:33 -0500">14 days ago</span>
+ |
+ <a href=#c_kiszlr>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>Given that I use <a href=https://newsboat.org/ rel=ugc>newsboat</a> as my feed reader, I do appreciate when the whole article is included in the feed - it saves time more than anything. I’ll open it in a GUI web browser if there are images related to the content, though.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_75ouph class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_75ouph data-shortid=75ouph class=comment>
+ <label for=comment_folder_75ouph class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_75ouph></a>
+ <label for=comment_folder_75ouph class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/benoliver999><img srcset class=avatar alt="benoliver999 avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-7)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/benoliver999>benoliver999</a>
+ <span title="2020-07-13 17:10:46 -0500">14 days ago</span>
+ |
+ <a href=#c_75ouph>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>I have too many feeds, and when I’m thinning them down the first ones to go are ones without full articles, or at least a few paragraphs.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ </ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_olyath class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_olyath data-shortid=olyath class=comment>
+ <label for=comment_folder_olyath class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_olyath></a>
+ <label for=comment_folder_olyath class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/eb><img srcset class=avatar alt="eb avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADE0lEQVQ4y02TzU8cdRjHP7/Z2aVl2RcWGd7crSzWliKBbiIWixrjpYmp4dCT8SVN9ODRg8bExL+hiQev1hjjy0XbpEEwJlhtGyoJJBIcSgGBbrszsDs7O8M6Ozvz88BSfS7P7ZPv83y/X/HxTVOC5P5PXxOu3sTzPHRdxzAMbNtGSkk8HkfTNKLRKN3ZQZ69/CmduZMgBAqADEPs5Xl0XWdmZgbHcYhEIiiKQiaToVAokMlkMI0StlFk68YXHI0C4LkOf9z6FV3XaTabmKZBuVwmCAKcms3i3QU+efcNni+MUyqVCA5sEIcA9XBJwjDE930Wrn9DMvSoew0eGCal/QpTZ0cZyj3Jn5s7zM3/hmvtgxQgQJVS0hZPkurNoiqCqmVxvD3GcP4EZ/I5KmWLYqXKlS+/RXuilzAMqTdDEBIQqAJw57+iXTSZvjTN7tY23926Q1c6xYfvX2ZheYXd7V3agVdfmOCVqUn2KiXshRskJ147POFk9ID0SxMMj4+RPT3OZ/fiXH2nQKojSk+ig6X8i2xaAdM9/RRGRxgd6Gbd28M/+oHf0U2+32Wgr5fJnhh3PjiHggQJTd/nvaEIXdkcSpvCy+fPUVnXQetruSDgfvoMphfiuC4ETRQk+2ULs2xhWFVS3V0toKRkmKw5AVbf2JGNguRTp9kYfp27RRdix0BCKplAX99k6JmniR1rA6FgNZrMmjGsybeJZ7T/2yhInzjFXnuCa0urXBzJ8vPcL3i1GnumiVBVcsMjXJlZZPDCmwghHgdJHEYZkJL97XWs4t9kNud56/wYI4NZoqrK9duLfL+8Q/tzF0lqAyS1fmhB1CNS8fcfya9eJXxosVN2WdXSPNzYxP3HY6mqEK7MkijdJt2Z4NHUR2gjkyBaUUZKlOUfuLdhsLZbJgwC/lJO8fnsHNfWTBxVo9EIWNnao/hgn8jqLCD/6wICgnoNKaErcZyK41G3i4SRkLOFMWpOHcM+oLOjDbN6AG75cRdaCkARAgH4fkBeS9JohKiRgG6tCyUaZ1BL4dZ9BAKhiJYAyb90uV4+SOzxDQAAAABJRU5ErkJggg==" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/eb>eb</a>
+ <span title="2020-07-13 16:04:35 -0500">14 days ago</span>
+ |
+ <a href=#c_olyath>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>I don’t know if it is appropriate/desirable in general to include all content in the feed. I personally prefer feeds that include the full text. It seems that I am not the only one because there are <a href=https://www.fivefilters.org/full-text-rss/ rel=ugc>commercial products</a> that generate full text feeds from partial ones.</p>
+<p>My impression is that partial feeds became more popular with publishers as a way to prevent people to bypass their paywalls and/or to monetize page views on their main website. If you monetize your website, I would keep partial articles in your feed. If you don’t monetize it, I would suggest to include a full feed just to accommodate your readers that might prefer it.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_yirlrb class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_yirlrb data-shortid=yirlrb class=comment>
+ <label for=comment_folder_yirlrb class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_yirlrb></a>
+ <label for=comment_folder_yirlrb class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/krn><img srcset class=avatar alt="krn avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-9)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/krn class=new_user>krn</a>
+ <span title="2020-07-13 20:07:02 -0500">14 days ago</span>
+ |
+ <a href=#c_yirlrb>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>I make <a href=https://goel.io/feed.xml rel=ugc>everything available</a> in RSS feeds.</p>
+<p>I read RSS heavily on my phone and love it when full feeds are available. I understand many news sites can’t do that, so in that case I am happy to subscribe for full feed (for eg Ars Technica) or just click through to open in browser.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ <li class=comments_subtree>
+ <input id=comment_folder_1jzbwb class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_1jzbwb data-shortid=1jzbwb class=comment>
+ <label for=comment_folder_1jzbwb class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_1jzbwb></a>
+ <label for=comment_folder_1jzbwb class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/sjamaan><img srcset class=avatar alt="sjamaan avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-15)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/sjamaan>sjamaan</a>
+ <span title="2020-07-14 01:45:48 -0500">14 days ago</span>
+ |
+ <a href=#c_1jzbwb>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>Yes, I prefer to read the entire article straight from my feed reader. I find it much less distracting than having to open a web browser, copy the link (I use newsbeuter, so links aren’t clickable) and visit the web site. Of course it doesn’t help that many websites aren’t exactly designed to be pleasant to read, just to look good (or to make money with distracting banners).</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_utnr5v class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_utnr5v data-shortid=utnr5v class=comment>
+ <label for=comment_folder_utnr5v class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_utnr5v></a>
+ <label for=comment_folder_utnr5v class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/rjc><img srcset class=avatar alt="rjc avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/rjc>rjc</a>
+ edited
+ <span title="2020-07-14 03:53:49 -0500">13 days ago</span>
+ |
+ <a href=#c_utnr5v>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>Yes, I prefer to read the entire article straight from my feed reader.</p>
+</blockquote>
+<p>You and me both! :^)</p>
+<blockquote>
+<p>I use newsbeuter […]</p>
+</blockquote>
+<p><a href="https://github.com/akrennmair/newsbeuter/issues?q=is%3Aissue+is%3Aopen+cve" rel=ugc>Ouch!</a> From the very top of the <code>README</code>:</p>
+<blockquote>
+<p>ABANDONED! An actively maintained fork is available in <a href=https://github.com/newsboat/newsboat rel=ugc>newsboat repo</a></p>
+</blockquote>
+<blockquote>
+<p>[…] so links aren’t clickable</p>
+</blockquote>
+<p>This is a feature of your <code>$TERM</code>, <strong>not</strong> feed reader.</p>
+<blockquote>
+<p>Of course it doesn’t help that many websites aren’t exactly designed to be pleasant to read, just to look good (or to make money with distracting banners).</p>
+</blockquote>
+<p>You can say that again! Unless there’s a really good article, linked from multiple sources, I never visit anything <em>Medium</em>-like.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_kiuyf4 class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_kiuyf4 data-shortid=kiuyf4 class=comment>
+ <label for=comment_folder_kiuyf4 class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_kiuyf4></a>
+ <label for=comment_folder_kiuyf4 class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/sjamaan><img srcset class=avatar alt="sjamaan avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-15)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/sjamaan>sjamaan</a>
+ <span title="2020-07-14 03:47:17 -0500">13 days ago</span>
+ |
+ <a href=#c_kiuyf4>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>Yikes, I didn’t know newsbeuter was abandoned. I just installed newsboat and was happy to see that it converted my newsbeuter config automatically. It’s truly a drop-in replacement! Thanks for the tip!</p>
+<blockquote>
+<p>This is a feature of your $TERM, not feed reader.</p>
+</blockquote>
+<p>Yeah, true. But if I was using a non-terminal based feed reader, it’d likely have clickable links.</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_2gxfzc class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_2gxfzc data-shortid=2gxfzc class=comment>
+ <label for=comment_folder_2gxfzc class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_2gxfzc></a>
+ <label for=comment_folder_2gxfzc class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/rjc><img srcset class=avatar alt="rjc avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/rjc>rjc</a>
+ <span title="2020-07-14 03:59:15 -0500">13 days ago</span>
+ |
+ <a href=#c_2gxfzc>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <blockquote>
+<p>But if I was using a non-terminal based feed reader, it’d likely have clickable links.</p>
+</blockquote>
+<p>However, you <strong>chose</strong> a terminal feed reader! If clickable links were a priority, you’d most likely go for a GUI option, no? ;^)</p>
+<p>Either way, it’s an easy fix :^)</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments>
+ <li class=comments_subtree>
+ <input id=comment_folder_55dbx6 class="comment_folder_button sf-hidden" type=checkbox>
+<div id=c_55dbx6 data-shortid=55dbx6 class=comment>
+ <label for=comment_folder_55dbx6 class=comment_folder></label>
+ <div class=voters>
+ <a class=upvoter href=https://lobste.rs/login></a>
+ <div class=score>1</div>
+ <span class="downvoter downvoter_stub"></span>
+ </div>
+ <div class="comment_parent_tree_line score_shown no_children"></div>
+ <div class=details>
+ <div class=byline>
+ <a name=c_55dbx6></a>
+ <label for=comment_folder_55dbx6 class="comment_folder comment_folder_inline sf-hidden"></label>
+ <a href=https://lobste.rs/u/sjamaan><img srcset class=avatar alt="sjamaan avatar" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-15)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important" sizes width=16 height=16></a>
+ <a href=https://lobste.rs/u/sjamaan>sjamaan</a>
+ <span title="2020-07-14 06:15:22 -0500">13 days ago</span>
+ |
+ <a href=#c_55dbx6>link</a>
+ <span class=reason>
+ </span>
+ </div>
+ <div class=comment_text>
+ <p>haha, true that. But the point was about how it’s more convenient to read it in the reader anyway. That’s not an easy fix for me, but it is for the site’s author!</p>
+ </div>
+ </div>
+</div>
+ <div class=comment_siblings_tree_line></div>
+ <ol class=comments></ol></li>
+ </ol></li>
+ </ol></li>
+ </ol></li>
+ </ol></li>
+ </ol></li>
+ </ol>
+ <div id=footer>
+ <a href=https://lobste.rs/moderations>Moderation Log</a>
+ <a href=https://lobste.rs/hats>Hats</a>
+ <a href=https://lobste.rs/tags>Tags</a>
+<a href=https://github.com/lobsters/lobsters/wiki>Wiki</a>
+<a href=https://lobste.rs/privacy>Privacy</a>
+<a href=https://lobste.rs/about>About</a>
+ </div>
+ <div class=clear></div>
+ </div>
+ </div>
+<script>document.currentScript.remove();(() => { const INFOBAR_TAGNAME = "singlefile-infobar"; const LINK_ICON = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABmJLR0QABQDuAACS38mlAAAACXBIWXMAACfuAAAn7gExzuVDAAAAB3RJTUUH4ggCDDcMnYqGGAAAATtJREFUOMvNk19LwlAYxp+zhOoqpxJ1la3patFVINk/oRDBLuyreiPFMmcj/QQRSOOwpEINDCpwRr7d1HBMc4sufO7Oe877e5/zcA4wbWLDi8urGr2+vXsOFfJZdnPboDtuueoRcQEH6RQDgNBP8bxcpfvmA0QxPHF6u/MMInLVHFDP7kMUwyjks2xU8+ZGkgGAbtSp1e5gRhBc+0KQHHSjTg2TY0tVEItF/wYqV6+pYXKoiox0atvjOuQXYnILqiJj/ztceXUlGEirGGRyC0pCciDDmfm6mlYxiFtNKAkJmb0dV2OxpFGxpNFE0NmFTtxqQpbiHsgojQX1bBuyFMfR4S7zk+PYjE5PcizI0xD+6685jubnZvH41MJwgL+p233B8tKiF7SeXMPnYIB+/8OXg2hERO44wzC1+gJYGGpVbtoqiAAAAABJRU5ErkJggg=="; const IMAGE_ICON = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABIUlEQVQ4y+2TsarCMBSGvxTBRdqiUZAWOrhJB9EXcPKFfCvfQYfulUKHDqXg4CYUJSioYO4mSDX3ttzt3n87fMlHTpIjlsulxpDZbEYYhgghSNOUOI5Ny2mZYBAELBYLer0eAJ7ncTweKYri4x7LJJRS0u12n7XrukgpjSc0CpVSXK/XZ32/31FKNW85z3PW6zXT6RSAJEnIsqy5UGvNZrNhu90CcDqd+C6tT6J+v//2Th+PB2VZ1hN2Oh3G4zGTyQTbtl/YbrdjtVpxu91+Ljyfz0RRhG3bzOfzF+Y4TvNXvlwuaK2pE4tfzr/wzwsty0IIURlL0998KxRCMBqN8H2/wlzXJQxD2u12vVkeDoeUZUkURRU+GAw4HA7s9/sK+wK6CWHasQ/S/wAAAABJRU5ErkJggg=="; const SINGLEFILE_COMMENT = "SingleFile"; const browser = this.browser; if (window == top) { if (document.readyState == "loading") { document.addEventListener("DOMContentLoaded", displayIcon, false); } else { displayIcon(); } } async function displayIcon() { const result = document.evaluate("//comment()", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); let singleFileComment = result && result.singleNodeValue; if (singleFileComment && isSingleFileComment(singleFileComment)) { const info = singleFileComment.textContent.split("\n"); const [, , url, saveDate, ...infoData] = info; if (url && saveDate) { let options; if (browser && browser.runtime && browser.runtime.sendMessage) { options = await browser.runtime.sendMessage({ method: "tabs.getOptions", url }); } else { options = { displayInfobar: true }; } if (options.displayInfobar) { initInfobar(url, saveDate, infoData); } } } } function isSingleFileComment(node) { return node.nodeType == Node.COMMENT_NODE && node.textContent.includes(SINGLEFILE_COMMENT); } function initInfobar(url, saveDate, infoData) { let infobarElement = document.querySelector(INFOBAR_TAGNAME); if (!infobarElement) { url = url.split("url: ")[1]; saveDate = saveDate.split("saved date: ")[1]; if (infoData && infoData.length > 1) { let content = infoData[0].split("info: ")[1].trim(); for (let indexLine = 1; indexLine < infoData.length - 1; indexLine++) { content += "\n" + infoData[indexLine].trim(); } infoData = content.trim(); } else { infoData = saveDate; } infobarElement = createElement(INFOBAR_TAGNAME, document.body); setProperty(infobarElement, "background-color", "#f9f9f9"); setProperty(infobarElement, "display", "flex"); setProperty(infobarElement, "position", "fixed"); setProperty(infobarElement, "top", "16px"); setProperty(infobarElement, "right", "16px"); setProperty(infobarElement, "height", "auto"); setProperty(infobarElement, "min-height", "24px"); setProperty(infobarElement, "min-width", "24px"); setProperty(infobarElement, "background-position", "center"); setProperty(infobarElement, "background-repeat", "no-repeat"); setProperty(infobarElement, "z-index", 2147483647); setProperty(infobarElement, "text-align", "center"); setProperty(infobarElement, "will-change", "opacity, padding-left, padding-right, width, background-color, color"); setProperty(infobarElement, "margin", "0 0 0 16px"); const closeElement = createElement("span", infobarElement); closeElement.textContent = "✕"; setProperty(closeElement, "display", "none"); setProperty(closeElement, "opacity", .7); setProperty(closeElement, "padding-right", "8px"); setProperty(closeElement, "cursor", "pointer"); setProperty(closeElement, "color", "#9aa0a6"); setProperty(closeElement, "line-height", "24px"); closeElement.onmouseover = () => setProperty(closeElement, "opacity", 1); closeElement.onmouseout = () => setProperty(closeElement, "opacity", .7); closeElement.onclick = event => { if (event.button === 0) { infobarElement.remove(); } }; const infoElement = createElement("span", infobarElement); setProperty(infoElement, "font-family", "Arial"); setProperty(infoElement, "color", "#9aa0a6"); setProperty(infoElement, "font-size", "14px"); setProperty(infoElement, "line-height", "22px"); setProperty(infoElement, "word-break", "break-word"); setProperty(infoElement, "white-space", "pre-wrap"); infoElement.textContent = infoData; const linkElement = createElement("a", infobarElement); setProperty(linkElement, "display", "inline-block"); setProperty(linkElement, "padding-left", "8px"); setProperty(linkElement, "line-height", "11px"); setProperty(linkElement, "cursor", "pointer"); setProperty(linkElement, "user-select", "none"); linkElement.target = "_blank"; linkElement.rel = "noopener noreferrer"; linkElement.title = "Open source URL: " + url; linkElement.href = url; const imgElement = createElement("img", linkElement); setProperty(imgElement, "padding-top", "3px"); setProperty(imgElement, "-webkit-padding-after", "2px"); setProperty(imgElement, "padding-left", "2px"); setProperty(imgElement, "-webkit-padding-start", "2px"); setProperty(imgElement, "cursor", "pointer"); setProperty(infobarElement, "text-align", "right"); imgElement.src = LINK_ICON; hideInfobar(infobarElement, linkElement, infoElement, closeElement); infobarElement.onmouseover = () => setProperty(infobarElement, "opacity", 1); document.addEventListener("click", event => { if (event.button === 0) { let element = event.target; while (element && element != infobarElement) { element = element.parentElement; } if (element != infobarElement) { hideInfobar(infobarElement, linkElement, infoElement, closeElement); } } }); setTimeout(() => { setProperty(infobarElement, "transition-property", "opacity"); setProperty(infobarElement, "transition-duration", "250ms"); }); } } function displayInfobar(infobarElement, linkElement, infoElement, closeElement) { setProperty(infobarElement, "font-size", "13px"); setProperty(infobarElement, "opacity", 1); setProperty(infobarElement, "width", "auto"); setProperty(infobarElement, "background-color", "#f9f9f9"); setProperty(infobarElement, "cursor", "auto"); setProperty(infobarElement, "color", "#9aa0a6"); setProperty(infobarElement, "padding-left", "8px"); setProperty(infobarElement, "padding-right", "4px"); setProperty(infobarElement, "padding-top", "2px"); setProperty(infobarElement, "padding-bottom", "2px"); setProperty(infobarElement, "-webkit-padding-start", "8px"); setProperty(infobarElement, "-webkit-padding-end", "4px"); setProperty(infobarElement, "border", "2px solid #555"); setProperty(infobarElement, "-webkit-border-start", "2px solid #555"); setProperty(infobarElement, "-webkit-border-before", "2px solid #555"); setProperty(infobarElement, "-webkit-border-end", "2px solid #555"); setProperty(infobarElement, "-webkit-border-after", "2px solid #555"); setProperty(infobarElement, "background-image", "none"); setProperty(infobarElement, "border-radius", "8px"); setProperty(infoElement, "display", "inline-block"); setProperty(linkElement, "display", "inline-block"); setProperty(closeElement, "display", "inline-block"); setProperty(infobarElement, "user-select", "initial"); setProperty(infobarElement, "-moz-user-select", "initial"); infobarElement.onclick = null; infobarElement.onmouseout = null; } function hideInfobar(infobarElement, linkElement, infoElement, closeElement) { setProperty(infobarElement, "user-select", "none"); setProperty(infobarElement, "-moz-user-select", "none"); setProperty(infobarElement, "opacity", .7); infobarElement.onmouseout = () => setProperty(infobarElement, "opacity", .7); setProperty(infobarElement, "width", "24px"); setProperty(infobarElement, "background-color", "#737373"); setProperty(infobarElement, "cursor", "pointer"); setProperty(infobarElement, "color", "white"); setProperty(infobarElement, "padding-left", 0); setProperty(infobarElement, "padding-right", 0); setProperty(infobarElement, "padding-top", 0); setProperty(infobarElement, "padding-bottom", 0); setProperty(infobarElement, "-webkit-padding-start", 0); setProperty(infobarElement, "-webkit-padding-end", 0); setProperty(infobarElement, "border", "2px solid #eee"); setProperty(infobarElement, "-webkit-border-start", "2px solid #eee"); setProperty(infobarElement, "-webkit-border-before", "2px solid #eee"); setProperty(infobarElement, "-webkit-border-end", "2px solid #eee"); setProperty(infobarElement, "-webkit-border-after", "2px solid #eee"); setProperty(infobarElement, "background-image", "url(" + IMAGE_ICON + ")"); setProperty(infobarElement, "background-size", "70% 70%"); setProperty(infobarElement, "border-radius", "16px"); setProperty(closeElement, "display", "none"); setProperty(linkElement, "display", "none"); setProperty(infoElement, "display", "none"); infobarElement.onclick = event => { if (event.button === 0) { displayInfobar(infobarElement, linkElement, infoElement, closeElement); return false; } }; } function createElement(tagName, parentElement) { const element = document.createElement(tagName); parentElement.appendChild(element); Array.from(getComputedStyle(element)).forEach(property => setProperty(element, property, "initial")); return element; } function setProperty(element, name, value) { element.style.setProperty(name, value, "important"); }})();</script>
