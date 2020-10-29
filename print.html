@@ -1,0 +1,972 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Patrick&#x27;s Web Archive</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="2020.html">2020 Archive</a></li><li class="chapter-item expanded affix "><a href="2020/2020-01.html">January 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-02.html">February 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-03.html">March 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-04.html">April 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-05.html">May 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-06.html">June 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-07.html">July 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-08.html">August 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-09.html">September 2020</a></li><li class="chapter-item expanded affix "><a href="2020/2020-10.html">October 2020</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Patrick&#x27;s Web Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/code-ink-space/webarchive" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#2020-archive" id="2020-archive">2020 Archive</a></h1>
+<p>Welcome to my personal <em>Wayback Machine</em> where I store for posterity my favorite articles from around the web. That's right. The full web page is saved here because millions of links and websites are lost to the digital sands of time every day. I will share here the best online reads I gather for every month of every year.</p>
+<p><strong>Monthly Archives:</strong></p>
+<p><a href="./2020/2020-01.html">January 2020</a></p>
+<p><a href="./2020/2020-02.html">February 2020</a></p>
+<p><a href="./2020/2020-03.html">March 2020</a></p>
+<p><a href="./2020/2020-04.html">April 2020</a></p>
+<p><a href="./2020/2020-05.html">May 2020</a></p>
+<p><a href="./2020/2020-06.html">June 2020</a></p>
+<p><a href="./2020/2020-07.html">July 2020</a></p>
+<p><a href="./2020/2020-08.html">August 2020</a></p>
+<p><a href="./2020/2020-09.html">September 2020</a></p>
+<p><a href="./2020/2020-10.html">October 2020</a></p>
+<p><em>The original URLs are below each article title to credit the sources.</em></p>
+<p>If you're curious, I use <a href="https://tt-rss.org/"><em>Tiny Tiny RSS</em></a>, <a href="https://www.sublimetext.com/"><em>Sublime Text</em></a> and <a href="https://telegram.org/"><em>Telegram</em></a> to help me collect these. I save the webpages themselves using the browser extension <a href="https://github.com/gildas-lormeau/SingleFile/"><em>SingleFile</em></a>. I use <a href="https://github.com/rust-lang/mdBook"><em>mdBook</em></a> for this archive site. These pages are hosted in <em>GitHub</em>, for now.</p>
+<p>Happy reading!</p>
+<p>-- <a href="https://speak.hopeph.com/patrick">Patrick</a></p>
+<h1><a class="header" href="#january-2020" id="january-2020">January 2020</a></h1>
+<p><a href="2020/01/ask_hn__a_new_decade._any_predictions_page1____hacker_news_2020-01-19_10_57_07_pm.html"><strong>Ask HN: A New Decade. Any Predictions?</strong></a> / <a href="2020/01/ask_hn__a_new_decade._any_predictions_page2____hacker_news_2020-01-19_10_57_43_pm.html">Page 2</a>
+<br>
+https://news.ycombinator.com/item?id=21941278</p>
+<p><a href="2020/01/why_we_can%E2%80%99t_tell_the_truth_about_aging___the_new_yorker_2020-01-19_12_03_46_am.html"><strong>Why We Can’t Tell the Truth About Aging</strong></a>
+<br>
+https://www.newyorker.com/magazine/2019/11/04/why-we-cant-tell-the-truth-about-aging</p>
+<p><a href="2020/01/don&#x27;t_believe_everything_you_read_on_social_media_and_7_other_tough_lessons_of_the_decade_-_cnet_2020-01-19_12_16_58_am.html"><strong>Don't believe everything you read on social media and 7 other tough lessons of the decade</strong></a>
+<br>
+https://www.cnet.com/news/dont-believe-everything-you-read-on-social-media-and-7-other-tough-lessons-of-the-decade/</p>
+<p><a href="2020/01/advertising_makes_us_unhappy_2020-01-17_11_08_16_pm.html"><strong>Advertising Makes Us Unhappy</strong></a>
+<br>
+https://hbr.org/01/01/advertising-makes-us-unhappy</p>
+<p><a href="2020/01/philip_pullman_on_children&#x27;s_literature_and_the_critics_who_disdain_it___literary_hub_2020-01-17_11_59_56_pm.html"><strong>Philip Pullman on Children’s Literature and the Critics Who Disdain It</strong></a>
+<br>
+https://lithub.com/philip-pullman-on-childrens-literature-and-the-critics-who-disdain-it/</p>
+<p><a href="2020/01/in_us_library_visits_outpaced_trips_to_movies_in_2019_2020-02-01_7_42_36_am.html"><strong>In U.S., Library Visits Outpaced Trips to Movies in 2019</strong></a>
+<br>
+https://news.gallup.com/poll/284009/library-visits-outpaced-trips-movies-2019.aspx</p>
+<p><a href="2020/01/the_miseducation_of_the_american_boy_-_the_atlantic_2020-01-19_12_09_35_am.html"><strong>The Miseducation of the American Boy</strong></a>
+<br>
+https://www.theatlantic.com/magazine/archive/01/01/the-miseducation-of-the-american-boy/603046/</p>
+<p><a href="2020/01/fundamental_attribution_error__why_you_make_terrible_life_choices_2020-01-19_11_18_58_pm.html"><strong>Fundamental Attribution Error: Why You Make Terrible Life Choices</strong></a>
+<br>
+https://www.nirandfar.com/fundamental-attribution-error/</p>
+<p><a href="2020/01/why_destroy_their_faith__what_the_asian_woman_said_to_pope_francis_before_he_slapped_her_2020-01-19_12_27_09_am.html"><strong>“Why destroy their faith?”: What the Asian woman said to Pope Francis before he slapped her</strong></a>
+<br>
+http://claytestament.blogspot.com/01/01/why-destroy-their-faith-what-asian.html</p>
+<p><a href="2020/01/christopher_tolkien_son_of_jrr_tolkien_long_time_steward_author_middle_earth_passed_away_age_95_2020-01-22_5_56_05_pm.html"><strong>Christopher Tolkien, son of J.R.R. Tolkien and long time steward and author of Middle Earth content, has passed away at age 95</strong></a>
+<br>
+https://old.reddit.com/r/books/comments/epnie9/christopher_tolkien_son_of_jrr_tolkien_and_long/</p>
+<p><a href="2020/01/stray_dogs_have_the_natural_ability_to_understand_human_gestures_2020-01-26_8_52_29_pm.html"><strong>Stray dogs have the natural ability to understand human gestures</strong></a>
+<br>
+https://www.nationalgeographic.com/animals/01/01/stray-dogs-communication-rabies-health/</p>
+<p><a href="2020/01/the_5_keys_to_falling_asleep_on_time_every_night___scott_h_young_2020-01-19_12_14_40_am.html"><strong>The 5 Keys to Falling Asleep On Time Every Night</strong></a>
+<br>
+https://www.scotthyoung.com/blog/2019/07/15/sleep-on-time/</p>
+<p><a href="2020/01/why_the_simple_life_is_not_just_beautiful,_it%E2%80%99s_necessary___aeon_ideas_2020-01-19_12_18_43_am.html"><strong>Why the simple life is not just beautiful, it’s necessary</strong></a>
+<br>
+https://aeon.co/ideas/why-the-simple-life-is-not-just-beautiful-it-s-necessary</p>
+<p><a href="2020/01/how_to_stop_wasting_your_life_watching_tv_2020-01-19_12_22_09_am.html"><strong>How to stop wasting your life watching TV and do something worthwhile with your downtime</strong></a>
+<br>
+https://www.fastcompany.com/90244574/how-to-stop-wasting-your-life-watching-tv-do-something-worthwhile-with-your-downtime</p>
+<p><a href="2020/01/6_ways_to_boost_your_productivity_by_managing_your_energy_not_your_time_2020-01-19_12_25_51_am.html"><strong>6 ways to boost your productivity by managing your energy (not your time)</strong></a>
+<br>
+https://www.fastcompany.com/90450087/6-ways-to-boost-your-productivity-by-managing-your-energy-not-your-time</p>
+<p><a href="2020/01/special_sunglasses,_license-plate_dresses__how_to_be_anonymous_in_the_age_of_surveillance___the_seattle_times_2020-01-19_12_30_04_am.html"><strong>Special sunglasses, license-plate dresses: How to be anonymous in the age of surveillance</strong></a>
+<br>
+https://www.seattletimes.com/business/technology/special-sunglasses-license-plate-dresses-juggalo-face-paint-how-to-be-anonymous-in-the-age-of-surveillance/</p>
+<p><a href="2020/01/xkcd__digital_resource_lifespan_2020-01-10_1_35_58_am.html"><strong>xkcd: Digital Resource Lifespan</strong></a>
+<br>
+https://xkcd.com/1909/</p>
+<h2><a class="header" href="#extra" id="extra">Extra:</a></h2>
+<p><a href="2020/01/michael_mary%E2%80%99s_year_in_books_2019___goodreads_2020-01-10_1_32_27_am.html"><strong>My Year in Books: 2019 (Goodreads)</strong></a>
+<br></p>
+<h1><a class="header" href="#february-2020" id="february-2020">February 2020</a></h1>
+<p><a href="2020/02/the_best_of_the_2010s_%E2%80%93_animated_views_2020-02-28_12_10_24_am.html"><strong>The Best of the 2010s – Animated Views</strong></a>
+<br>
+https://animatedviews.com/2020/the-best-of-the-2010s/</p>
+<p><a href="2020/02/palindromeday__geeks_around_the_world_celebrate_02_02_2020_-_bbc_news_2020-02-22_5_55_04_am.html"><strong>#PalindromeDay: Geeks around the world celebrate 02/02/2020 - BBC News</strong></a>
+<br>
+https://www.bbc.com/news/world-51349158</p>
+<p><a href="2020/02/heres_the_easiest_way_ive_seen_1_to_determine_if_a_year_is_a_leap_year___if---___hacker_news_2020-02-29_4_15_11_pm.html"><strong>Here's the easiest way I’ve seen to determine if a year is a leap year | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=21928681</p>
+<p><a href="2020/02/rebecca_knill__how_technology_has_changed_what_its_like_to_be_deaf___ted_talk_2020-02-28_9_45_27_pm.html"><strong>Rebecca Knill: How technology has changed what it's like to be deaf | TED Talk Subtitles and Transcript | TED</strong></a>
+<br>
+https://www.ted.com/talks/rebecca_knill_how_technology_has_changed_what_it_s_like_to_be_deaf/transcript</p>
+<p><a href="2020/02/i_am_the_book_murderer_but_i_tear_them_apart_out_of_love___books___the_guardian_2020-02-03_9_38_22_am.html"><strong>I am the 'book murderer', but I tear them apart out of love | Books | The Guardian</strong></a>
+<br>
+https://www.theguardian.com/books/jan/22/book-murderer-tear-apart-love-alex-christofi</p>
+<p><a href="2020/02/wikipedia_is_the_last_best_place_on_the_internet_wired_2020-03-02_8_07_56_pm.html"><strong>Wikipedia Is the Last Best Place on the Internet | WIRED</strong></a>
+<br>
+https://www.wired.com/story/wikipedia-online-encyclopedia-best-place-internet/</p>
+<p><a href="2020/02/find_rare_books_at_roels_bookshop_along_maginhawa_in_qc_2020-02-22_5_54_04_am.html"><strong>Find Rare Books at Roel's Bookshop Along Maginhawa in QC</strong></a>
+<br>
+https://www.spot.ph/newsfeatures/the-latest-news-features/80984/roels-bookshop-maginhawa-quezon-city-a4362-20200215-lfrm</p>
+<p><a href="2020/02/bob_ong_books_for_every_mood__which_should_you_read_next__2020-02-16_6_45_00_am.html"><strong>There’s a Bob Ong Book for Your Every Mood</strong></a>
+<br>
+https://8list.ph/bob-ong-books-for-every-mood/</p>
+<p><a href="2020/02/coolest_offices_in_manila__top_draw_animation_studios_2020-02-22_5_53_17_am.html"><strong>Coolest Offices in Manila: Top Draw Animation Studios</strong></a>
+<br>
+https://www.spot.ph/newsfeatures/the-latest-news-features/80873/top-draw-animation-studios-tour-a2809-20200207</p>
+<p><a href="2020/02/pale_blue_dot__meet_the_scientist_who_first_saw_the_iconic_nasa_voyager_image_2020-02-22_5_06_14_am.html"><strong>‘Pale Blue Dot’: Meet the scientist who first saw the iconic NASA Voyager image</strong></a>
+<br>
+https://www.nationalgeographic.com/science/02/first-person-see-pale-blue-dot/</p>
+<p><a href="2020/02/the_10_worst_epidemics_in_history_-_worldatlas-com_2020-02-22_5_27_41_am.html"><strong>The 10 Worst Epidemics In History - WorldAtlas.com</strong></a>
+<br>
+https://www.worldatlas.com/articles/the-10-worst-epidemics-in-history.html</p>
+<p><a href="2020/02/the_oldest_company_in_almost_every_country_that_is_still_in_business_-_businessfinancing-co-uk_2020-02-28_12_12_40_am.html"><strong>The Oldest Company in Almost Every Country (That is Still in Business)</strong></a>
+<br>
+https://businessfinancing.co.uk/the-oldest-company-in-almost-every-country/</p>
+<p><a href="2020/02/smithsonian_releases_2-8_million_images_into_public_domain_smithsonian_magazine_2020-02-28_4_46_28_pm.html"><strong>Smithsonian Releases 2.8 Million Images Into Public Domain | Smithsonian Magazine</strong></a>
+<br>
+https://www.smithsonianmag.com/smithsonian-institution/smithsonian-releases-28-million-images-public-domain-180974263/</p>
+<p><a href="2020/02/rhoner_comments_on_have_you_ever_picked_up_a_hitch-hiker__2020-02-28_12_20_35_am.html"><strong>&quot;Today you.... tomorrow me.&quot; - rhoner comments on Have you ever picked up a hitch-hiker?</strong></a>
+<br>
+https://old.reddit.com/r/AskReddit/comments/elal2/have_you_ever_picked_up_a_hitchhiker/c18z0z2/</p>
+<p><a href="2020/02/computers_can_be_understood_-_made_of_bugs_2020-02-28_12_31_53_am.html"><strong>Computers can be understood - Made of Bugs</strong></a>
+<br>
+https://blog.nelhage.com/post/computers-can-be-understood/</p>
+<p><a href="2020/02/this_page_is_designed_to_last__a_manifesto_for_preserving_content_on_the_web_2020-02-22_6_27_17_am.html"><strong>This Page is Designed to Last: A Manifesto for Preserving Content on the Web</strong></a>
+<br>
+https://jeffhuang.com/designed_to_last/</p>
+<h1><a class="header" href="#march-2020" id="march-2020">March 2020</a></h1>
+<p><a href="2020/03/covid-19_coronavirus_epidemic_has_a_natural_origin_--_sciencedaily_2020-03-20_8_04_12_am.html"><strong>COVID-19 coronavirus epidemic has a natural origin - ScienceDaily</strong></a>
+<br>
+https://www.sciencedaily.com/releases/2020/03/200317175442.htm</p>
+<p><a href="2020/03/coronavirus_101__what_you_need_to_know_2020-04-23_9_36_02_am.html"><strong>Coronavirus 101: What you need to know - National Geographic</strong></a>
+<br>
+https://www.nationalgeographic.com/science/2020/03/covid-overview-coronavirus/</p>
+<p><a href="2020/03/the_coronavirus_spares_most_kids-_these_theories_may_help_explain_why-_2020-04-23_9_49_09_am.html"><strong>The coronavirus spares most kids. These theories may help explain why.</strong></a>
+<br>
+https://www.nationalgeographic.com/science/2020/03/coronavirus-spares-most-kids-these-theories-may-help-explain-why/</p>
+<p><a href="2020/03/mid-term_break_-_how_covid-19_is_interrupting_children%E2%80%99s_education___international___the_economist_2020-04-23_1_54_22_am.html"><strong>How covid-19 is interrupting children’s education - The Economist</strong></a>
+<br>
+https://www.economist.com/international/2020/03/19/how-covid-19-is-interrupting-childrens-education</p>
+<p><a href="2020/03/hong_kong_warns_residents_not_to_kiss_pets_after_dog_contracts_coronavirus___world_news___the_guardian_2020-03-18_2_16_31_pm.html"><strong>Hong Kong warns residents not to kiss pets after dog contracts coronavirus - The Guardian</strong></a>
+<br>
+https://www.theguardian.com/world/2020/mar/05/hong-kong-warns-residents-not-to-kiss-pets-after-dog-contracts-coronavirus</p>
+<p><a href="2020/03/priest_shelters_stray_dogs_then_brings_them_to_church_so_they_can_be_adopted_by_attendees___aww_2020-03-20_9_10_36_am.html"><strong>Priest shelters stray dogs then brings them to church so they can be adopted by attendees - r/aww</strong></a>
+<br>
+https://old.reddit.com/r/aww/comments/fjubav/priest_shelters_stray_dogs_then_brings_them_to/</p>
+<p><a href="2020/03/creating_the_coronopticon_-_countries_are_using_apps_and_data_networks_to_keep_tabs_on_the_pandemic___briefing___the_economist_2020-04-23_1_51_18_am.html"><strong>Countries are using apps and data networks to keep tabs on the pandemic - The Economist</strong></a>
+<br>
+https://www.economist.com/briefing/2020/03/26/countries-are-using-apps-and-data-networks-to-keep-tabs-on-the-pandemic</p>
+<p><a href="2020/03/stop_collaborate_and_listen_-_crowdsourcing_to_fight_covid-19___international___the_economist_2020-04-23_1_56_03_am.html"><strong>Crowdsourcing to fight covid-19 - The Economist</strong></a>
+<br>
+https://www.economist.com/international/2020/03/26/crowdsourcing-to-fight-covid-19</p>
+<p><a href="2020/03/ask_hn__how_are_you_coping_with_all_the_mostly_bad_news_around_you____hacker_news_2020-03-20_5_03_55_pm.html"><strong>Ask HN: How are you coping with all the (mostly bad) news around you? | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=22603129</p>
+<p><a href="2020/03/ask_hn__economy_after_coronavirus_%E2%80%93_what_can_we_do____hacker_news_2020-03-20_5_04_41_pm.html"><strong>Ask HN: Economy after coronavirus – what can we do? | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=22587052</p>
+<p><a href="2020/03/a_priest_a_son_and_his_mother-_italy_20_march_2020___pics_2020-04-23_9_30_50_am.html"><strong>A priest, a son and his mother. Italy, 20 March 2020 - r/pics</strong></a>
+<br>
+https://old.reddit.com/r/pics/comments/foiqh8/a_priest_a_son_and_his_mother_italy_20_march_2020/</p>
+<p><a href="2020/03/librarything_is_now_free_to_all_%C2%AB_the_librarything_blog_2020-04-23_9_26_16_am.html"><strong>LibraryThing Is Now Free to All</strong></a>
+<br>
+https://blog.librarything.com/main/2020/03/librarything-goes-free/</p>
+<p><a href="2020/03/internet_archive_responds__why_we_released_the_national_emergency_library___internet_archive_blogs_2020-04-23_2_01_00_am.html"><strong>Internet Archive responds: Why we released the National Emergency Library</strong></a>
+<br>
+http://blog.archive.org/2020/03/30/internet-archive-responds-why-we-released-the-national-emergency-library/</p>
+<p><a href="2020/03/publishing_reels_from_covid-19___inquirer_lifestyle_2020-04-23_2_10_29_am.html"><strong>Publishing reels from COVID-19 - Inquirer.net</strong></a>
+<br>
+https://lifestyle.inquirer.net/360137/publishing-reels-from-covid-19/</p>
+<p><a href="2020/03/room_to_read%E2%80%99s_new_filipino_children%E2%80%99s_books___inquirer_opinion_2020-03-20_9_15_26_am.html"><strong>Room to Read’s new Filipino children’s books | Inquirer.net</strong></a>
+<br>
+https://opinion.inquirer.net/127699/room-to-reads-new-filipino-childrens-books</p>
+<p><a href="2020/03/graphic_novels_your_kid_probably_hasnt_read_yet_-_the_new_york_times_2020-03-20_5_16_13_pm.html"><strong>Graphic Novels Your Kid (Probably) Hasn’t Read Yet - The New York Times</strong></a>
+<br>
+https://www.nytimes.com/2020/02/28/books/graphic-novels-your-kid-probably-hasnt-read-yet.html</p>
+<p><a href="2020/03/of_mice_and_spacemen_-_%E2%80%9Cthe_hitchhiker%E2%80%99s_guide_to_the_galaxy%E2%80%9D_turns_42___prospero___the_economist_2020-04-23_2_51_11_am.html"><strong>Of mice and spacemen - “The Hitchhiker’s Guide To The Galaxy” turns 42 | The Economist</strong></a>
+<br>
+https://www.economist.com/prospero/2020/03/06/the-hitchhikers-guide-to-the-galaxy-turns-42</p>
+<p><a href="2020/03/avatar__5_ways_netflixs_adaptation_could_be_better_than_the_original__5_ways_it_wont_2020-04-23_9_17_48_am.html"><strong>Avatar: 5 Ways Netflix's Adaptation Could Be Better Than The Original (&amp; 5 Ways It Won't)</strong></a>
+<br>
+https://screenrant.com/avatar-netflix-live-action-better-than-animated-series/</p>
+<p><a href="2020/03/how_to_make_yourself_into_a_learning_machine_-_superorganizers_2020-03-18_2_18_05_pm.html"><strong>How to Make Yourself Into a Learning Machine - Superorganizers</strong></a>
+<br>
+https://superorganizers.substack.com/p/how-to-build-a-learning-machine</p>
+<p><a href="2020/03/ask_hn__why_arent_you_using_spaced_repetition____hacker_news_2020-04-23_2_06_13_am.html"><strong>Ask HN: Why aren't you using spaced repetition?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=22484060</p>
+<p><a href="2020/03/ancient_scripts_of_the_philippines___languagelearning_2020-03-20_9_06_47_am.html"><strong>Ancient scripts of the Philippines - r/languagelearning</strong></a>
+<br>
+https://old.reddit.com/r/languagelearning/comments/fiwm8p/ancient_scripts_of_the_philippines/</p>
+<p><a href="2020/03/zoom_privacy__your_video_conferences_aren%E2%80%99t_as_private_as_you_think_2020-04-23_9_34_04_am.html"><strong>Using Zoom? Here are the privacy issues you need to be aware of</strong></a>
+<br>
+https://protonmail.com/blog/zoom-privacy-issues/</p>
+<p><a href="2020/03/zoom_meetings_do_not_support_end-to-end_encryption_2020-04-23_1_59_35_am.html"><strong>Zoom Meetings Aren’t End-to-End Encrypted, Despite Misleading Marketing</strong></a>
+<br>
+https://theintercept.com/2020/03/31/zoom-meeting-encryption/?comments=1#comments</p>
+<p><a href="2020/03/fever_dreams__did_author_dean_koontz_really_predict_coronavirus____books___the_guardian_2020-03-18_2_17_29_pm.html"><strong>Fever dreams: did author Dean Koontz really predict coronavirus? - The Guardian</strong></a>
+<br>
+https://www.theguardian.com/books/2020/mar/05/theres-something-out-there-spread-of-disease</p>
+<p><a href="2020/03/deep_submariners_are_likely_unaware_of_coronavirus_-_los_angeles_times_2020-04-23_2_04_15_am.html"><strong>Deep underwater, submariners are likely unaware of pandemic roiling the world above</strong></a>
+<br>
+https://www.latimes.com/world-nation/story/2020-03-30/blissful-ignorance-submariners-likely-unaware-of-pandemic</p>
+<p><a href="2020/03/meet_the_man_who_has_lived_alone_on_this_island_for_31_years_2020-04-23_9_39_53_am.html"><strong>Meet a man who has lived alone on an island for 31 years - National Geographic</strong></a>
+<br>
+https://www.nationalgeographic.com/travel/destinations/europe/italy/photos-of-life-alone-on-a-paradise-island/</p>
+<p><a href="2020/03/opinion___i_spent_a_year_in_space_and_i_have_tips_on_isolation_to_share_-_the_new_york_times_2020-04-23_9_23_13_am.html"><strong>I Spent a Year in Space, and I Have Tips on Isolation to Share - by Scott Kelly</strong></a>
+<br>
+https://www.nytimes.com/2020/03/21/opinion/scott-kelly-coronavirus-isolation.html</p>
+<p><a href="2020/03/st_patrick_found_strength_in_social_distancing_2020-04-23_2_16_14_am.html"><strong>St. Patrick found strength in social distancing - Aleteia</strong></a>
+<br>
+https://aleteia.org/2020/03/17/st-patrick-found-strength-in-social-distancing/</p>
+<h1><a class="header" href="#april-2020" id="april-2020">April 2020</a></h1>
+<p><a href="2020/04/why_coronavirus_conspiracy_theories_flourish-_and_why_it_matters-_-_the_new_york_times_2020-05-02_1_24_50_am.html"><strong>Why Coronavirus Conspiracy Theories Flourish. And Why It Matters. - The New York Times</strong></a>
+<br>
+https://www.nytimes.com/2020/04/08/world/europe/coronavirus-conspiracy-theories.html</p>
+<p><a href="2020/04/only_connect_-_how_will_humans_by_nature_social_animals_fare_when_isolated____international___the_economist_2020-04-30_10_38_10_am.html"><strong>Only connect - How will humans, by nature social animals, fare when isolated? | The Economist</strong></a>
+<br>
+https://www.economist.com/international/2020/04/04/how-will-humans-by-nature-social-animals-fare-when-isolated</p>
+<p><a href="2020/04/net_benefits_-_with_millions_stuck_at_home_the_online_wellness_industry_is_booming___international___the_economist_2020-04-30_10_44_10_am.html"><strong>Net benefits - With millions stuck at home, the online wellness industry is booming | The Economist</strong></a>
+<br>
+https://www.economist.com/international/2020/04/04/with-millions-stuck-at-home-the-online-wellness-industry-is-booming</p>
+<p><a href="2020/04/whats_a_virus_anyway__part_1__the_bare-bones_basics_-_scope_2020-05-01_6_28_44_pm.html"><strong>What’s a virus, anyway? - Part 1 | Stanford Medicine</strong></a>, <a href="2020/04/whats_a_virus_anyway__part_2__how_coronaviruses_infect_us_-_and_how_viruses_created_us_-_scope_2020-04-30_10_45_28_am.html">Part 2: How coronaviruses infect us — and how viruses created us</a>
+<br>
+https://scopeblog.stanford.edu/2020/04/02/whats-a-virus-anyway-part-1-the-bare-bones-basics/
+<br>
+https://scopeblog.stanford.edu/2020/04/03/how-coronaviruses-infect-us-how-infectious-viruses-created-us/</p>
+<p><a href="2020/04/does_coronavirus_spell_the_end_of_the_modern_world__2020-05-02_1_47_13_am.html"><strong>Does Coronavirus Spell the End of the Modern World?</strong></a>
+<br>
+https://www.ncregister.com/daily-news/does-coronavirus-spell-the-end-of-the-modern-world</p>
+<p><a href="2020/04/dear_jeff_bezos_instead_of_firing_me_protect_your_workers_from_coronavirus___chris_smalls___opinion___the_guardian_2020-05-02_2_14_59_am.html"><strong>Dear Jeff Bezos, instead of firing me, protect your workers from coronavirus - Chris Smalls | The Guardian</strong></a>
+<br>
+https://www.theguardian.com/commentisfree/2020/apr/02/dear-jeff-bezos-amazon-instead-of-firing-me-protect-your-workers-from-coronavirus</p>
+<p><a href="2020/04/biggest_and_brightest_supermoon_of_the_year_to_rise_tonight___euronews_2020-04-30_10_41_03_am.html"><strong>Biggest and brightest 'supermoon' of the year to rise tonight | Euronews</strong></a>
+<br>
+https://www.wired.com/story/coronavirus-book-sales-indie/</p>
+<p><a href="2020/04/the_coronavirus_pandemic_is_changing_how_people_buy_books___wired_2020-05-02_10_36_19_am.html"><strong>The Coronavirus Pandemic Is Changing How People Buy Books | WIRED</strong></a>
+<br>
+https://www.euronews.com/2020/04/07/biggest-and-brightest-supermoon-of-the-year-to-rise-tonight</p>
+<p><a href="2020/04/the_shared_visual_language_of_the_1918_and_2020_pandemics___wired_2020-05-02_10_41_17_am.html"><strong>The Shared Visual Language of the 1918 and 2020 Pandemics | WIRED</strong></a>
+<br>
+https://www.wired.com/story/shared-visual-language-1918-2020-pandemics/</p>
+<p><a href="2020/04/setihome_search_for_alien_life_project_shuts_down_after_21_years_-_slashdot_2020-05-02_1_43_42_am.html"><strong>SETI@Home Search For Alien Life Project Shuts Down After 21 Years - Slashdot</strong></a>, <a href="2020/04/setihome_search_for_alien_life_project_shuts_down_after_21_years_2020-05-02_1_40_40_am.html"><strong>BleepingComputer</strong></a>, <a href="2020/04/setihomes_search_for_extraterrestrial_intelligence_comes_to_an_end_-_ghacks_tech_news_2020-05-02_1_41_20_am.html"><strong>Ghacks.net</strong></a>
+<br>
+https://hardware.slashdot.org/story/20/03/04/0129200/setihome-search-for-alien-life-project-shuts-down-after-21-years
+<br>
+https://www.bleepingcomputer.com/news/software/seti-home-search-for-alien-life-project-shuts-down-after-21-years
+<br>
+https://www.ghacks.net/2020/03/03/setihomes-search-for-extraterrestrial-intelligence-comes-to-an-end</p>
+<p><a href="2020/04/heres_what_disinfectants_and_uv_light_really_do_to_your_body___wired_2020-05-02_10_28_14_am.html"><strong>Here's What Disinfectants and UV Light Really Do to Your Body | WIRED</strong></a>
+<br>
+https://www.wired.com/story/heres-what-disinfectants-and-uv-light-really-do-to-your-body/</p>
+<p><a href="2020/04/expert_twitter_only_goes_so_far-_bring_back_blogs___wired_2020-05-02_3_04_33_am.html"><strong>'Expert Twitter' Only Goes So Far. Bring Back Blogs | WIRED</strong></a>
+<br>
+https://www.wired.com/story/opinion-expert-twitter-only-goes-so-far-bring-back-blogs/</p>
+<p><a href="2020/04/the_coronavirus_pandemic_is_getting_the_%E2%80%98total_attention%E2%80%99_of_the_gates_foundation_-_the_verge_2020-05-02_10_37_50_am.html"><strong>The coronavirus pandemic is getting the ‘total attention’ of the Gates Foundation | The Verge</strong></a>
+<br>
+https://www.theverge.com/2020/4/26/21237482/coronavirus-pandemic-gates-foundation-microsoft</p>
+<p><a href="2020/04/zoom_upgrades_encryption_keys_to_what_it_promised_all_along___wired_2020-05-02_11_05_49_am.html"><strong>Zoom Upgrades Encryption Keys to What It Promised All Along | WIRED</strong></a>
+<br>
+https://www.wired.com/story/security-news-roundup-zoom-upgrades-encryption-keys/</p>
+<p><a href="2020/04/the_web_is_the_next_platform_5_27_1995___ben_slivka_2020-05-01_6_29_31_pm.html"><strong>The Web is the Next Platform, 5/27/1995 | Ben Slivka</strong></a>
+<br>
+https://benslivka.com/2017/08/15/the-web-is-the-next-platform-5271995/</p>
+<p><a href="2020/04/my_blog_is_a_digital_garden_not_a_blog_2020-05-01_6_32_27_pm.html"><strong>🌱 My blog is a digital garden, not a blog</strong></a>
+<br>
+https://joelhooks.com/digital-garden</p>
+<p><a href="2020/04/ask_hn__programs_that_saved_you_100_hours____hacker_news_2020-05-01_6_33_26_pm.html"><strong>Ask HN: Programs that saved you 100 hours? | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=22849208</p>
+<p><a href="2020/04/hooq_demise_damages_the_business_case_for_southeast_asian_streaming_%E2%80%93_variety_2020-05-07_4_07_54_pm.html"><strong>Hooq May Have Fallen But a Business Case for Southeast Asian Streamers Endure | Variety</strong></a>
+<br>
+https://variety.com/2020/biz/asia/hooq-collapse-singtel-southeast-asia-streaming-1203550122/</p>
+<p><a href="2020/04/how_to_understand_movies_better____movies_2020-05-02_2_09_27_am.html"><strong>How to understand movies better? - r/movies</strong></a>
+<br>
+https://old.reddit.com/r/movies/comments/g3w5q6/how_to_understand_movies_better/</p>
+<p><a href="2020/04/the_lord_of_the_rings_film_trilogy_broken_up_into_a_miniseries_extended_editions___movies_2020-05-02_2_12_15_am.html"><strong>The Lord of the Rings film trilogy broken up into a miniseries (extended editions) - r/movies</strong></a>
+<br>
+https://old.reddit.com/r/movies/comments/fuirxs/the_lord_of_the_rings_film_trilogy_broken_up_into/</p>
+<p><a href="2020/04/the_statistical_top_250_movies_of_all_time_based_on_averaging_ratings_from_13_different_websites___movies_2020-05-02_2_45_43_am.html"><strong>The statistical top 250 movies of all time based on averaging ratings from 13 different websites - r/movies</strong></a>
+<br>
+https://old.reddit.com/r/movies/comments/g90unl/the_statistical_top_250_movies_of_all_time_based/</p>
+<p><a href="2020/04/one_mans_radical_plan_to_solve_wealth_inequality___wired_2020-05-02_10_45_58_am.html"><strong>One Man's Radical Plan to Solve Wealth Inequality | WIRED</strong></a>
+<br>
+https://www.wired.com/story/one-mans-radical-plan-to-solve-wealth-inequality/</p>
+<p><a href="2020/04/after_the_1929_stock_market_crash_did_investors_really_jump_out_of_windows__%E2%80%93_the_straight_dope_2020-05-07_12_12_09_am.html"><strong>After the 1929 stock market crash, did investors really jump out of windows? | The Straight Dope</strong></a>
+<br>
+https://www.straightdope.com/columns/read/2412/after-the-1929-stock-market-crash-did-investors-really-jump-out-of-windows/</p>
+<p><a href="2020/04/who_made_money_during_the_1929_stock_market_crash__%E2%80%93_the_straight_dope_2020-05-07_12_15_49_am.html"><strong>Who made money during the 1929 stock market crash? | The Straight Dope</strong></a>
+<br>
+https://www.straightdope.com/columns/read/2873/who-made-money-during-the-1929-stock-market-crash/</p>
+<p><a href="2020/04/the_dangerous_coronavirus_conspiracy_theories_targeting_5g_technology_bill_gates_and_a_world_of_fear___the_new_yorker_2020-05-02_10_56_55_am.html"><strong>The Dangerous Coronavirus Conspiracy Theories Targeting 5G Technology, Bill Gates, and a World of Fear | The New Yorker</strong></a>
+<br>
+https://www.newyorker.com/news/daily-comment/the-dangerous-coronavirus-conspiracy-theories-targeting-5g-technology-bill-gates-and-a-world-of-fear</p>
+<p><a href="2020/04/bill_gates_is_now_a_target_of_covid-19_coronavirus_conspiracy_theories_2020-05-02_10_50_03_am.html"><strong>Bill Gates Is Now A Target Of COVID-19 Coronavirus Conspiracy Theories | Forbes</strong></a>
+<br>
+https://www.forbes.com/sites/brucelee/2020/04/19/bill-gates-is-now-a-target-of-covid-19-coronavirus-conspiracy-theories/</p>
+<p><a href="2020/04/why_bill_gates_is_the_focus_of_covid-19_conspiracy_theories_2020-05-02_10_55_35_am.html"><strong>Why Bill Gates is the focus of the latest coronavirus conspiracy theories | Fast Company</strong></a>
+<br>
+https://www.fastcompany.com/90493469/why-bill-gates-is-the-focus-of-the-latest-coronavirus-conspiracy-theories</p>
+<p><a href="2020/04/the_bizarre_conspiracy_theory_that_bill_gates_caused_covid-19_crisis_-_business_insider_2020-05-07_2_39_42_pm.html"><strong>The bizarre conspiracy theory that Bill Gates caused COVID-19 crisis - Business Insider</strong></a>
+<br>
+https://www.businessinsider.com/coronavirus-conspiracy-bill-gates-infowars-2020-4</p>
+<p><a href="2020/04/computer_scientist_donald_knuth_can%E2%80%99t_stop_telling_stories___quanta_magazine_2020-05-02_2_06_06_am.html"><strong>The Computer Scientist Who Can’t Stop Telling Stories | Quanta Magazine</strong></a>
+<br>
+https://www.quantamagazine.org/computer-scientist-donald-knuth-cant-stop-telling-stories-20200416/</p>
+<p><a href="2020/04/eight_marvelous_and_melancholy_things_ive_learned_about_creativity_-_the_oatmeal_2020-04-26_6_31_09_am.html"><strong>Eight marvelous and melancholy things I've learned about creativity - The Oatmeal</strong></a>
+<br>
+<a href="2020/04/erasers_are_wonderful_-_the_oatmeal_2020-04-26_6_31_39_am.html">Part 1. Erasers are wonderful</a>
+<br>
+<a href="2020/04/your_ears_are_plugged_-_the_oatmeal_2020-04-26_6_32_10_am.html">Part 2. Your ears are plugged</a>
+<br>
+<a href="2020/04/creativity_is_like_breathing_-_the_oatmeal_2020-04-26_6_32_33_am.html">Part 3. Creativity is like breathing</a>
+<br>
+<a href="2020/04/there_are_only_bad_ideas_in_brainstorming_-_the_oatmeal_2020-04-26_6_33_03_am.html">Part 4. There are only bad ideas in brainstorming</a>
+<br>
+<a href="2020/04/this_is_not_a_petting_zoo_-_the_oatmeal_2020-04-26_6_33_32_am.html">Part 5. This is not a petting zoo</a>
+<br>
+<a href="2020/04/the_wondrous_utility_of_self-loathing_-_the_oatmeal_2020-04-26_6_34_02_am.html">Part 6. The wondrous utility of self-loathing</a>
+<br>
+<a href="2020/04/killing_your_darlings_-_the_oatmeal_2020-04-26_6_34_27_am.html">Part 7. Killing your darlings</a>
+<br>
+<a href="2020/04/the_business_of_art_-_the_oatmeal_2020-04-26_6_34_55_am.html">Part 8. The business of art</a>
+<br>
+https://theoatmeal.com/comics/creativity_things</p>
+<p><a href="2020/04/xkcd__pathogen_resistance_2020-05-02_11_11_03_am.html"><strong>xkcd: Pathogen Resistance</strong></a>
+<br>
+https://xkcd.com/2287/</p>
+<p><a href="2020/04/xkcd__scenario_4_2020-05-02_11_09_10_am.html"><strong>xkcd: Scenario 4</strong></a>
+<br>
+https://xkcd.com/2289/</p>
+<p><a href="2020/04/xkcd__everyones_an_epidemiologist_2020-05-02_11_07_26_am.html"><strong>xkcd: Everyone's an Epidemiologist</strong></a>
+<br>
+https://xkcd.com/2300/</p>
+<p><a href="2020/04/hubble_after_30_years_is_still_revealing_new_mysteries_of_the_universe_2020-05-02_11_03_38_am.html"><strong>After 30 years, Hubble is still revealing new mysteries of the universe | NatGeo</strong></a>
+<br>
+https://www.nationalgeographic.com/magazine/2020/05/hubble-after-30-years-is-still-revealing-new-mysteries-of-the-universe/</p>
+<p><a href="2020/04/celebrating_30_years_of_the_hubble_space_telescope___space_2020-05-02_11_04_11_am.html"><strong>Celebrating 30 years of the Hubble Space Telescope | Space.com</strong></a>
+<br>
+https://www.space.com/hubble-space-telescope-turns-30.html</p>
+<p><a href="2020/04/hubble_marks_30_years_in_space_with_tapestry_of_blazing_starbirth_2020-05-02_11_05_08_am.html"><strong>Hubble Marks 30 Years in Space with Tapestry of Blazing Starbirth | NASA Hubblesite.org</strong></a>
+<br>
+https://hubblesite.org/contents/news-releases/2020/news-2020-16</p>
+<p><a href="2020/04/who_is_the_patron_saint_of_computers__%E2%80%93_mindbounce_2020-05-02_10_34_00_am.html"><strong>Who Is The Patron Saint of Computers? - MindBounce</strong></a>
+<br>
+https://www.mindbounce.com/trivia/who-is-the-patron-saint-of-computers/</p>
+<p><a href="2020/04/here_is_the_daily_schedule_of_a_hermit_2020-05-02_1_57_17_am.html"><strong>Here is the daily schedule of a hermit | Aleteia.org</strong></a>
+<br>
+https://aleteia.org/2020/04/01/here-is-the-daily-schedule-of-a-hermit/</p>
+<h1><a class="header" href="#may-2020" id="may-2020">May 2020</a></h1>
+<p><a href="2020/05/abs-cbn_a_leading_broadcaster_in_the_philippines_and_target_of_dutertes_ire_signs_off_-_the_new_york_times_2020-05-08_3_36_06_pm.html"><strong>ABS-CBN, a Leading Broadcaster in the Philippines and Target of Duterte's Ire, Signs Off - The New York Times</strong></a> - <a href="2020/05/abs-cbn_a_leading_broadcaster_in_the_philippines_and_target_of_dutertes_ire_signs_off_-_the_new_york_times_2020-05-08_3_40_11_pm.html">Comments</a>
+<br>
+https://www.nytimes.com/2020/05/05/world/asia/philippines-abs-cbn-duterte.html</p>
+<p><a href="2020/05/philippines_orders_leading_tv_network_abs-cbn_to_shut_down___time_2020-05-08_3_40_48_pm.html"><strong>Philippines Orders Leading TV Network to Shut Down as Watchdogs Accuse President of Muzzling Independent Media - TIME</strong></a>
+<br>
+https://time.com/5832266/philippines-tv-network-shutdown/</p>
+<p><a href="2020/05/abs-cbn__philippines_biggest_broadcaster_forced_off_air_-_bbc_news_2020-05-08_3_36_49_pm.html"><strong>ABS-CBN: Philippines' biggest broadcaster forced off air - BBC News</strong></a>
+<br>
+https://www.bbc.com/news/world-asia-52548703</p>
+<p><a href="2020/05/philippines_main_channel_forced_off-air_amid_coronavirus_lockdown___philippines___the_guardian_2020-05-08_3_41_44_pm.html"><strong>Philippines' main channel forced off-air amid coronavirus lockdown - The Guardian</strong></a>
+<br>
+https://www.theguardian.com/world/2020/may/05/philippines-main-channel-abs-cbn-forced-off-air-amid-coronavirus-lockdown</p>
+<p><a href="2020/05/leading_tv_network_goes_off_air_under_philippine_govt_order_2020-05-08_3_42_09_pm.html"><strong>Leading TV network goes off air under Philippine gov’t order - AP News</strong></a>
+<br>
+https://apnews.com/fc45af8058069fc98033a9b096fdb256</p>
+<p><a href="2020/05/philippines_orders_closure_of_abs-cbn_country%E2%80%99s_largest_broadcaster_%E2%80%93_variety_2020-05-08_3_43_07_pm.html"><strong>Philippines Orders Closure of ABS-CBN Country’s Largest Broadcaster - Variety</strong></a>
+<br>
+https://variety.com/2020/biz/asia/philippines-orders-closure-of-abs-cbn-countrys-largest-broadcaster-1234598102/</p>
+<p><a href="2020/05/wikipedia_the_free_encyclopedia_2020-05-08_5_47_23_am.html"><strong>Wikipedia English main page during ABS-CBN shutdown</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Main_Page</p>
+<p><a href="2020/05/why_it%E2%80%99s_so_hard_to_be_rational_about_covid-19_-_bbc_future_2020-05-07_12_35_13_am.html"><strong>Why it’s so hard to be rational about Covid-19 - BBC</strong></a>
+<br>
+https://www.bbc.com/future/article/20200505-why-its-so-hard-to-be-rational-about-covid-19</p>
+<p><a href="2020/05/how_will_coronavirus_change_the_world_-_bbc_future_2020-05-07_12_37_14_am.html"><strong>How will coronavirus change the world? - BBC</strong></a>
+<br>
+https://www.bbc.com/future/article/20200331-covid-19-how-will-the-coronavirus-change-the-world</p>
+<p><a href="2020/05/will_covid-19_have_a_lasting_impact_on_the_environment__-_bbc_future_2020-05-07_12_28_46_am.html"><strong>Will Covid-19 have a lasting impact on the environment? - BBC</strong></a>
+<br>
+https://www.bbc.com/future/article/20200326-covid-19-the-impact-of-coronavirus-on-the-environment</p>
+<p><a href="2020/05/covid-19__what_we_can_learn_from_wartime_efforts_-_bbc_future__-__no_heading_2020-08-01_5_22_35_pm.html"><strong>Covid-19: What we can learn from wartime efforts - BBC</strong></a>
+<br>
+https://www.bbc.com/future/article/20200430-covid-19-what-we-can-learn-from-wartime-efforts</p>
+<p><a href="2020/05/daniel_radcliffe_delights_fans_with_harry_potter_video_reading_-_bbc_news_2020-05-06_9_36_24_am.html"><strong>Daniel Radcliffe delights fans with Harry Potter video reading - BBC News</strong></a>
+<br>
+https://www.bbc.com/news/amp/entertainment-arts-52543241</p>
+<p><a href="2020/05/introducing_the_next_phase_of_harry_potter_at_home___wizarding_world_2020-05-06_9_44_45_am.html"><strong>Introducing the next phase of Harry Potter At Home | Wizarding World</strong></a>
+<br>
+https://www.wizardingworld.com/news/introducing-harry-potter-at-home-readings</p>
+<p><a href="2020/05/all_the_great_ways_you_can_enjoy_the_harry_potter_books_from_your_home___wizarding_world_2020-05-06_5_55_55_pm.html"><strong>All the great ways you can enjoy the Harry Potter books from your home | Wizarding World</strong></a>
+<br>
+https://www.wizardingworld.com/features/all-the-great-ways-you-can-enjoy-the-hp-books-from-your-home</p>
+<p><a href="2020/05/wizarding_world_-_the_official_home_of_harry_potter_2020-05-06_5_52_14_pm.html"><strong>WizardingWorld.com - Daniel Radcliffe reads Chapter One: ‘The Boy Who Lived’</strong></a>
+<br>
+https://www.wizardingworld.com</p>
+<p><a href="2020/05/how_i_became_a_better_programmer_2020-05-06_11_53_32_pm.html"><strong>How I Became a Better Programmer - James Long</strong></a>
+<br>
+https://jlongster.com/How-I-Became-Better-Programmer</p>
+<p><a href="2020/05/asking_questions_-_aarons_blog_2020-05-06_11_25_49_pm.html"><strong>Asking questions - Aaron Harris</strong></a>
+<br>
+https://www.aaronkharris.com/asking-questions</p>
+<p><a href="2020/05/who_was_the_worst_catholic_saint__%E2%80%93_the_straight_dope_2020-05-18_6_12_55_pm.html"><strong>Who was the worst Catholic saint? - The Straight Dope</strong></a>
+<br>
+https://www.straightdope.com/columns/read/2382/who-was-the-worst-catholic-saint/</p>
+<p><a href="2020/05/how_does_a_new_pope_decide_what_name_to_take__%E2%80%93_the_straight_dope_2020-05-18_6_14_30_pm.html"><strong>How does a new pope decide what name to take? - The Straight Dope</strong></a>
+<br>
+https://www.straightdope.com/columns/read/3251/how-does-a-new-pope-decide-what-name-to-take/</p>
+<p><a href="2020/05/who_decided_saints_have_halos__%E2%80%93_the_straight_dope_2020-05-18_6_14_44_pm.html"><strong>Who decided saints have halos? - The Straight Dope</strong></a>
+<br>
+https://www.straightdope.com/columns/read/38/who-decided-saints-have-halos/</p>
+<p><a href="2020/05/cross_the_world_four_times___derek_sivers_2020-05-06_12_06_41_am.html"><strong>Cross the world four times - Derek Sivers</strong></a>
+<br>
+https://sivers.org/4</p>
+<h1><a class="header" href="#june-2020" id="june-2020">June 2020</a></h1>
+<p><a href="2020/06/clutter_can_be_useful_-_the_atlantic__-__the_end_of_minimalism_2020-08-01_5_46_42_pm.html"><strong>The End of Minimalism</strong></a>
+<br>
+https://www.theatlantic.com/magazine/archive/2020/07/the-triumph-of-the-slob/612232/</p>
+<p><a href="2020/06/digital_hoarding_-_wikipedia__-__digital_hoarding_2020-08-01_5_49_22_pm.html"><strong>Digital hoarding - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Digital_hoarding</p>
+<p><a href="2020/06/web_archiving_community_%C2%B7_pirate_archivebox_wiki_%C2%B7_github__-__pirate_________archivebox_2020-08-01_6_01_10_pm.html"><strong>Web Archiving Community - pirate / ArchiveBox - Wiki</strong></a>
+<br>
+https://github.com/pirate/ArchiveBox/wiki/Web-Archiving-Community</p>
+<p><a href="2020/06/piracy_should_be_fundamentally_justifiable_if_original_works_of_media_arent_preserved_by_their_original_owners-_a_mild_rant-___piracy_2020-06-17_2_29_55_pm.html"><strong>Piracy should be fundamentally justifiable if original works of media aren't preserved by their original owners. A mild rant. - r/Piracy</strong></a>
+<br>
+https://old.reddit.com/r/Piracy/comments/buqgo8/piracy_should_be_fundamentally_justifiable_if/</p>
+<p><a href="2020/06/how_to_do_noise_reduction_using_ffmpeg_and_sox_-_articulating_ideas_2020-06-18_10_12_22_pm.html"><strong>How To Do Noise Reduction Using ffmpeg And sox - Zohar Babin</strong></a>
+<br>
+http://www.zoharbabin.com/how-to-do-noise-reduction-using-ffmpeg-and-sox/</p>
+<p><a href="2020/06/a_bookworms_guide_to_becoming_a_better_reader_-_fully_booked_blog__-__a_bookworms_guide_to_becoming_a_better_reader_2020-08-01_4_51_40_pm.html"><strong>A Bookworm's Guide to Becoming a Better Reader - Fully Booked Blog</strong></a>
+<br>
+https://www.fullybookedonline.com/blog/post/bookworm-guide-becoming-better-reader.html</p>
+<p><a href="2020/06/what_are_the_seven_basic_literary_plots__%E2%80%93_the_straight_dope__-__what_are_the_seven_basic_literary_plots__2020-08-03_3_08_22_pm.html"><strong>What are the seven basic literary plots? - The Straight Dope</strong></a>
+<br>
+https://www.straightdope.com/columns/read/2366/what-are-the-seven-basic-literary-plots/</p>
+<p><a href="2020/06/lauds_-_wikipedia__-__lauds_2020-08-01_6_00_38_pm.html"><strong>Lauds - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Lauds</p>
+<p><a href="2020/06/morning_has_broken_-_wikipedia__-__morning_has_broken_2020-08-01_5_58_32_pm.html"><strong>Morning Has Broken - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Morning_Has_Broken</p>
+<p><a href="2020/06/catholic_101__intro_to_the_%E2%80%9Cliturgy_of_the_hours%E2%80%9D___the_jesuit_post__-__catholic_101__intro_to_the_%E2%80%9Cliturgy_of_the_hours%E2%80%9D_2020-08-01_5_56_38_pm.html"><strong>Catholic 101: Intro to the &quot;Liturgy of the Hours&quot; | The Jesuit Post</strong></a>
+<br>
+https://thejesuitpost.org/2019/07/catholic-101-intro-to-the-liturgy-of-the-hours/</p>
+<p><a href="2020/06/breviaries_with_a_2-year_cycle_of_patristic_readings_-_zenit_-_english__-__breviaries_with_a_2-year_cycle_of_patristic_readings_2020-08-01_5_56_03_pm.html"><strong>Breviaries With a 2-Year Cycle of Patristic Readings - ZENIT.org</strong></a>
+<br>
+https://zenit.org/2014/12/03/breviaries-with-a-2-year-cycle-of-patristic-readings/</p>
+<p><a href="2020/06/liturgy_of_the_hours_readings___catholic_answers__-__liturgy_of_the_hours_readings_2020-08-01_5_57_48_pm.html"><strong>Q&amp;A: Liturgy of the Hours Readings | Catholic Answers</strong></a>
+<br>
+https://www.catholic.com/qa/liturgy-of-the-hours-readings</p>
+<p><a href="2020/06/podcasting_legal_guide_-_creative_commons__-__podcasting_legal_guide_2020-08-01_5_59_29_pm.html"><strong>Podcasting Legal Guide</strong></a>
+<br>
+https://wiki.creativecommons.org/wiki/Podcasting_Legal_Guide</p>
+<p><a href="2020/06/learn_to_be_alone_-_austin_kleon__-__learn_to_be_alone_2020-07-07_6_58_31_pm.html"><strong>Learn to be alone - Austin Kleon</strong></a>
+<br>
+https://austinkleon.com/2020/06/19/learn-to-be-alone/</p>
+<p><a href="2020/06/the_other_wise_man_-_wikipedia__-__the_other_wise_man_2020-08-01_5_59_50_pm.html"><strong>The Other Wise Man - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/The_Other_Wise_Man</p>
+<p><a href="2020/06/star_of_artaban_-_wikipedia__-__star_of_artaban_2020-08-01_5_59_51_pm.html"><strong>Star of Artaban - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Star_of_Artaban</p>
+<h1><a class="header" href="#july-2020" id="july-2020">July 2020</a></h1>
+<p><a href="2020/07/ask_hn__what%E2%80%99s_a_big_trend_we_should_all_be_following____hacker_news__-__no_heading_2020-07-07_7_10_15_pm.html"><strong>Ask HN: What’s a big trend we should all be following?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23579184</p>
+<p><a href="2020/07/star34___information_sharing_heroes__-__information_sharing_heroes_2020-07-28_2_57_53_pm.html"><strong>Information sharing heroes: Telegram channel PH Coronavirus Updates - The Philippine Star</strong></a>
+<br>
+https://star34.philstarlife.com/article/750732-information-sharing-heroes</p>
+<p><a href="2020/07/antisocial_media___ntoll-org__-__ntoll-org_2020-07-28_3_33_32_pm.html"><strong>(Anti)Social Media - ntoll.org</strong></a>
+<br>
+https://ntoll.org/article/antisocial-media/</p>
+<p><a href="2020/07/your_doomscrolling_breeds_anxiety-_heres_how_to_stop_the_cycle___npr__-__your_doomscrolling_breeds_anxiety-_heres_how_to_stop_the_cycle_2020-07-28_3_02_55_pm%E2%80%A6.html"><strong>Your 'Doomscrolling' Breeds Anxiety. Here's How To Stop The Cycle - NPR</strong></a> - <a href="2020/07/doomscrolling_breeds_anxiety_%E2%80%93_how_to_stop_the_cycle___hacker_news__-__no_heading_2020-07-28_3_03_37_pm.html">hacker news</a>
+<br>
+https://www.npr.org/2020/07/19/892728595/your-doomscrolling-breeds-anxiety-here-s-how-to-stop-the-cycle
+<br>
+https://news.ycombinator.com/item?id=23893690</p>
+<p><a href="2020/07/making_rss_prominent_again___lobsters__-__no_heading_2020-07-28_2_58_21_pm.html"><strong>Making RSS prominent again | Lobsters</strong></a>
+<br>
+https://lobste.rs/s/1lv132/making_rss_prominent_again</p>
+<p><a href="2020/07/tired_of_note-taking_apps_%E2%80%93_akkshaya__-__tired_of_note-taking%C2%A0apps_2020-07-28_9_30_16_am.html"><strong>Tired of note-taking apps (akkshaya.blog) | Hacker News</strong></a> - <a href="2020/07/tired_of_note-taking_apps___hacker_news__-__no_heading_2020-07-28_9_08_10_am.html">hacker news</a>
+<br>
+https://akkshaya.blog/2020/07/19/note-taking/
+<br>
+https://news.ycombinator.com/item?id=23888799</p>
+<p><a href="2020/07/mozilla_vpn___hacker_news__-__no_heading_2020-07-07_7_12_58_pm.html"><strong>Mozilla VPN | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23565192</p>
+<p><a href="2020/07/ffmpeg_4-3___hacker_news__-__no_heading_2020-07-07_7_14_52_pm.html"><strong>FFmpeg 4.3 | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23540704</p>
+<p><a href="2020/07/ask_hn__what_do_you_use_google_sheets_for____hacker_news__-__no_heading_2020-07-07_7_21_50_pm.html"><strong>Ask HN: What do you use Google Sheets for?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23250489</p>
+<p><a href="2020/07/ask_hn__best_books_under_200_pages_for_developers____hacker_news__-__no_heading_2020-07-07_7_17_38_pm.html"><strong>Ask HN: Best books under 200 pages for developers?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23363595</p>
+<p><a href="2020/07/its_pretty_fucked_up_that_we_boil_crustaceans_alive-___unpopularopinion__-__unpopularopinion_2020-07-07_7_10_29_pm.html"><strong>It's pretty fucked up that we boil crustaceans alive. - r/unpopularopinion</strong></a>
+<br>
+https://old.reddit.com/r/unpopularopinion/comments/he4wr7/its_pretty_fucked_up_that_we_boil_crustaceans/</p>
+<p><a href="2020/07/let%E2%80%99s_avoid_talk_of_%E2%80%98chemical_imbalance%E2%80%99__it%E2%80%99s_people_in_distress___h__-__no_heading_2020-07-28_3_04_10_pm.html"><strong>Let’s avoid talk of ‘chemical imbalance’: it’s people in distress | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23858294</p>
+<p><a href="2020/07/plaidophile__advice_to_young_web_developers__-__plaidophile_2020-08-03_3_24_07_pm.html"><strong>Advice to Young Web Developers</strong></a> - <a href="2020/07/advice_to_young_web_developers___hacker_news__-__no_heading_2020-07-07_7_12_10_pm.html">hacker news</a>
+<br>
+https://beesbuzz.biz/blog/2934-Advice-to-young-web-developers
+<br>
+https://news.ycombinator.com/item?id=23556831</p>
+<p><a href="2020/07/on_coding_ego_and_attention__-__on_coding_ego_and_attention_2020-08-03_3_17_12_pm.html"><strong>On Coding, Ego and Attention</strong></a> - <a href="2020/07/on_coding_ego_and_attention___hacker_news__-__no_heading_2020-07-07_7_14_16_pm.html">hacker news</a>
+<br>
+https://josebrowne.com/on-coding-ego-and-attention/
+<br>
+https://news.ycombinator.com/item?id=23526417</p>
+<p><a href="2020/07/the_return_of_the_90s_web___max_b%C3%B6ck__-__the_return_of_the_90s_web_2020-08-03_3_41_34_pm.html"><strong>The Return of the 90s Web | Max Böck</strong></a> - <a href="2020/07/the_return_of_the_90s_web___hacker_news__-__no_heading_2020-07-07_7_13_42_pm.html">hacker news</a>
+<br>
+https://mxb.dev/blog/the-return-of-the-90s-web/
+<br>
+https://news.ycombinator.com/item?id=23567744</p>
+<p><a href="2020/07/simones_computer__-__no_heading_2020-08-03_4_09_41_pm.html"><strong>Websites that look like desktop GUIs (simone.computer)</strong></a> - <a href="2020/07/websites_that_look_like_desktop_guis___hacker_news__-__no_heading_2020-07-07_7_24_52_pm.html">hacker news</a>
+<br>
+https://simone.computer/#/webdesktops
+<br>
+https://news.ycombinator.com/item?id=23734093</p>
+<p><a href="2020/07/so__wheel_of_time___avatar_the_last_airbender___lord_of_the_rings___the_ch__-__television_2020-07-07_7_17_42_pm.html"><strong>So &quot;Wheel of Time&quot;, &quot;Avatar:The Last Airbender&quot;, &quot;Lord Of The Rings&quot;, &quot;The Chronicles of Narnia&quot; and &quot;Percy Jackson and The Olympians&quot; are all set to receive Big Budget adaptations soon in an attempt to emulate the success of Game Of Thrones. What's your bet on what will generate the Biggest Buzz? - r/television</strong></a>
+<br>
+https://old.reddit.com/r/television/comments/gpb0o3/so_wheel_of_time_avatarthe_last_airbender_lord_of/</p>
+<p><a href="2020/07/in_praise_of_solitude_-_los_angeles_review_of_books__-__in_praise_of_solitude_2020-08-03_4_12_22_pm.html"><strong>In Praise of Solitude - Los Angeles Review of Books</strong></a>
+<br>
+https://lareviewofbooks.org/article/in-praise-of-solitude/</p>
+<h2><a class="header" href="#c2020-f3-neowise-or-comet-neowise" id="c2020-f3-neowise-or-comet-neowise">C/2020 F3 (NEOWISE) or Comet NEOWISE</a></h2>
+<p><a href="2020/07/neowise/c_2020_f3_neowise_-_wikipedia__-__c_2020_f3_neowise_2020-08-03_4_26_27_pm.html"><strong>C/2020 F3 (NEOWISE) - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/C/2020_F3_(NEOWISE)</p>
+<p><a href="2020/07/neowise/how_to_see_comet_neowise___nasa__-__how_to_see_comet_neowise_2020-08-03_4_28_30_pm.html"><strong>How to See Comet NEOWISE | NASA</strong></a>
+<br>
+https://www.nasa.gov/feature/how-to-see-comet-neowise</p>
+<p><a href="2020/07/neowise/comet_neowise__10_big_questions_and_answers_about_the_icy_wanderer___space__-__comet_neowise__10_big_questions_and_answers_about_the_icy_wanderer_2020-08-03_4_%E2%80%A6.html"><strong>Comet NEOWISE: 10 big questions (and answers) about the icy wanderer | Space.com</strong></a>
+<br>
+https://www.space.com/comet-neowise-strange-facts.html</p>
+<p><a href="2020/07/neowise/how_to_see_comet_neowise_before_it%E2%80%99s_gone___wired__-__how_to_see_comet_neowise_before_it%E2%80%99s_gone_2020-08-03_8_44_32_pm.html"><strong>How to See Comet Neowise Before It’s Gone | WIRED</strong></a>
+<br>
+https://www.wired.com/story/how-to-see-comet-neowise-before-its-gone/</p>
+<p><a href="2020/07/neowise/one_of_the_brightest_comets_in_decades_is_passing_earth-_here%E2%80%99s_how_to_see___-__one_of_the_brightest_comets_in_decades_is_passing_earth-_here%E2%80%99s_how_to_see__202%E2%80%A6.html"><strong>One of the brightest comets in decades is passing Earth. Here’s how to see it. | National Geographic</strong></a>
+<br>
+https://www.nationalgeographic.com/science/2020/07/one-of-brightest-comets-in-decades-passing-earth-how-to-see/</p>
+<p><a href="2020/07/neowise/how_to_see_comet_neowise___space___earthsky__-__no_heading_2020-08-03_4_49_12_pm.html"><strong>How to See Comet NEOWISE | EarthSky</strong></a>
+<br>
+https://earthsky.org/space/how-to-see-comet-c2020-f3-neowise</p>
+<p><a href="2020/07/neowise/comet_neowise_observation_last_week---_-_philippine_astronomical_society_in__-__facebook_2020-08-03_8_48_49_pm.html"><strong>Comet NEOWISE Observation by Philippine Astronomical Society, Inc.</strong></a>
+<br>
+https://www.facebook.com/PhilippineAstronomicalSociety/posts/comet-neowise-observationlast-week-the-comet-was-visible-before-sunrise-it-then-/10157488066160933/</p>
+<p><a href="2020/07/neowise/as_we_look_out_for_the_neowise_comet_we_recall_the_last_time_a_comet_appeare__-__no_heading_2020-08-03_8_42_47_pm.html"><strong>As we look out for the NEOWISE comet, we recall the last time a comet appeared in our skies | ANC</strong></a>
+<br>
+https://news.abs-cbn.com/ancx/culture/spotlight/07/23/20/as-we-look-out-for-the-neowise-comet-we-recall-the-last-time-a-comet-appeared-in-our-skies</p>
+<p><a href="2020/07/neowise/finding_rare_comet_neowise_in_philippines_skies_this_july_-_good_news_pilipi__-__finding_rare_comet_neowise_in_philippines%E2%80%99_skies_this_july_2020-08-03_8_46_55_p%E2%80%A6.html"><strong>Finding Rare Comet NEOWISE in Philippines’ skies this July | Good News Pilipinas</strong></a>
+<br>
+https://www.goodnewspilipinas.com/finding-rare-comet-neowise-in-philippines-skies-this-july/</p>
+<p><a href="2020/07/neowise/neowise__an_increasingly_rare_opportunity_to_spot_a_comet_with_the_naked_eye__-__neowise__an_increasingly_rare_opportunity_to_spot_a_comet_with_the_naked_eye_2020-%E2%80%A6.html"><strong>Neowise: An increasingly rare opportunity to spot a comet with the naked eye | Rappler</strong></a>
+<br>
+https://rappler.com/science/earth-space/neowise-rare-opportunity-to-spot-comet-with-naked-eye</p>
+<p><a href="2020/07/neowise/neowise_comet__worth_the_wait_once_in_6800_years___inquirer_news__-__neowise_comet__worth_the_wait_once_in_6800_years_2020-08-03_8_33_26_pm.html"><strong>Neowise comet: Worth the wait, once in 6,800 years | Inquirer.net</strong></a>
+<br>
+https://newsinfo.inquirer.net/1312017/worth-the-wait-once-in-6800-years</p>
+<p><a href="2020/07/neowise/ultra-rare_comet_neowise_couldnt_be_spotted_in_the_philippines-_is_light_pol__-__ultra-rare_comet_neowise_couldn%E2%80%99t_be_spotted_in_the_philippines-_is_light_p_202%E2%80%A6.html"><strong>Ultra-rare Comet Neowise couldn’t be spotted in the Philippines. Is light pollution to blame? | interaksyon.com</strong></a>
+<br>
+https://www.interaksyon.com/hobbies-interests/2020/07/24/173562/comet-neowise-philippines-light-pollution/</p>
+<h2><a class="header" href="#comet-neowise-in-nasas-apod" id="comet-neowise-in-nasas-apod">Comet NEOWISE in NASA's APOD</a></h2>
+<p><a href="2020/07/neowise/apod__2020_july_7_-_comet_neowise_over_lebanon__-__astronomy_picture_of_the_day_2020-08-03_9_08_04_pm.html"><strong>Comet NEOWISE over Lebanon | APOD 2020 July 7</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200707.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_9_-_noctilucent_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_07_07_pm.html"><strong>Noctilucent Clouds and Comet NEOWISE | APOD 2020 July 9</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200709.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_10_-_comet_neowise_from_the_iss__-__astronomy_picture_of_the_day_2020-08-03_9_06_29_pm.html"><strong>Comet NEOWISE from the ISS | APOD 2020 July 10</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200710.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_11_-_the_tails_of_comet_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_05_55_pm.html"><strong>The Tails of Comet NEOWISE | APOD 2020 July 11</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200711.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_14_-_comet_neowise_over_stonehenge__-__astronomy_picture_of_the_day_2020-08-03_9_04_50_pm.html"><strong>Comet NEOWISE over Stonehenge | APOD 2020 July 14</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200714.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_15_-_comet_neowise_over_the_swiss_alps__-__astronomy_picture_of_the_day_2020-08-03_9_03_54_pm.html"><strong>Comet NEOWISE over the Swiss Alps | APOD 2020 July 15</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200715.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_16_-_the_long_tails_of_comet_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_03_15_pm.html"><strong>The Long Tails of Comet NEOWISE | APOD 2020 July 16</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200716.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_17_-_neowise_of_the_north__-__astronomy_picture_of_the_day_2020-08-03_9_02_19_pm.html"><strong>NEOWISE of the North | APOD 2020 July 17</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200717.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_18_-_finding_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_01_47_pm.html"><strong>Finding NEOWISE | APOD 2020 July 18</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200718.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_20_-_comet_neowise_and_nebulae__-__astronomy_picture_of_the_day_2020-08-03_8_59_59_pm.html"><strong>Comet NEOWISE and Nebulae | APOD 2020 July 20</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200720.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_22_%E2%80%93_the_structured_tails_of_comet_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_00_40_pm.html"><strong>The Structured Tails of Comet NEOWISE | APOD 2020 July 22</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200722.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_23_-_fairytale_neowise__-__astronomy_picture_of_the_day_2020-08-03_8_58_04_pm.html"><strong>Fairytale NEOWISE | APOD 2020 July 23</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200723.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_24_-_magic_neowise__-__astronomy_picture_of_the_day_2020-08-03_8_57_26_pm.html"><strong>MAGIC NEOWISE | APOD 2020 July 24</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200724.html</p>
+<p><a href="2020/07/neowise/apod__2020_july_27_%E2%80%93_comet_and_lightning_beyond_bighorn_mountains__-__astronomy_picture_of_the_day_2020-08-03_8_54_41_pm.html"><strong>Comet and Lightning Beyond Bighorn Mountains | APOD 2020 July 27</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200727.html</p>
+<h1><a class="header" href="#august-2020" id="august-2020">August 2020</a></h1>
+<p><a href="2020/08/the_tragic_physics_of_the_deadly_explosion_in_beirut___wired__-__the_tragic_physics_of_the_deadly_explosion_in_beirut_2020-08-13_2_10_41_pm.html"><strong>The Tragic Physics of the Deadly Explosion in Beirut | WIRED</strong></a> | <a href="2020/08/the_tragic_physics_of_the_deadly_explosion_in_beirut___hacker_news__-__no_heading_2020-08-13_2_11_06_pm.html">Hacker News</a>
+<br>
+https://www.wired.com/story/tragic-physics-deadly-explosion-beirut/
+<br>
+https://news.ycombinator.com/item?id=24114997</p>
+<p><a href="2020/08/from_minecraft_tricks_to_twitter_hack__a_florida_teen%E2%80%99s_troubled_online_pat__-__from_minecraft_tricks_to_twitter_hack__a_florida_teen%E2%80%99s_troubled_online_pat_202%E2%80%A6.html"><strong>From Minecraft tricks to Twitter hack: A Florida teen’s troubled online path | Chicago Tribune</strong></a>
+<br>
+https://www.chicagotribune.com/nation-world/ct-nw-nyt-twitter-hack-teen-20200803-46qsw3ajnnh23aapjxzjyx62sm-story.html</p>
+<p><a href="2020/08/the_social_media_problem_%C2%B7_jacques_mattheij__-__jacques_mattheij_2020-08-13_2_20_29_pm.html"><strong>The Social Media Problem</strong></a> | <a href="2020/08/the_social_media_problem___hacker_news__-__no_heading_2020-08-13_2_20_19_pm.html">Hacker News</a>
+<br>
+https://jacquesmattheij.com/the-social-media-problem/
+<br>
+https://news.ycombinator.com/item?id=24137330</p>
+<p><a href="2020/08/changing_world_changing_mozilla_-_the_mozilla_blog__-__changing_world_changing_mozilla_2020-08-13_2_23_07_pm.html"><strong>Mozilla lays off 250 employees while it refocuses on commercial products</strong></a>
+<a href="2020/08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products___ha__-__no_heading_2020-10-29_3_46_47_pm.html">Hacker News</a> <a href="2020/08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products_page2_2020-08-13_2_23_40_pm.html">2</a> <a href="2020/08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products_page3_2020-08-13_2_24_22_pm.html">3</a> <a href="2020/08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products_page4__no_heading_2020-08-13_2_25_01_pm.html">4</a> <a href="2020/08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products_page5__no_heading_2020-08-13_2_26_15_pm.html">5</a>
+<br>
+https://blog.mozilla.org/blog/2020/08/11/changing-world-changing-mozilla/
+<br>
+https://news.ycombinator.com/item?id=24120336</p>
+<p><a href="2020/08/over_three_billion_people_worldwide_now_play_video_games_study_reports___hac__-__no_heading_2020-10-29_4_19_17_pm.html"><strong>Over three billion people worldwide now play video games, study reports (nintendosmash.com) | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24239234</p>
+<p><a href="2020/08/wozs_70th_birthday__-__no_heading_2020-08-13_2_14_51_pm.html"><strong>Celebrate Woz's 70th (wozbday.com)</strong></a> | <a href="2020/08/celebrate_wozs_70th___hacker_news__-__no_heading_2020-08-13_2_14_41_pm.html">Hacker News</a>
+<br>
+https://www.wozbday.com/
+<br>
+https://news.ycombinator.com/item?id=24114054</p>
+<p><a href="2020/08/why_efficiency_is_dangerous_and_slowing_down_makes_life_better___psyche_ideas__-__why_efficiency_is_dangerous_and_slowing_down_makes_life_better_2020-10-29_4_22_57%E2%80%A6.html"><strong>Efficiency is dangerous and slowing down makes life better (psyche.co)</strong></a> | <a href="2020/08/efficiency_is_dangerous_and_slowing_down_makes_life_better___hacker_news__-__no_heading_2020-10-29_4_19_57_pm.html">Hacker News</a>
+<br>
+https://psyche.co/ideas/why-efficiency-is-dangerous-and-slowing-down-makes-life-better
+<br>
+https://news.ycombinator.com/item?id=24236489</p>
+<p><a href="2020/08/why_bertrand_russells_argument_for_idleness_is_more_relevant_than_ever__-__no_heading_2020-08-13_2_17_42_pm.html"><strong>Why Bertrand Russell's argument for idleness is more relevant than ever</strong></a> | <a href="2020/08/bertrand_russells_argument_for_idleness_is_more_relevant_than_ever___hacker___-__no_heading_2020-08-13_2_17_14_pm.html">Hacker News</a>
+<br>
+https://www.newstatesman.com/2020/08/why-bertrand-russells-argument-idleness-more-relevant-ever
+<br>
+https://news.ycombinator.com/item?id=24128366</p>
+<p><a href="2020/08/how_to_stop_procrastinating_by_using_the_fogg_behavior_model__-__how_to_stop_procrastinating_by_using_the_fogg_behavior_model_2020-08-13_2_21_35_pm.html"><strong>How to stop procrastinating by using the Fogg Behavior Model (deprocrastination.co)</strong></a> | <a href="2020/08/how_to_stop_procrastinating_by_using_the_fogg_behavior_model___hacker_news__-__no_heading_2020-08-13_2_21_16_pm.html">Hacker News</a>
+<br>
+https://www.deprocrastination.co/blog/how-to-stop-procrastinating-by-using-the-fogg-behavior-model
+<br>
+https://news.ycombinator.com/item?id=24120275</p>
+<p><a href="2020/08/google_says_it%E2%80%99s_working_hard_to_address_youtube_music_complaints___ars_tec__-__google_says_it%E2%80%99s_working_hard_to_address_youtube_music_complaints_2020-10-29_3_%E2%80%A6.html"><strong>Google says it’s working hard to address YouTube Music complaints | Ars Technica</strong></a>
+<br>
+https://arstechnica.com/gadgets/2020/08/google-says-its-working-hard-to-address-youtube-music-complaints/</p>
+<p><a href="2020/08/pdf__still_unfit_for_human_consumption_20_years_later__-__browse_all_topics__authors_2020-08-13_2_12_49_pm.html"><strong>PDF: Still Unfit for Human Consumption, 20 Years Later</strong></a> | <a href="2020/08/pdf__still_unfit_for_human_consumption_20_years_later___hacker_news__-__no_heading_2020-08-13_2_11_38_pm.html">Hacker News</a>
+<br>
+https://www.nngroup.com/articles/pdf-unfit-for-human-consumption/
+<br>
+https://news.ycombinator.com/item?id=24108950</p>
+<p><a href="2020/08/new_academic_journal_only_publishes_unsurprising_research_rejected_by_other__-__no_heading_2020-10-29_4_20_58_pm.html"><strong>New academic journal only publishes 'unsurprising' research rejected by others (cbc.ca) | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24229269</p>
+<p><a href="2020/08/not_all_netflix_movies_are_bad_its_just_that_the_good_ones_are_so_small_the__-__movies_2020-10-29_4_18_26_pm.html"><strong>Not all Netflix movies are bad, it's just that the good ones are so small they don't get attention. (reddit/movies)</strong></a>
+<br>
+https://old.reddit.com/r/movies/comments/iaufjf/not_all_netflix_movies_are_bad_its_just_that_the/</p>
+<p><a href="2020/08/whats_it_like_to_be_an_octopus__2017___hacker_news__-__no_heading_2020-08-13_2_13_09_pm.html"><strong>What's it like to be an Octopus? (2017) (lrb.co.uk) | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24109723</p>
+<p><a href="2020/08/rob_pikes_5_rules_of_programming_2020-08-13_2_15_55_pm.html"><strong>Rob Pike's Rules of Programming (1989)</strong></a> | <a href="2020/08/rob_pikes_rules_of_programming_1989___hacker_news__-__no_heading_2020-08-13_2_15_32_pm.html">Hacker News</a>
+<br>
+http://users.ece.utexas.edu/~adnan/pike.html
+<br>
+https://news.ycombinator.com/item?id=24135189</p>
+<p><a href="2020/08/matthew_arnold__why_i_switched_to_fedora_-_fedora_magazine__-__matthew_arnold__why_i_switched_to_fedora_2020-10-29_3_35_40_pm.html"><strong>Matthew Arnold: Why I switched to Fedora</strong></a>
+<br>
+https://fedoramagazine.org/matthew-arnold-why-i-switched-to-fedora/</p>
+<p><a href="2020/08/ask_hn__self-taught_webdev_with_lots_of_free_time-_what_should_i_learn____hac__-__no_heading_2020-08-19_8_10_59_pm.html"><strong>Ask HN: Self-taught webdev with lots of free time. What should I learn?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24130286</p>
+<p><a href="2020/08/ask_hn__how_can_i_work-out_critical_thinking_skills_as_i_age____hacker___-__no_heading_2020-10-29_3_36_48_pm.html"><strong>Ask HN: How can I “work-out” critical thinking skills as I age?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24025759</p>
+<h2><a class="header" href="#philippines" id="philippines">Philippines</a></h2>
+<p><a href="2020/08/staying_alive___inquirer_opinion__-__staying_alive_2020-08-13_2_03_09_pm.html"><strong>Staying alive | Inquirer.net Opinion</strong></a>
+<br>
+https://opinion.inquirer.net/132321/staying-alive-2</p>
+<p><a href="2020/08/finally_the_law_catches_up_with_ruben_ecleo_jr-___inquirer_opinion__-__finally_the_law_catches_up_with_ruben_ecleo_jr-_2020-08-13_2_08_08_pm.html"><strong>Finally, the law catches up with Ruben Ecleo Jr. | Inquirer.net Opinion</strong></a>
+<br>
+https://opinion.inquirer.net/132301/finally-the-law-catches-up-with-ruben-ecleo-jr</p>
+<p><a href="2020/08/saving_generation_covid___inquirer_opinion__-__saving_generation_covid_2020-08-13_2_08_52_pm.html"><strong>Saving Generation COVID | Inquirer.net Opinion</strong></a>
+<br>
+https://opinion.inquirer.net/132291/saving-generation-covid</p>
+<p><a href="2020/08/vatican_launches_campaign_to_promote_appreciation_for_the_elderly___my_pope_p__-__vatican_launches_campaign_to_promote_appreciation_for_the_elderly_2020-08-13_2_07%E2%80%A6.html"><strong>Vatican Launches Campaign to Promote Appreciation for the Elderly | My Pope Philippines</strong></a>
+<br>
+https://www.mypope.com.ph/dicastery-for-laity-family-and-life-campaign-for-elderly/</p>
+<h2><a class="header" href="#photos" id="photos">Photos</a></h2>
+<p><a href="2020/08/perseid_meteor_shower_2020___flickr__-__perseid_meteor_shower_2020_2020-08-20_12_17_25_pm.html"><strong>Perseid Meteor Shower 2020 - a gallery curated by Flickr</strong></a>
+<br>
+https://www.flickr.com/photos/flickr/galleries/72157715387019068/</p>
+<p><a href="2020/08/apod__2020_august_3_%E2%80%93_comet_neowise_over_vikos_gorge__-__astronomy_picture_of_the_day_2020-08-03_9_09_51_pm.html"><strong>Comet NEOWISE over Vikos Gorge | APOD 2020 August 03</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200803.html</p>
+<p><a href="2020/08/apod__2020_july_31_-_mars_2020_from_5000_feet__-__astronomy_picture_of_the_day_2020-08-03_8_53_52_pm.html"><strong>Mars 2020 from 5,000 Feet | APOD 2020 July 31</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200731.html</p>
+<h1><a class="header" href="#september-2020" id="september-2020">September 2020</a></h1>
+<p><em>This month I read more magazines and less web articles.</em></p>
+<p><a href="2020/09/lecturer_takes_laptops_and_smart_phones_away_and_musters_student_presence_2020-10%E2%80%A6.html"><strong>Lecturer takes laptops and smart phones away and musters student presence | ScienceDaily</strong></a>
+<br>
+https://www.sciencedaily.com/releases/2020/09/200909100255.htm</p>
+<p><a href="2020/09/gpt-3_-_wikipedia__-__gpt-3_2020-10-29_5_50_27_pm.html"><strong>GPT-3 - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/GPT-3
+<br>
+<a href="2020/09/a_robot_wrote_this_entire_article-_are_you_scared_yet_human____gpt-3__2020-10-29_7_22_02_%E2%80%A6.html"><strong>A robot wrote this entire article. Are you scared yet, human? | The Guardian</strong></a>
+<br>
+https://www.theguardian.com/commentisfree/2020/sep/08/robot-wrote-this-article-gpt-3</p>
+<p><a href="2020/09/three-body_problem_-_wikipedia__-__three-body_problem_2020-10-29_5_52_01_pm.html"><strong>Three-body_problem - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Three-body_problem
+<br>
+<a href="2020/09/the_three-body_problem_novel_-_wikipedia__-__the_three-body_problem_novel_2020-10-29_5_52_24_pm.html"><strong>The Three-Body Problem (novel) - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel)
+<br>
+<a href="2020/09/the_three-body_problem_by_liu_cixin__-__the_three-body_problem_2020-10-29_5_53_40_pm.html"><strong>The Three-Body Problem by Liu Cixin - Goodreads</strong></a>
+<br>
+https://www.goodreads.com/book/show/20518872-the-three-body-problem</p>
+<p><a href="2020/09/the_expanse_tv_series_-_wikipedia__-__the_expanse_tv_series_2020-10-29_6_18_00_pm.html"><strong>The Expanse (TV series) - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/The_Expanse_(TV_series)
+<br>
+<a href="2020/09/the_expanse_novel_series_-_wikipedia__-__the_expanse_novel_series_2020-10-29_6_18_33_pm.html"><strong>The Expanse (novel series) - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/The_Expanse_(novel_series)</p>
+<p><a href="2020/09/character_and_caricature__-__character_and_caricature_2020-10-29_6_19_07_pm.html"><strong>Character and Caricature | Daily Writing Tips</strong></a>
+<br>
+https://www.dailywritingtips.com/character-and-caricature/</p>
+<p><a href="2020/09/chucks_challenge_chuckschallenge___it%E2%80%99s_been_over_30_years_since_chuck___-__no_heading_2020-10-29_6_24_40_pm.html"><strong>&quot;It’s been over 30 years since Chuck Sommerville created Chip’s Challenge. Today is goes free on Steam&quot;</strong></a> | <a href="2020/09/chucks_challenge_chuckschallenge___nitter__-__no_heading_2020-10-29_6_22_22_pm.html">@chuckschallenge Twitter</a>
+<br>
+https://nitter.net/chuckschallenge/status/1308093829342429187</p>
+<p><a href="2020/09/carlo_acutis_-_wikipedia__-__carlo_acutis_2020-10-29_6_20_15_pm.html"><strong>Carlo Acutis - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Carlo_Acutis</p>
+<h1><a class="header" href="#october-2020" id="october-2020">October 2020</a></h1>
+<p><em>Archiving...</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

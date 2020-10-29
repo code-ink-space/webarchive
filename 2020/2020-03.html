@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>March 2020 - Patrick&#x27;s Web Archive</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../2020.html">2020 Archive</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-01.html">January 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-02.html">February 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-03.html" class="active">March 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-04.html">April 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-05.html">May 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-06.html">June 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-07.html">July 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-08.html">August 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-09.html">September 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-10.html">October 2020</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Patrick&#x27;s Web Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/code-ink-space/webarchive" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#march-2020" id="march-2020">March 2020</a></h1>
+<p><a href="03/covid-19_coronavirus_epidemic_has_a_natural_origin_--_sciencedaily_2020-03-20_8_04_12_am.html"><strong>COVID-19 coronavirus epidemic has a natural origin - ScienceDaily</strong></a>
+<br>
+https://www.sciencedaily.com/releases/2020/03/200317175442.htm</p>
+<p><a href="03/coronavirus_101__what_you_need_to_know_2020-04-23_9_36_02_am.html"><strong>Coronavirus 101: What you need to know - National Geographic</strong></a>
+<br>
+https://www.nationalgeographic.com/science/2020/03/covid-overview-coronavirus/</p>
+<p><a href="03/the_coronavirus_spares_most_kids-_these_theories_may_help_explain_why-_2020-04-23_9_49_09_am.html"><strong>The coronavirus spares most kids. These theories may help explain why.</strong></a>
+<br>
+https://www.nationalgeographic.com/science/2020/03/coronavirus-spares-most-kids-these-theories-may-help-explain-why/</p>
+<p><a href="03/mid-term_break_-_how_covid-19_is_interrupting_children%E2%80%99s_education___international___the_economist_2020-04-23_1_54_22_am.html"><strong>How covid-19 is interrupting children’s education - The Economist</strong></a>
+<br>
+https://www.economist.com/international/2020/03/19/how-covid-19-is-interrupting-childrens-education</p>
+<p><a href="03/hong_kong_warns_residents_not_to_kiss_pets_after_dog_contracts_coronavirus___world_news___the_guardian_2020-03-18_2_16_31_pm.html"><strong>Hong Kong warns residents not to kiss pets after dog contracts coronavirus - The Guardian</strong></a>
+<br>
+https://www.theguardian.com/world/2020/mar/05/hong-kong-warns-residents-not-to-kiss-pets-after-dog-contracts-coronavirus</p>
+<p><a href="03/priest_shelters_stray_dogs_then_brings_them_to_church_so_they_can_be_adopted_by_attendees___aww_2020-03-20_9_10_36_am.html"><strong>Priest shelters stray dogs then brings them to church so they can be adopted by attendees - r/aww</strong></a>
+<br>
+https://old.reddit.com/r/aww/comments/fjubav/priest_shelters_stray_dogs_then_brings_them_to/</p>
+<p><a href="03/creating_the_coronopticon_-_countries_are_using_apps_and_data_networks_to_keep_tabs_on_the_pandemic___briefing___the_economist_2020-04-23_1_51_18_am.html"><strong>Countries are using apps and data networks to keep tabs on the pandemic - The Economist</strong></a>
+<br>
+https://www.economist.com/briefing/2020/03/26/countries-are-using-apps-and-data-networks-to-keep-tabs-on-the-pandemic</p>
+<p><a href="03/stop_collaborate_and_listen_-_crowdsourcing_to_fight_covid-19___international___the_economist_2020-04-23_1_56_03_am.html"><strong>Crowdsourcing to fight covid-19 - The Economist</strong></a>
+<br>
+https://www.economist.com/international/2020/03/26/crowdsourcing-to-fight-covid-19</p>
+<p><a href="03/ask_hn__how_are_you_coping_with_all_the_mostly_bad_news_around_you____hacker_news_2020-03-20_5_03_55_pm.html"><strong>Ask HN: How are you coping with all the (mostly bad) news around you? | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=22603129</p>
+<p><a href="03/ask_hn__economy_after_coronavirus_%E2%80%93_what_can_we_do____hacker_news_2020-03-20_5_04_41_pm.html"><strong>Ask HN: Economy after coronavirus – what can we do? | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=22587052</p>
+<p><a href="03/a_priest_a_son_and_his_mother-_italy_20_march_2020___pics_2020-04-23_9_30_50_am.html"><strong>A priest, a son and his mother. Italy, 20 March 2020 - r/pics</strong></a>
+<br>
+https://old.reddit.com/r/pics/comments/foiqh8/a_priest_a_son_and_his_mother_italy_20_march_2020/</p>
+<p><a href="03/librarything_is_now_free_to_all_%C2%AB_the_librarything_blog_2020-04-23_9_26_16_am.html"><strong>LibraryThing Is Now Free to All</strong></a>
+<br>
+https://blog.librarything.com/main/2020/03/librarything-goes-free/</p>
+<p><a href="03/internet_archive_responds__why_we_released_the_national_emergency_library___internet_archive_blogs_2020-04-23_2_01_00_am.html"><strong>Internet Archive responds: Why we released the National Emergency Library</strong></a>
+<br>
+http://blog.archive.org/2020/03/30/internet-archive-responds-why-we-released-the-national-emergency-library/</p>
+<p><a href="03/publishing_reels_from_covid-19___inquirer_lifestyle_2020-04-23_2_10_29_am.html"><strong>Publishing reels from COVID-19 - Inquirer.net</strong></a>
+<br>
+https://lifestyle.inquirer.net/360137/publishing-reels-from-covid-19/</p>
+<p><a href="03/room_to_read%E2%80%99s_new_filipino_children%E2%80%99s_books___inquirer_opinion_2020-03-20_9_15_26_am.html"><strong>Room to Read’s new Filipino children’s books | Inquirer.net</strong></a>
+<br>
+https://opinion.inquirer.net/127699/room-to-reads-new-filipino-childrens-books</p>
+<p><a href="03/graphic_novels_your_kid_probably_hasnt_read_yet_-_the_new_york_times_2020-03-20_5_16_13_pm.html"><strong>Graphic Novels Your Kid (Probably) Hasn’t Read Yet - The New York Times</strong></a>
+<br>
+https://www.nytimes.com/2020/02/28/books/graphic-novels-your-kid-probably-hasnt-read-yet.html</p>
+<p><a href="03/of_mice_and_spacemen_-_%E2%80%9Cthe_hitchhiker%E2%80%99s_guide_to_the_galaxy%E2%80%9D_turns_42___prospero___the_economist_2020-04-23_2_51_11_am.html"><strong>Of mice and spacemen - “The Hitchhiker’s Guide To The Galaxy” turns 42 | The Economist</strong></a>
+<br>
+https://www.economist.com/prospero/2020/03/06/the-hitchhikers-guide-to-the-galaxy-turns-42</p>
+<p><a href="03/avatar__5_ways_netflixs_adaptation_could_be_better_than_the_original__5_ways_it_wont_2020-04-23_9_17_48_am.html"><strong>Avatar: 5 Ways Netflix's Adaptation Could Be Better Than The Original (&amp; 5 Ways It Won't)</strong></a>
+<br>
+https://screenrant.com/avatar-netflix-live-action-better-than-animated-series/</p>
+<p><a href="03/how_to_make_yourself_into_a_learning_machine_-_superorganizers_2020-03-18_2_18_05_pm.html"><strong>How to Make Yourself Into a Learning Machine - Superorganizers</strong></a>
+<br>
+https://superorganizers.substack.com/p/how-to-build-a-learning-machine</p>
+<p><a href="03/ask_hn__why_arent_you_using_spaced_repetition____hacker_news_2020-04-23_2_06_13_am.html"><strong>Ask HN: Why aren't you using spaced repetition?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=22484060</p>
+<p><a href="03/ancient_scripts_of_the_philippines___languagelearning_2020-03-20_9_06_47_am.html"><strong>Ancient scripts of the Philippines - r/languagelearning</strong></a>
+<br>
+https://old.reddit.com/r/languagelearning/comments/fiwm8p/ancient_scripts_of_the_philippines/</p>
+<p><a href="03/zoom_privacy__your_video_conferences_aren%E2%80%99t_as_private_as_you_think_2020-04-23_9_34_04_am.html"><strong>Using Zoom? Here are the privacy issues you need to be aware of</strong></a>
+<br>
+https://protonmail.com/blog/zoom-privacy-issues/</p>
+<p><a href="03/zoom_meetings_do_not_support_end-to-end_encryption_2020-04-23_1_59_35_am.html"><strong>Zoom Meetings Aren’t End-to-End Encrypted, Despite Misleading Marketing</strong></a>
+<br>
+https://theintercept.com/2020/03/31/zoom-meeting-encryption/?comments=1#comments</p>
+<p><a href="03/fever_dreams__did_author_dean_koontz_really_predict_coronavirus____books___the_guardian_2020-03-18_2_17_29_pm.html"><strong>Fever dreams: did author Dean Koontz really predict coronavirus? - The Guardian</strong></a>
+<br>
+https://www.theguardian.com/books/2020/mar/05/theres-something-out-there-spread-of-disease</p>
+<p><a href="03/deep_submariners_are_likely_unaware_of_coronavirus_-_los_angeles_times_2020-04-23_2_04_15_am.html"><strong>Deep underwater, submariners are likely unaware of pandemic roiling the world above</strong></a>
+<br>
+https://www.latimes.com/world-nation/story/2020-03-30/blissful-ignorance-submariners-likely-unaware-of-pandemic</p>
+<p><a href="03/meet_the_man_who_has_lived_alone_on_this_island_for_31_years_2020-04-23_9_39_53_am.html"><strong>Meet a man who has lived alone on an island for 31 years - National Geographic</strong></a>
+<br>
+https://www.nationalgeographic.com/travel/destinations/europe/italy/photos-of-life-alone-on-a-paradise-island/</p>
+<p><a href="03/opinion___i_spent_a_year_in_space_and_i_have_tips_on_isolation_to_share_-_the_new_york_times_2020-04-23_9_23_13_am.html"><strong>I Spent a Year in Space, and I Have Tips on Isolation to Share - by Scott Kelly</strong></a>
+<br>
+https://www.nytimes.com/2020/03/21/opinion/scott-kelly-coronavirus-isolation.html</p>
+<p><a href="03/st_patrick_found_strength_in_social_distancing_2020-04-23_2_16_14_am.html"><strong>St. Patrick found strength in social distancing - Aleteia</strong></a>
+<br>
+https://aleteia.org/2020/03/17/st-patrick-found-strength-in-social-distancing/</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../2020/2020-02.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../2020/2020-04.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../2020/2020-02.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../2020/2020-04.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>August 2020 - Patrick&#x27;s Web Archive</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../2020.html">2020 Archive</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-01.html">January 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-02.html">February 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-03.html">March 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-04.html">April 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-05.html">May 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-06.html">June 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-07.html">July 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-08.html" class="active">August 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-09.html">September 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-10.html">October 2020</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Patrick&#x27;s Web Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/code-ink-space/webarchive" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#august-2020" id="august-2020">August 2020</a></h1>
+<p><a href="08/the_tragic_physics_of_the_deadly_explosion_in_beirut___wired__-__the_tragic_physics_of_the_deadly_explosion_in_beirut_2020-08-13_2_10_41_pm.html"><strong>The Tragic Physics of the Deadly Explosion in Beirut | WIRED</strong></a> | <a href="08/the_tragic_physics_of_the_deadly_explosion_in_beirut___hacker_news__-__no_heading_2020-08-13_2_11_06_pm.html">Hacker News</a>
+<br>
+https://www.wired.com/story/tragic-physics-deadly-explosion-beirut/
+<br>
+https://news.ycombinator.com/item?id=24114997</p>
+<p><a href="08/from_minecraft_tricks_to_twitter_hack__a_florida_teen%E2%80%99s_troubled_online_pat__-__from_minecraft_tricks_to_twitter_hack__a_florida_teen%E2%80%99s_troubled_online_pat_202%E2%80%A6.html"><strong>From Minecraft tricks to Twitter hack: A Florida teen’s troubled online path | Chicago Tribune</strong></a>
+<br>
+https://www.chicagotribune.com/nation-world/ct-nw-nyt-twitter-hack-teen-20200803-46qsw3ajnnh23aapjxzjyx62sm-story.html</p>
+<p><a href="08/the_social_media_problem_%C2%B7_jacques_mattheij__-__jacques_mattheij_2020-08-13_2_20_29_pm.html"><strong>The Social Media Problem</strong></a> | <a href="08/the_social_media_problem___hacker_news__-__no_heading_2020-08-13_2_20_19_pm.html">Hacker News</a>
+<br>
+https://jacquesmattheij.com/the-social-media-problem/
+<br>
+https://news.ycombinator.com/item?id=24137330</p>
+<p><a href="08/changing_world_changing_mozilla_-_the_mozilla_blog__-__changing_world_changing_mozilla_2020-08-13_2_23_07_pm.html"><strong>Mozilla lays off 250 employees while it refocuses on commercial products</strong></a>
+<a href="08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products___ha__-__no_heading_2020-10-29_3_46_47_pm.html">Hacker News</a> <a href="08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products_page2_2020-08-13_2_23_40_pm.html">2</a> <a href="08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products_page3_2020-08-13_2_24_22_pm.html">3</a> <a href="08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products_page4__no_heading_2020-08-13_2_25_01_pm.html">4</a> <a href="08/mozilla_lays_off_250_employees_while_it_refocuses_on_commercial_products_page5__no_heading_2020-08-13_2_26_15_pm.html">5</a>
+<br>
+https://blog.mozilla.org/blog/2020/08/11/changing-world-changing-mozilla/
+<br>
+https://news.ycombinator.com/item?id=24120336</p>
+<p><a href="08/over_three_billion_people_worldwide_now_play_video_games_study_reports___hac__-__no_heading_2020-10-29_4_19_17_pm.html"><strong>Over three billion people worldwide now play video games, study reports (nintendosmash.com) | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24239234</p>
+<p><a href="08/wozs_70th_birthday__-__no_heading_2020-08-13_2_14_51_pm.html"><strong>Celebrate Woz's 70th (wozbday.com)</strong></a> | <a href="08/celebrate_wozs_70th___hacker_news__-__no_heading_2020-08-13_2_14_41_pm.html">Hacker News</a>
+<br>
+https://www.wozbday.com/
+<br>
+https://news.ycombinator.com/item?id=24114054</p>
+<p><a href="08/why_efficiency_is_dangerous_and_slowing_down_makes_life_better___psyche_ideas__-__why_efficiency_is_dangerous_and_slowing_down_makes_life_better_2020-10-29_4_22_57%E2%80%A6.html"><strong>Efficiency is dangerous and slowing down makes life better (psyche.co)</strong></a> | <a href="08/efficiency_is_dangerous_and_slowing_down_makes_life_better___hacker_news__-__no_heading_2020-10-29_4_19_57_pm.html">Hacker News</a>
+<br>
+https://psyche.co/ideas/why-efficiency-is-dangerous-and-slowing-down-makes-life-better
+<br>
+https://news.ycombinator.com/item?id=24236489</p>
+<p><a href="08/why_bertrand_russells_argument_for_idleness_is_more_relevant_than_ever__-__no_heading_2020-08-13_2_17_42_pm.html"><strong>Why Bertrand Russell's argument for idleness is more relevant than ever</strong></a> | <a href="08/bertrand_russells_argument_for_idleness_is_more_relevant_than_ever___hacker___-__no_heading_2020-08-13_2_17_14_pm.html">Hacker News</a>
+<br>
+https://www.newstatesman.com/2020/08/why-bertrand-russells-argument-idleness-more-relevant-ever
+<br>
+https://news.ycombinator.com/item?id=24128366</p>
+<p><a href="08/how_to_stop_procrastinating_by_using_the_fogg_behavior_model__-__how_to_stop_procrastinating_by_using_the_fogg_behavior_model_2020-08-13_2_21_35_pm.html"><strong>How to stop procrastinating by using the Fogg Behavior Model (deprocrastination.co)</strong></a> | <a href="08/how_to_stop_procrastinating_by_using_the_fogg_behavior_model___hacker_news__-__no_heading_2020-08-13_2_21_16_pm.html">Hacker News</a>
+<br>
+https://www.deprocrastination.co/blog/how-to-stop-procrastinating-by-using-the-fogg-behavior-model
+<br>
+https://news.ycombinator.com/item?id=24120275</p>
+<p><a href="08/google_says_it%E2%80%99s_working_hard_to_address_youtube_music_complaints___ars_tec__-__google_says_it%E2%80%99s_working_hard_to_address_youtube_music_complaints_2020-10-29_3_%E2%80%A6.html"><strong>Google says it’s working hard to address YouTube Music complaints | Ars Technica</strong></a>
+<br>
+https://arstechnica.com/gadgets/2020/08/google-says-its-working-hard-to-address-youtube-music-complaints/</p>
+<p><a href="08/pdf__still_unfit_for_human_consumption_20_years_later__-__browse_all_topics__authors_2020-08-13_2_12_49_pm.html"><strong>PDF: Still Unfit for Human Consumption, 20 Years Later</strong></a> | <a href="08/pdf__still_unfit_for_human_consumption_20_years_later___hacker_news__-__no_heading_2020-08-13_2_11_38_pm.html">Hacker News</a>
+<br>
+https://www.nngroup.com/articles/pdf-unfit-for-human-consumption/
+<br>
+https://news.ycombinator.com/item?id=24108950</p>
+<p><a href="08/new_academic_journal_only_publishes_unsurprising_research_rejected_by_other__-__no_heading_2020-10-29_4_20_58_pm.html"><strong>New academic journal only publishes 'unsurprising' research rejected by others (cbc.ca) | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24229269</p>
+<p><a href="08/not_all_netflix_movies_are_bad_its_just_that_the_good_ones_are_so_small_the__-__movies_2020-10-29_4_18_26_pm.html"><strong>Not all Netflix movies are bad, it's just that the good ones are so small they don't get attention. (reddit/movies)</strong></a>
+<br>
+https://old.reddit.com/r/movies/comments/iaufjf/not_all_netflix_movies_are_bad_its_just_that_the/</p>
+<p><a href="08/whats_it_like_to_be_an_octopus__2017___hacker_news__-__no_heading_2020-08-13_2_13_09_pm.html"><strong>What's it like to be an Octopus? (2017) (lrb.co.uk) | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24109723</p>
+<p><a href="08/rob_pikes_5_rules_of_programming_2020-08-13_2_15_55_pm.html"><strong>Rob Pike's Rules of Programming (1989)</strong></a> | <a href="08/rob_pikes_rules_of_programming_1989___hacker_news__-__no_heading_2020-08-13_2_15_32_pm.html">Hacker News</a>
+<br>
+http://users.ece.utexas.edu/~adnan/pike.html
+<br>
+https://news.ycombinator.com/item?id=24135189</p>
+<p><a href="08/matthew_arnold__why_i_switched_to_fedora_-_fedora_magazine__-__matthew_arnold__why_i_switched_to_fedora_2020-10-29_3_35_40_pm.html"><strong>Matthew Arnold: Why I switched to Fedora</strong></a>
+<br>
+https://fedoramagazine.org/matthew-arnold-why-i-switched-to-fedora/</p>
+<p><a href="08/ask_hn__self-taught_webdev_with_lots_of_free_time-_what_should_i_learn____hac__-__no_heading_2020-08-19_8_10_59_pm.html"><strong>Ask HN: Self-taught webdev with lots of free time. What should I learn?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24130286</p>
+<p><a href="08/ask_hn__how_can_i_work-out_critical_thinking_skills_as_i_age____hacker___-__no_heading_2020-10-29_3_36_48_pm.html"><strong>Ask HN: How can I “work-out” critical thinking skills as I age?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=24025759</p>
+<h2><a class="header" href="#philippines" id="philippines">Philippines</a></h2>
+<p><a href="08/staying_alive___inquirer_opinion__-__staying_alive_2020-08-13_2_03_09_pm.html"><strong>Staying alive | Inquirer.net Opinion</strong></a>
+<br>
+https://opinion.inquirer.net/132321/staying-alive-2</p>
+<p><a href="08/finally_the_law_catches_up_with_ruben_ecleo_jr-___inquirer_opinion__-__finally_the_law_catches_up_with_ruben_ecleo_jr-_2020-08-13_2_08_08_pm.html"><strong>Finally, the law catches up with Ruben Ecleo Jr. | Inquirer.net Opinion</strong></a>
+<br>
+https://opinion.inquirer.net/132301/finally-the-law-catches-up-with-ruben-ecleo-jr</p>
+<p><a href="08/saving_generation_covid___inquirer_opinion__-__saving_generation_covid_2020-08-13_2_08_52_pm.html"><strong>Saving Generation COVID | Inquirer.net Opinion</strong></a>
+<br>
+https://opinion.inquirer.net/132291/saving-generation-covid</p>
+<p><a href="08/vatican_launches_campaign_to_promote_appreciation_for_the_elderly___my_pope_p__-__vatican_launches_campaign_to_promote_appreciation_for_the_elderly_2020-08-13_2_07%E2%80%A6.html"><strong>Vatican Launches Campaign to Promote Appreciation for the Elderly | My Pope Philippines</strong></a>
+<br>
+https://www.mypope.com.ph/dicastery-for-laity-family-and-life-campaign-for-elderly/</p>
+<h2><a class="header" href="#photos" id="photos">Photos</a></h2>
+<p><a href="08/perseid_meteor_shower_2020___flickr__-__perseid_meteor_shower_2020_2020-08-20_12_17_25_pm.html"><strong>Perseid Meteor Shower 2020 - a gallery curated by Flickr</strong></a>
+<br>
+https://www.flickr.com/photos/flickr/galleries/72157715387019068/</p>
+<p><a href="08/apod__2020_august_3_%E2%80%93_comet_neowise_over_vikos_gorge__-__astronomy_picture_of_the_day_2020-08-03_9_09_51_pm.html"><strong>Comet NEOWISE over Vikos Gorge | APOD 2020 August 03</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200803.html</p>
+<p><a href="08/apod__2020_july_31_-_mars_2020_from_5000_feet__-__astronomy_picture_of_the_day_2020-08-03_8_53_52_pm.html"><strong>Mars 2020 from 5,000 Feet | APOD 2020 July 31</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200731.html</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../2020/2020-07.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../2020/2020-09.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../2020/2020-07.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../2020/2020-09.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

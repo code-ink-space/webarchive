@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>July 2020 - Patrick&#x27;s Web Archive</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../2020.html">2020 Archive</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-01.html">January 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-02.html">February 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-03.html">March 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-04.html">April 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-05.html">May 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-06.html">June 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-07.html" class="active">July 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-08.html">August 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-09.html">September 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-10.html">October 2020</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Patrick&#x27;s Web Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/code-ink-space/webarchive" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#july-2020" id="july-2020">July 2020</a></h1>
+<p><a href="07/ask_hn__what%E2%80%99s_a_big_trend_we_should_all_be_following____hacker_news__-__no_heading_2020-07-07_7_10_15_pm.html"><strong>Ask HN: What’s a big trend we should all be following?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23579184</p>
+<p><a href="07/star34___information_sharing_heroes__-__information_sharing_heroes_2020-07-28_2_57_53_pm.html"><strong>Information sharing heroes: Telegram channel PH Coronavirus Updates - The Philippine Star</strong></a>
+<br>
+https://star34.philstarlife.com/article/750732-information-sharing-heroes</p>
+<p><a href="07/antisocial_media___ntoll-org__-__ntoll-org_2020-07-28_3_33_32_pm.html"><strong>(Anti)Social Media - ntoll.org</strong></a>
+<br>
+https://ntoll.org/article/antisocial-media/</p>
+<p><a href="07/your_doomscrolling_breeds_anxiety-_heres_how_to_stop_the_cycle___npr__-__your_doomscrolling_breeds_anxiety-_heres_how_to_stop_the_cycle_2020-07-28_3_02_55_pm%E2%80%A6.html"><strong>Your 'Doomscrolling' Breeds Anxiety. Here's How To Stop The Cycle - NPR</strong></a> - <a href="07/doomscrolling_breeds_anxiety_%E2%80%93_how_to_stop_the_cycle___hacker_news__-__no_heading_2020-07-28_3_03_37_pm.html">hacker news</a>
+<br>
+https://www.npr.org/2020/07/19/892728595/your-doomscrolling-breeds-anxiety-here-s-how-to-stop-the-cycle
+<br>
+https://news.ycombinator.com/item?id=23893690</p>
+<p><a href="07/making_rss_prominent_again___lobsters__-__no_heading_2020-07-28_2_58_21_pm.html"><strong>Making RSS prominent again | Lobsters</strong></a>
+<br>
+https://lobste.rs/s/1lv132/making_rss_prominent_again</p>
+<p><a href="07/tired_of_note-taking_apps_%E2%80%93_akkshaya__-__tired_of_note-taking%C2%A0apps_2020-07-28_9_30_16_am.html"><strong>Tired of note-taking apps (akkshaya.blog) | Hacker News</strong></a> - <a href="07/tired_of_note-taking_apps___hacker_news__-__no_heading_2020-07-28_9_08_10_am.html">hacker news</a>
+<br>
+https://akkshaya.blog/2020/07/19/note-taking/
+<br>
+https://news.ycombinator.com/item?id=23888799</p>
+<p><a href="07/mozilla_vpn___hacker_news__-__no_heading_2020-07-07_7_12_58_pm.html"><strong>Mozilla VPN | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23565192</p>
+<p><a href="07/ffmpeg_4-3___hacker_news__-__no_heading_2020-07-07_7_14_52_pm.html"><strong>FFmpeg 4.3 | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23540704</p>
+<p><a href="07/ask_hn__what_do_you_use_google_sheets_for____hacker_news__-__no_heading_2020-07-07_7_21_50_pm.html"><strong>Ask HN: What do you use Google Sheets for?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23250489</p>
+<p><a href="07/ask_hn__best_books_under_200_pages_for_developers____hacker_news__-__no_heading_2020-07-07_7_17_38_pm.html"><strong>Ask HN: Best books under 200 pages for developers?</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23363595</p>
+<p><a href="07/its_pretty_fucked_up_that_we_boil_crustaceans_alive-___unpopularopinion__-__unpopularopinion_2020-07-07_7_10_29_pm.html"><strong>It's pretty fucked up that we boil crustaceans alive. - r/unpopularopinion</strong></a>
+<br>
+https://old.reddit.com/r/unpopularopinion/comments/he4wr7/its_pretty_fucked_up_that_we_boil_crustaceans/</p>
+<p><a href="07/let%E2%80%99s_avoid_talk_of_%E2%80%98chemical_imbalance%E2%80%99__it%E2%80%99s_people_in_distress___h__-__no_heading_2020-07-28_3_04_10_pm.html"><strong>Let’s avoid talk of ‘chemical imbalance’: it’s people in distress | Hacker News</strong></a>
+<br>
+https://news.ycombinator.com/item?id=23858294</p>
+<p><a href="07/plaidophile__advice_to_young_web_developers__-__plaidophile_2020-08-03_3_24_07_pm.html"><strong>Advice to Young Web Developers</strong></a> - <a href="07/advice_to_young_web_developers___hacker_news__-__no_heading_2020-07-07_7_12_10_pm.html">hacker news</a>
+<br>
+https://beesbuzz.biz/blog/2934-Advice-to-young-web-developers
+<br>
+https://news.ycombinator.com/item?id=23556831</p>
+<p><a href="07/on_coding_ego_and_attention__-__on_coding_ego_and_attention_2020-08-03_3_17_12_pm.html"><strong>On Coding, Ego and Attention</strong></a> - <a href="07/on_coding_ego_and_attention___hacker_news__-__no_heading_2020-07-07_7_14_16_pm.html">hacker news</a>
+<br>
+https://josebrowne.com/on-coding-ego-and-attention/
+<br>
+https://news.ycombinator.com/item?id=23526417</p>
+<p><a href="07/the_return_of_the_90s_web___max_b%C3%B6ck__-__the_return_of_the_90s_web_2020-08-03_3_41_34_pm.html"><strong>The Return of the 90s Web | Max Böck</strong></a> - <a href="07/the_return_of_the_90s_web___hacker_news__-__no_heading_2020-07-07_7_13_42_pm.html">hacker news</a>
+<br>
+https://mxb.dev/blog/the-return-of-the-90s-web/
+<br>
+https://news.ycombinator.com/item?id=23567744</p>
+<p><a href="07/simones_computer__-__no_heading_2020-08-03_4_09_41_pm.html"><strong>Websites that look like desktop GUIs (simone.computer)</strong></a> - <a href="07/websites_that_look_like_desktop_guis___hacker_news__-__no_heading_2020-07-07_7_24_52_pm.html">hacker news</a>
+<br>
+https://simone.computer/#/webdesktops
+<br>
+https://news.ycombinator.com/item?id=23734093</p>
+<p><a href="07/so__wheel_of_time___avatar_the_last_airbender___lord_of_the_rings___the_ch__-__television_2020-07-07_7_17_42_pm.html"><strong>So &quot;Wheel of Time&quot;, &quot;Avatar:The Last Airbender&quot;, &quot;Lord Of The Rings&quot;, &quot;The Chronicles of Narnia&quot; and &quot;Percy Jackson and The Olympians&quot; are all set to receive Big Budget adaptations soon in an attempt to emulate the success of Game Of Thrones. What's your bet on what will generate the Biggest Buzz? - r/television</strong></a>
+<br>
+https://old.reddit.com/r/television/comments/gpb0o3/so_wheel_of_time_avatarthe_last_airbender_lord_of/</p>
+<p><a href="07/in_praise_of_solitude_-_los_angeles_review_of_books__-__in_praise_of_solitude_2020-08-03_4_12_22_pm.html"><strong>In Praise of Solitude - Los Angeles Review of Books</strong></a>
+<br>
+https://lareviewofbooks.org/article/in-praise-of-solitude/</p>
+<h2><a class="header" href="#c2020-f3-neowise-or-comet-neowise" id="c2020-f3-neowise-or-comet-neowise">C/2020 F3 (NEOWISE) or Comet NEOWISE</a></h2>
+<p><a href="07/neowise/c_2020_f3_neowise_-_wikipedia__-__c_2020_f3_neowise_2020-08-03_4_26_27_pm.html"><strong>C/2020 F3 (NEOWISE) - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/C/2020_F3_(NEOWISE)</p>
+<p><a href="07/neowise/how_to_see_comet_neowise___nasa__-__how_to_see_comet_neowise_2020-08-03_4_28_30_pm.html"><strong>How to See Comet NEOWISE | NASA</strong></a>
+<br>
+https://www.nasa.gov/feature/how-to-see-comet-neowise</p>
+<p><a href="07/neowise/comet_neowise__10_big_questions_and_answers_about_the_icy_wanderer___space__-__comet_neowise__10_big_questions_and_answers_about_the_icy_wanderer_2020-08-03_4_%E2%80%A6.html"><strong>Comet NEOWISE: 10 big questions (and answers) about the icy wanderer | Space.com</strong></a>
+<br>
+https://www.space.com/comet-neowise-strange-facts.html</p>
+<p><a href="07/neowise/how_to_see_comet_neowise_before_it%E2%80%99s_gone___wired__-__how_to_see_comet_neowise_before_it%E2%80%99s_gone_2020-08-03_8_44_32_pm.html"><strong>How to See Comet Neowise Before It’s Gone | WIRED</strong></a>
+<br>
+https://www.wired.com/story/how-to-see-comet-neowise-before-its-gone/</p>
+<p><a href="07/neowise/one_of_the_brightest_comets_in_decades_is_passing_earth-_here%E2%80%99s_how_to_see___-__one_of_the_brightest_comets_in_decades_is_passing_earth-_here%E2%80%99s_how_to_see__202%E2%80%A6.html"><strong>One of the brightest comets in decades is passing Earth. Here’s how to see it. | National Geographic</strong></a>
+<br>
+https://www.nationalgeographic.com/science/2020/07/one-of-brightest-comets-in-decades-passing-earth-how-to-see/</p>
+<p><a href="07/neowise/how_to_see_comet_neowise___space___earthsky__-__no_heading_2020-08-03_4_49_12_pm.html"><strong>How to See Comet NEOWISE | EarthSky</strong></a>
+<br>
+https://earthsky.org/space/how-to-see-comet-c2020-f3-neowise</p>
+<p><a href="07/neowise/comet_neowise_observation_last_week---_-_philippine_astronomical_society_in__-__facebook_2020-08-03_8_48_49_pm.html"><strong>Comet NEOWISE Observation by Philippine Astronomical Society, Inc.</strong></a>
+<br>
+https://www.facebook.com/PhilippineAstronomicalSociety/posts/comet-neowise-observationlast-week-the-comet-was-visible-before-sunrise-it-then-/10157488066160933/</p>
+<p><a href="07/neowise/as_we_look_out_for_the_neowise_comet_we_recall_the_last_time_a_comet_appeare__-__no_heading_2020-08-03_8_42_47_pm.html"><strong>As we look out for the NEOWISE comet, we recall the last time a comet appeared in our skies | ANC</strong></a>
+<br>
+https://news.abs-cbn.com/ancx/culture/spotlight/07/23/20/as-we-look-out-for-the-neowise-comet-we-recall-the-last-time-a-comet-appeared-in-our-skies</p>
+<p><a href="07/neowise/finding_rare_comet_neowise_in_philippines_skies_this_july_-_good_news_pilipi__-__finding_rare_comet_neowise_in_philippines%E2%80%99_skies_this_july_2020-08-03_8_46_55_p%E2%80%A6.html"><strong>Finding Rare Comet NEOWISE in Philippines’ skies this July | Good News Pilipinas</strong></a>
+<br>
+https://www.goodnewspilipinas.com/finding-rare-comet-neowise-in-philippines-skies-this-july/</p>
+<p><a href="07/neowise/neowise__an_increasingly_rare_opportunity_to_spot_a_comet_with_the_naked_eye__-__neowise__an_increasingly_rare_opportunity_to_spot_a_comet_with_the_naked_eye_2020-%E2%80%A6.html"><strong>Neowise: An increasingly rare opportunity to spot a comet with the naked eye | Rappler</strong></a>
+<br>
+https://rappler.com/science/earth-space/neowise-rare-opportunity-to-spot-comet-with-naked-eye</p>
+<p><a href="07/neowise/neowise_comet__worth_the_wait_once_in_6800_years___inquirer_news__-__neowise_comet__worth_the_wait_once_in_6800_years_2020-08-03_8_33_26_pm.html"><strong>Neowise comet: Worth the wait, once in 6,800 years | Inquirer.net</strong></a>
+<br>
+https://newsinfo.inquirer.net/1312017/worth-the-wait-once-in-6800-years</p>
+<p><a href="07/neowise/ultra-rare_comet_neowise_couldnt_be_spotted_in_the_philippines-_is_light_pol__-__ultra-rare_comet_neowise_couldn%E2%80%99t_be_spotted_in_the_philippines-_is_light_p_202%E2%80%A6.html"><strong>Ultra-rare Comet Neowise couldn’t be spotted in the Philippines. Is light pollution to blame? | interaksyon.com</strong></a>
+<br>
+https://www.interaksyon.com/hobbies-interests/2020/07/24/173562/comet-neowise-philippines-light-pollution/</p>
+<h2><a class="header" href="#comet-neowise-in-nasas-apod" id="comet-neowise-in-nasas-apod">Comet NEOWISE in NASA's APOD</a></h2>
+<p><a href="07/neowise/apod__2020_july_7_-_comet_neowise_over_lebanon__-__astronomy_picture_of_the_day_2020-08-03_9_08_04_pm.html"><strong>Comet NEOWISE over Lebanon | APOD 2020 July 7</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200707.html</p>
+<p><a href="07/neowise/apod__2020_july_9_-_noctilucent_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_07_07_pm.html"><strong>Noctilucent Clouds and Comet NEOWISE | APOD 2020 July 9</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200709.html</p>
+<p><a href="07/neowise/apod__2020_july_10_-_comet_neowise_from_the_iss__-__astronomy_picture_of_the_day_2020-08-03_9_06_29_pm.html"><strong>Comet NEOWISE from the ISS | APOD 2020 July 10</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200710.html</p>
+<p><a href="07/neowise/apod__2020_july_11_-_the_tails_of_comet_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_05_55_pm.html"><strong>The Tails of Comet NEOWISE | APOD 2020 July 11</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200711.html</p>
+<p><a href="07/neowise/apod__2020_july_14_-_comet_neowise_over_stonehenge__-__astronomy_picture_of_the_day_2020-08-03_9_04_50_pm.html"><strong>Comet NEOWISE over Stonehenge | APOD 2020 July 14</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200714.html</p>
+<p><a href="07/neowise/apod__2020_july_15_-_comet_neowise_over_the_swiss_alps__-__astronomy_picture_of_the_day_2020-08-03_9_03_54_pm.html"><strong>Comet NEOWISE over the Swiss Alps | APOD 2020 July 15</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200715.html</p>
+<p><a href="07/neowise/apod__2020_july_16_-_the_long_tails_of_comet_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_03_15_pm.html"><strong>The Long Tails of Comet NEOWISE | APOD 2020 July 16</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200716.html</p>
+<p><a href="07/neowise/apod__2020_july_17_-_neowise_of_the_north__-__astronomy_picture_of_the_day_2020-08-03_9_02_19_pm.html"><strong>NEOWISE of the North | APOD 2020 July 17</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200717.html</p>
+<p><a href="07/neowise/apod__2020_july_18_-_finding_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_01_47_pm.html"><strong>Finding NEOWISE | APOD 2020 July 18</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200718.html</p>
+<p><a href="07/neowise/apod__2020_july_20_-_comet_neowise_and_nebulae__-__astronomy_picture_of_the_day_2020-08-03_8_59_59_pm.html"><strong>Comet NEOWISE and Nebulae | APOD 2020 July 20</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200720.html</p>
+<p><a href="07/neowise/apod__2020_july_22_%E2%80%93_the_structured_tails_of_comet_neowise__-__astronomy_picture_of_the_day_2020-08-03_9_00_40_pm.html"><strong>The Structured Tails of Comet NEOWISE | APOD 2020 July 22</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200722.html</p>
+<p><a href="07/neowise/apod__2020_july_23_-_fairytale_neowise__-__astronomy_picture_of_the_day_2020-08-03_8_58_04_pm.html"><strong>Fairytale NEOWISE | APOD 2020 July 23</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200723.html</p>
+<p><a href="07/neowise/apod__2020_july_24_-_magic_neowise__-__astronomy_picture_of_the_day_2020-08-03_8_57_26_pm.html"><strong>MAGIC NEOWISE | APOD 2020 July 24</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200724.html</p>
+<p><a href="07/neowise/apod__2020_july_27_%E2%80%93_comet_and_lightning_beyond_bighorn_mountains__-__astronomy_picture_of_the_day_2020-08-03_8_54_41_pm.html"><strong>Comet and Lightning Beyond Bighorn Mountains | APOD 2020 July 27</strong></a>
+<br>
+https://apod.nasa.gov/apod/ap200727.html</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../2020/2020-06.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../2020/2020-08.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../2020/2020-06.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../2020/2020-08.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

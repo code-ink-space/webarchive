@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>January 2020 - Patrick&#x27;s Web Archive</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../2020.html">2020 Archive</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-01.html" class="active">January 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-02.html">February 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-03.html">March 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-04.html">April 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-05.html">May 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-06.html">June 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-07.html">July 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-08.html">August 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-09.html">September 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-10.html">October 2020</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Patrick&#x27;s Web Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/code-ink-space/webarchive" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#january-2020" id="january-2020">January 2020</a></h1>
+<p><a href="01/ask_hn__a_new_decade._any_predictions_page1____hacker_news_2020-01-19_10_57_07_pm.html"><strong>Ask HN: A New Decade. Any Predictions?</strong></a> / <a href="01/ask_hn__a_new_decade._any_predictions_page2____hacker_news_2020-01-19_10_57_43_pm.html">Page 2</a>
+<br>
+https://news.ycombinator.com/item?id=21941278</p>
+<p><a href="01/why_we_can%E2%80%99t_tell_the_truth_about_aging___the_new_yorker_2020-01-19_12_03_46_am.html"><strong>Why We Can’t Tell the Truth About Aging</strong></a>
+<br>
+https://www.newyorker.com/magazine/2019/11/04/why-we-cant-tell-the-truth-about-aging</p>
+<p><a href="01/don&#x27;t_believe_everything_you_read_on_social_media_and_7_other_tough_lessons_of_the_decade_-_cnet_2020-01-19_12_16_58_am.html"><strong>Don't believe everything you read on social media and 7 other tough lessons of the decade</strong></a>
+<br>
+https://www.cnet.com/news/dont-believe-everything-you-read-on-social-media-and-7-other-tough-lessons-of-the-decade/</p>
+<p><a href="01/advertising_makes_us_unhappy_2020-01-17_11_08_16_pm.html"><strong>Advertising Makes Us Unhappy</strong></a>
+<br>
+https://hbr.org/01/01/advertising-makes-us-unhappy</p>
+<p><a href="01/philip_pullman_on_children&#x27;s_literature_and_the_critics_who_disdain_it___literary_hub_2020-01-17_11_59_56_pm.html"><strong>Philip Pullman on Children’s Literature and the Critics Who Disdain It</strong></a>
+<br>
+https://lithub.com/philip-pullman-on-childrens-literature-and-the-critics-who-disdain-it/</p>
+<p><a href="01/in_us_library_visits_outpaced_trips_to_movies_in_2019_2020-02-01_7_42_36_am.html"><strong>In U.S., Library Visits Outpaced Trips to Movies in 2019</strong></a>
+<br>
+https://news.gallup.com/poll/284009/library-visits-outpaced-trips-movies-2019.aspx</p>
+<p><a href="01/the_miseducation_of_the_american_boy_-_the_atlantic_2020-01-19_12_09_35_am.html"><strong>The Miseducation of the American Boy</strong></a>
+<br>
+https://www.theatlantic.com/magazine/archive/01/01/the-miseducation-of-the-american-boy/603046/</p>
+<p><a href="01/fundamental_attribution_error__why_you_make_terrible_life_choices_2020-01-19_11_18_58_pm.html"><strong>Fundamental Attribution Error: Why You Make Terrible Life Choices</strong></a>
+<br>
+https://www.nirandfar.com/fundamental-attribution-error/</p>
+<p><a href="01/why_destroy_their_faith__what_the_asian_woman_said_to_pope_francis_before_he_slapped_her_2020-01-19_12_27_09_am.html"><strong>“Why destroy their faith?”: What the Asian woman said to Pope Francis before he slapped her</strong></a>
+<br>
+http://claytestament.blogspot.com/01/01/why-destroy-their-faith-what-asian.html</p>
+<p><a href="01/christopher_tolkien_son_of_jrr_tolkien_long_time_steward_author_middle_earth_passed_away_age_95_2020-01-22_5_56_05_pm.html"><strong>Christopher Tolkien, son of J.R.R. Tolkien and long time steward and author of Middle Earth content, has passed away at age 95</strong></a>
+<br>
+https://old.reddit.com/r/books/comments/epnie9/christopher_tolkien_son_of_jrr_tolkien_and_long/</p>
+<p><a href="01/stray_dogs_have_the_natural_ability_to_understand_human_gestures_2020-01-26_8_52_29_pm.html"><strong>Stray dogs have the natural ability to understand human gestures</strong></a>
+<br>
+https://www.nationalgeographic.com/animals/01/01/stray-dogs-communication-rabies-health/</p>
+<p><a href="01/the_5_keys_to_falling_asleep_on_time_every_night___scott_h_young_2020-01-19_12_14_40_am.html"><strong>The 5 Keys to Falling Asleep On Time Every Night</strong></a>
+<br>
+https://www.scotthyoung.com/blog/2019/07/15/sleep-on-time/</p>
+<p><a href="01/why_the_simple_life_is_not_just_beautiful,_it%E2%80%99s_necessary___aeon_ideas_2020-01-19_12_18_43_am.html"><strong>Why the simple life is not just beautiful, it’s necessary</strong></a>
+<br>
+https://aeon.co/ideas/why-the-simple-life-is-not-just-beautiful-it-s-necessary</p>
+<p><a href="01/how_to_stop_wasting_your_life_watching_tv_2020-01-19_12_22_09_am.html"><strong>How to stop wasting your life watching TV and do something worthwhile with your downtime</strong></a>
+<br>
+https://www.fastcompany.com/90244574/how-to-stop-wasting-your-life-watching-tv-do-something-worthwhile-with-your-downtime</p>
+<p><a href="01/6_ways_to_boost_your_productivity_by_managing_your_energy_not_your_time_2020-01-19_12_25_51_am.html"><strong>6 ways to boost your productivity by managing your energy (not your time)</strong></a>
+<br>
+https://www.fastcompany.com/90450087/6-ways-to-boost-your-productivity-by-managing-your-energy-not-your-time</p>
+<p><a href="01/special_sunglasses,_license-plate_dresses__how_to_be_anonymous_in_the_age_of_surveillance___the_seattle_times_2020-01-19_12_30_04_am.html"><strong>Special sunglasses, license-plate dresses: How to be anonymous in the age of surveillance</strong></a>
+<br>
+https://www.seattletimes.com/business/technology/special-sunglasses-license-plate-dresses-juggalo-face-paint-how-to-be-anonymous-in-the-age-of-surveillance/</p>
+<p><a href="01/xkcd__digital_resource_lifespan_2020-01-10_1_35_58_am.html"><strong>xkcd: Digital Resource Lifespan</strong></a>
+<br>
+https://xkcd.com/1909/</p>
+<h2><a class="header" href="#extra" id="extra">Extra:</a></h2>
+<p><a href="01/michael_mary%E2%80%99s_year_in_books_2019___goodreads_2020-01-10_1_32_27_am.html"><strong>My Year in Books: 2019 (Goodreads)</strong></a>
+<br></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../2020.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../2020/2020-02.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../2020.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../2020/2020-02.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

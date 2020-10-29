@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>June 2020 - Patrick&#x27;s Web Archive</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        <meta name="robots" content="noindex, nofollow">
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../2020.html">2020 Archive</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-01.html">January 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-02.html">February 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-03.html">March 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-04.html">April 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-05.html">May 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-06.html" class="active">June 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-07.html">July 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-08.html">August 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-09.html">September 2020</a></li><li class="chapter-item expanded affix "><a href="../2020/2020-10.html">October 2020</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Patrick&#x27;s Web Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        <a href="https://github.com/code-ink-space/webarchive" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#june-2020" id="june-2020">June 2020</a></h1>
+<p><a href="06/clutter_can_be_useful_-_the_atlantic__-__the_end_of_minimalism_2020-08-01_5_46_42_pm.html"><strong>The End of Minimalism</strong></a>
+<br>
+https://www.theatlantic.com/magazine/archive/2020/07/the-triumph-of-the-slob/612232/</p>
+<p><a href="06/digital_hoarding_-_wikipedia__-__digital_hoarding_2020-08-01_5_49_22_pm.html"><strong>Digital hoarding - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Digital_hoarding</p>
+<p><a href="06/web_archiving_community_%C2%B7_pirate_archivebox_wiki_%C2%B7_github__-__pirate_________archivebox_2020-08-01_6_01_10_pm.html"><strong>Web Archiving Community - pirate / ArchiveBox - Wiki</strong></a>
+<br>
+https://github.com/pirate/ArchiveBox/wiki/Web-Archiving-Community</p>
+<p><a href="06/piracy_should_be_fundamentally_justifiable_if_original_works_of_media_arent_preserved_by_their_original_owners-_a_mild_rant-___piracy_2020-06-17_2_29_55_pm.html"><strong>Piracy should be fundamentally justifiable if original works of media aren't preserved by their original owners. A mild rant. - r/Piracy</strong></a>
+<br>
+https://old.reddit.com/r/Piracy/comments/buqgo8/piracy_should_be_fundamentally_justifiable_if/</p>
+<p><a href="06/how_to_do_noise_reduction_using_ffmpeg_and_sox_-_articulating_ideas_2020-06-18_10_12_22_pm.html"><strong>How To Do Noise Reduction Using ffmpeg And sox - Zohar Babin</strong></a>
+<br>
+http://www.zoharbabin.com/how-to-do-noise-reduction-using-ffmpeg-and-sox/</p>
+<p><a href="06/a_bookworms_guide_to_becoming_a_better_reader_-_fully_booked_blog__-__a_bookworms_guide_to_becoming_a_better_reader_2020-08-01_4_51_40_pm.html"><strong>A Bookworm's Guide to Becoming a Better Reader - Fully Booked Blog</strong></a>
+<br>
+https://www.fullybookedonline.com/blog/post/bookworm-guide-becoming-better-reader.html</p>
+<p><a href="06/what_are_the_seven_basic_literary_plots__%E2%80%93_the_straight_dope__-__what_are_the_seven_basic_literary_plots__2020-08-03_3_08_22_pm.html"><strong>What are the seven basic literary plots? - The Straight Dope</strong></a>
+<br>
+https://www.straightdope.com/columns/read/2366/what-are-the-seven-basic-literary-plots/</p>
+<p><a href="06/lauds_-_wikipedia__-__lauds_2020-08-01_6_00_38_pm.html"><strong>Lauds - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Lauds</p>
+<p><a href="06/morning_has_broken_-_wikipedia__-__morning_has_broken_2020-08-01_5_58_32_pm.html"><strong>Morning Has Broken - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Morning_Has_Broken</p>
+<p><a href="06/catholic_101__intro_to_the_%E2%80%9Cliturgy_of_the_hours%E2%80%9D___the_jesuit_post__-__catholic_101__intro_to_the_%E2%80%9Cliturgy_of_the_hours%E2%80%9D_2020-08-01_5_56_38_pm.html"><strong>Catholic 101: Intro to the &quot;Liturgy of the Hours&quot; | The Jesuit Post</strong></a>
+<br>
+https://thejesuitpost.org/2019/07/catholic-101-intro-to-the-liturgy-of-the-hours/</p>
+<p><a href="06/breviaries_with_a_2-year_cycle_of_patristic_readings_-_zenit_-_english__-__breviaries_with_a_2-year_cycle_of_patristic_readings_2020-08-01_5_56_03_pm.html"><strong>Breviaries With a 2-Year Cycle of Patristic Readings - ZENIT.org</strong></a>
+<br>
+https://zenit.org/2014/12/03/breviaries-with-a-2-year-cycle-of-patristic-readings/</p>
+<p><a href="06/liturgy_of_the_hours_readings___catholic_answers__-__liturgy_of_the_hours_readings_2020-08-01_5_57_48_pm.html"><strong>Q&amp;A: Liturgy of the Hours Readings | Catholic Answers</strong></a>
+<br>
+https://www.catholic.com/qa/liturgy-of-the-hours-readings</p>
+<p><a href="06/podcasting_legal_guide_-_creative_commons__-__podcasting_legal_guide_2020-08-01_5_59_29_pm.html"><strong>Podcasting Legal Guide</strong></a>
+<br>
+https://wiki.creativecommons.org/wiki/Podcasting_Legal_Guide</p>
+<p><a href="06/learn_to_be_alone_-_austin_kleon__-__learn_to_be_alone_2020-07-07_6_58_31_pm.html"><strong>Learn to be alone - Austin Kleon</strong></a>
+<br>
+https://austinkleon.com/2020/06/19/learn-to-be-alone/</p>
+<p><a href="06/the_other_wise_man_-_wikipedia__-__the_other_wise_man_2020-08-01_5_59_50_pm.html"><strong>The Other Wise Man - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/The_Other_Wise_Man</p>
+<p><a href="06/star_of_artaban_-_wikipedia__-__star_of_artaban_2020-08-01_5_59_51_pm.html"><strong>Star of Artaban - Wikipedia</strong></a>
+<br>
+https://en.wikipedia.org/wiki/Star_of_Artaban</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../2020/2020-05.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../2020/2020-07.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../2020/2020-05.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../2020/2020-07.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
